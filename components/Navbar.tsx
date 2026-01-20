@@ -53,7 +53,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
 
   return (
     <header>
-      <div className="navbar fixed top-0 left-0 z-50 w-full bg-black text-white">
+      <div className="navbar fixed top-0 left-0 z-50 w-full  text-white">
         <div className="flex items-center justify-between p-2 md:p-4">
           <button
             onClick={toggleDrawer}
