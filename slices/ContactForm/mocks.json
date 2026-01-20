@@ -1,0 +1,51 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Great"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sint ad fugiat ut nostrud nisi magna in exercitation ex culpa esse."
+						}
+					}
+				]
+			},
+			"button_link": {
+				"__TYPE__": "RepeatableContent",
+				"type": "Link",
+				"value": [
+					{
+						"key": "912f7531-2afd-4835-8760-1231445bee25",
+						"__TYPE__": "LinkContent",
+						"value": {
+							"__TYPE__": "ExternalLink",
+							"url": "http://twitter.com",
+							"text": "gift"
+						}
+					}
+				]
+			},
+			"phone": {
+				"__TYPE__": "FieldContent",
+				"value": "hearing",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
