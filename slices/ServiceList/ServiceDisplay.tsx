@@ -1,5 +1,6 @@
 import { ButtonLink } from "@/components/ButtonLink";
 import { FadeIn } from "@/components/FadeIn";
+import { TransitionLink } from "@/components/TransitionLink";
 import { createClient } from "@/prismicio";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -23,7 +24,7 @@ export const ServiceDisplay = async ({ id }: ServiceDisplayProps) => {
       <div className="absolute inset-0 z-0">
         <PrismicNextImage
           field={service.data.image}
-          className="object-cover opacity-40 md:opacity-100"
+          className="object-cover opacity-30 md:opacity-50"
           fill
           width={1150}
           quality={90}
@@ -40,25 +41,24 @@ export const ServiceDisplay = async ({ id }: ServiceDisplayProps) => {
           <PrismicText field={service.data.heading} />
         </h3>
 
-        <p className="mb-8 text-base font-semibold text-gray-300">
-          Eau de Parfum
-        </p>
-
-        <div className="mb-10 max-w-md text-lg text-gray-300">
-          <PrismicRichText field={service.data.description} />
-        </div>
 
         
 
-        <div className="flex flex-wrap gap-4">
+        <div className="mb-10 max-w-md text-lg text-gray-300 bg-gray-800/50 p-4">
+          <PrismicRichText field={service.data.description} />
+        </div>
+        {/* <div className="flex flex-wrap gap-4">
+          {service.data.link.map((link)=>(
+            <TransitionLink field={link} key={link.key} />
+          ))}
           <ButtonLink document={service} variant="Secondary">
             Discover
           </ButtonLink>
 
-          <ButtonLink href="#" variant="Primary">
-            <HiPlus className="mr-2" /> <span>Add to bag</span>
-          </ButtonLink>
-        </div>
+          <ButtonLink document={service} variant="Primary">
+            <span>{"ggg"}</span>
+          </ButtonLink> 
+        </div> */}
       </FadeIn>
     </FadeIn>
   );

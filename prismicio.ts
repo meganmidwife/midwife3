@@ -24,6 +24,7 @@ const routes: Route[] = [
    { type: "about", path: "/about" },
    { type: "contact", path: "/contact" },
    { type: "services", path: "/services" },
+   { type: "service", path: "/service/:[uid]" },
 
 ];
 
