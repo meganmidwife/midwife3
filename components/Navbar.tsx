@@ -60,7 +60,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
             aria-label="Menu"
             className="cursor-pointer p-2 text-white transition-colors duration-300 hover:bg-white/20"
           >
-            <HiBars3 size={24} />
+            <HiBars3 size={34} />
           </button>
 
           <div className="absolute left-1/2 -translate-x-1/2 transform">

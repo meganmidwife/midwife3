@@ -7,4 +7,7 @@ export const components = {
   contact: dynamic(() => import("./Contact")),
   contact_form: dynamic(() => import("./ContactForm")),
   hero: dynamic(() => import("./Hero")),
+  service: dynamic(() => import("./Service")),
+  service_list: dynamic(() => import("./ServiceList")),
+  service_section: dynamic(() => import("./ServiceSection")),
 };

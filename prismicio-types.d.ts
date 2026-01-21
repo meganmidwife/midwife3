@@ -271,6 +271,234 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type ServiceDocumentDataSlicesSlice = ServiceSectionSlice;
+
+/**
+ * Content for Service documents
+ */
+interface ServiceDocumentData {
+  /**
+   * Heading field in *Service*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *Service*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Image field in *Service*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Link field in *Service*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.Repeatable<
+    prismic.LinkField<
+      string,
+      string,
+      unknown,
+      prismic.FieldState,
+      "Primary" | "Secondary"
+    >
+  >;
+
+  /**
+   * Slice Zone field in *Service*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<ServiceDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: service.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: service.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Service*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Service document from Prismic
+ *
+ * - **API ID**: `service`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServiceDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ServiceDocumentData>,
+    "service",
+    Lang
+  >;
+
+type ServicesDocumentDataSlicesSlice = ServiceListSlice;
+
+/**
+ * Content for Services documents
+ */
+interface ServicesDocumentData {
+  /**
+   * Heading field in *Services*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *Services*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Image field in *Services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Services field in *Services*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.services
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  services: ContentRelationshipFieldWithData<
+    [{ id: "service"; fields: ["heading", "description", "image", "link"] }]
+  >;
+
+  /**
+   * Slice Zone field in *Services*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<ServicesDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: services.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: services.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Services document from Prismic
+ *
+ * - **API ID**: `services`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServicesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ServicesDocumentData>,
+    "services",
+    Lang
+  >;
+
 /**
  * Content for Settings documents
  */
@@ -372,6 +600,8 @@ export type AllDocumentTypes =
   | AboutDocument
   | ContactDocument
   | HomepageDocument
+  | ServiceDocument
+  | ServicesDocument
   | SettingsDocument;
 
 /**
@@ -664,6 +894,240 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *Service → Default → Primary*
+ */
+export interface ServiceSliceDefaultPrimary {
+  /**
+   * Link field in *Service → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  link: ContentRelationshipFieldWithData<
+    [
+      {
+        id: "service";
+        fields: ["meta_title", "meta_description", "meta_image"];
+      },
+    ]
+  >;
+}
+
+/**
+ * Default variation for Service Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServiceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Service*
+ */
+type ServiceSliceVariation = ServiceSliceDefault;
+
+/**
+ * Service Shared Slice
+ *
+ * - **API ID**: `service`
+ * - **Description**: Service
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceSlice = prismic.SharedSlice<
+  "service",
+  ServiceSliceVariation
+>;
+
+/**
+ * Item in *ServiceList → Default → Primary → Services*
+ */
+export interface ServiceListSliceDefaultPrimaryServicesItem {
+  /**
+   * Service field in *ServiceList → Default → Primary → Services*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_list.default.primary.services[].service
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  service: ContentRelationshipFieldWithData<
+    [
+      {
+        id: "service";
+        fields: [
+          "heading",
+          "description",
+          "image",
+          "meta_title",
+          "link",
+          "meta_description",
+          "meta_image",
+        ];
+      },
+    ]
+  >;
+}
+
+/**
+ * Primary content in *ServiceList → Default → Primary*
+ */
+export interface ServiceListSliceDefaultPrimary {
+  /**
+   * eyebrow field in *ServiceList → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_list.default.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  eyebrow: prismic.KeyTextField;
+
+  /**
+   * Heading field in *ServiceList → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_list.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *ServiceList → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_list.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Services field in *ServiceList → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_list.default.primary.services[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  services: prismic.GroupField<
+    Simplify<ServiceListSliceDefaultPrimaryServicesItem>
+  >;
+}
+
+/**
+ * Default variation for ServiceList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceListSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServiceListSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServiceList*
+ */
+type ServiceListSliceVariation = ServiceListSliceDefault;
+
+/**
+ * ServiceList Shared Slice
+ *
+ * - **API ID**: `service_list`
+ * - **Description**: ServiceList
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceListSlice = prismic.SharedSlice<
+  "service_list",
+  ServiceListSliceVariation
+>;
+
+/**
+ * Primary content in *ServiceSection → Default → Primary*
+ */
+export interface ServiceSectionSliceDefaultPrimary {
+  /**
+   * Heading field in *ServiceSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_section.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *ServiceSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_section.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Image field in *ServiceSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_section.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Link field in *ServiceSection → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_section.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Default variation for ServiceSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServiceSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServiceSection*
+ */
+type ServiceSectionSliceVariation = ServiceSectionSliceDefault;
+
+/**
+ * ServiceSection Shared Slice
+ *
+ * - **API ID**: `service_section`
+ * - **Description**: ServiceSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceSectionSlice = prismic.SharedSlice<
+  "service_section",
+  ServiceSectionSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -694,6 +1158,12 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      ServiceDocument,
+      ServiceDocumentData,
+      ServiceDocumentDataSlicesSlice,
+      ServicesDocument,
+      ServicesDocumentData,
+      ServicesDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
@@ -713,6 +1183,19 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      ServiceSlice,
+      ServiceSliceDefaultPrimary,
+      ServiceSliceVariation,
+      ServiceSliceDefault,
+      ServiceListSlice,
+      ServiceListSliceDefaultPrimaryServicesItem,
+      ServiceListSliceDefaultPrimary,
+      ServiceListSliceVariation,
+      ServiceListSliceDefault,
+      ServiceSectionSlice,
+      ServiceSectionSliceDefaultPrimary,
+      ServiceSectionSliceVariation,
+      ServiceSectionSliceDefault,
     };
   }
 }
