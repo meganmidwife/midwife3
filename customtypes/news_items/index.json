@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "blog_post",
-  "label": "Blog Post",
+  "id": "news_items",
+  "label": "News Items",
   "repeatable": true,
   "status": true,
   "json": {
@@ -18,7 +18,7 @@
           "label": "Heading",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "heading1,strong,em"
+          "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "description": {
@@ -27,7 +27,7 @@
           "label": "Description",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "paragraph,strong,em,o-list-item,list-item"
+          "multi": "paragraph,strong,em,list-item,o-list-item"
         }
       },
       "image": {
@@ -38,26 +38,15 @@
           "thumbnails": []
         }
       },
-      "publication_date": {
-        "type": "Date",
-        "config": {
-          "label": "Publication Date",
-          "placeholder": ""
-        }
-      },
-      "background_image": {
-        "type": "Image",
-        "config": {
-          "label": "Background Image",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "blog_list": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

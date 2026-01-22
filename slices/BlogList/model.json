@@ -1,0 +1,51 @@
+{
+  "id": "blog_list",
+  "type": "SharedSlice",
+  "name": "BlogList",
+  "description": "BlogList",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "bloglist": {
+          "type": "Group",
+          "config": {
+            "label": "BlogList",
+            "repeat": true,
+            "fields": {
+              "blogpage": {
+                "type": "Link",
+                "config": {
+                  "label": "BlogPage",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    {
+                      "id": "blog_post",
+                      "fields": [
+                        "heading",
+                        "description",
+                        "image",
+                        "publication_date",
+                        "background_image",
+                        "meta_title",
+                        "meta_description",
+                        "meta_image"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -192,6 +192,17 @@ interface BlogPostDocumentData {
   publication_date: prismic.DateField;
 
   /**
+   * Background Image field in *Blog Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.background_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
    * Slice Zone field in *Blog Post*
    *
    * - **Field Type**: Slice Zone
@@ -377,6 +388,104 @@ export type HomepageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<HomepageDocumentData>,
     "homepage",
+    Lang
+  >;
+
+type NewsItemsDocumentDataSlicesSlice = BlogListSlice;
+
+/**
+ * Content for News Items documents
+ */
+interface NewsItemsDocumentData {
+  /**
+   * Heading field in *News Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_items.heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *News Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_items.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Image field in *News Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_items.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *News Items*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_items.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<NewsItemsDocumentDataSlicesSlice>; /**
+   * Meta Title field in *News Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: news_items.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *News Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: news_items.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *News Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_items.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * News Items document from Prismic
+ *
+ * - **API ID**: `news_items`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NewsItemsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<NewsItemsDocumentData>,
+    "news_items",
     Lang
   >;
 
@@ -710,6 +819,7 @@ export type AllDocumentTypes =
   | BlogPostDocument
   | ContactDocument
   | HomepageDocument
+  | NewsItemsDocument
   | ServiceDocument
   | ServicesDocument
   | SettingsDocument;
@@ -787,6 +897,84 @@ type AboutSliceVariation = AboutSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
+
+/**
+ * Item in *BlogList → Default → Primary → BlogList*
+ */
+export interface BlogListSliceDefaultPrimaryBloglistItem {
+  /**
+   * BlogPage field in *BlogList → Default → Primary → BlogList*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_list.default.primary.bloglist[].blogpage
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  blogpage: ContentRelationshipFieldWithData<
+    [
+      {
+        id: "blog_post";
+        fields: [
+          "heading",
+          "description",
+          "image",
+          "publication_date",
+          "background_image",
+          "meta_title",
+          "meta_description",
+          "meta_image",
+        ];
+      },
+    ]
+  >;
+}
+
+/**
+ * Primary content in *BlogList → Default → Primary*
+ */
+export interface BlogListSliceDefaultPrimary {
+  /**
+   * BlogList field in *BlogList → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_list.default.primary.bloglist[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  bloglist: prismic.GroupField<
+    Simplify<BlogListSliceDefaultPrimaryBloglistItem>
+  >;
+}
+
+/**
+ * Default variation for BlogList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BlogListSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogListSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BlogList*
+ */
+type BlogListSliceVariation = BlogListSliceDefault;
+
+/**
+ * BlogList Shared Slice
+ *
+ * - **API ID**: `blog_list`
+ * - **Description**: BlogList
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BlogListSlice = prismic.SharedSlice<
+  "blog_list",
+  BlogListSliceVariation
+>;
 
 /**
  * Primary content in *Contact → Default → Primary*
@@ -1271,6 +1459,9 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      NewsItemsDocument,
+      NewsItemsDocumentData,
+      NewsItemsDocumentDataSlicesSlice,
       ServiceDocument,
       ServiceDocumentData,
       ServiceDocumentDataSlicesSlice,
@@ -1284,6 +1475,11 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      BlogListSlice,
+      BlogListSliceDefaultPrimaryBloglistItem,
+      BlogListSliceDefaultPrimary,
+      BlogListSliceVariation,
+      BlogListSliceDefault,
       ContactSlice,
       ContactSliceDefaultPrimary,
       ContactSliceVariation,

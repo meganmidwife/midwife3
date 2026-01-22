@@ -50,7 +50,7 @@ export default async function Page() {
             </FadeIn>
     
              
-          </div>
+      </div>
 
   </Bounded>
   <SliceZone slices={page.data.slices} components={components} /></>);
