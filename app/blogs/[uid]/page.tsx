@@ -10,6 +10,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { FadeIn } from "@/components/FadeIn";
 import { ButtonLink } from "@/components/ButtonLink";
 import { asDate } from "@prismicio/client";
+import Link from "next/link";
 
 type Params = { uid: string };
 
@@ -36,7 +37,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
 
         <div className="text-white bg-neutral-600/50 p-6">
           <h1 className="font-display mb-4 border-b border-neutral-700 pb-2 text-4xl md:text-5xl">
-            <PrismicText field={page.data.heading} fallback="Fragrance" />
+            <PrismicText field={page.data.heading} fallback="Blog post" />
           </h1>
 
           <div className="space-y-6">
@@ -54,6 +55,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
             
           </div>
         </div>
+        <ButtonLink href={"/newsitems"} className="relative z-40 mt-10">Back</ButtonLink>
       </div>
     </Bounded>
     );

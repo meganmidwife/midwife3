@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Content, isFilled } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {  SliceComponentProps } from "@prismicio/react";
 import { BlogDisplay } from "./BlogDisplay";
 
 /**

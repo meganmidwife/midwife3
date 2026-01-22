@@ -21,10 +21,15 @@ export const TransitionLink = ({
   onClick,
   tabIndex,
 }: TransitionLinkProps) => {
-  const url = href ?? asLink(field ?? doc);
-  console.log(href)
-  console.log(url);
-   console.log(field);
+  const nu = doc;
+  console.log("CVCC"+nu?.uid);
+
+  const newurl = nu?.uid !== undefined ? `/blogs/${nu?.uid}` : undefined; 
+
+  const url = href ?? newurl ?? asLink(field ?? doc);
+
+
+
   if (!url) {
     console.warn("TransitionLink: No URL Found");
     return null;

@@ -53,6 +53,17 @@
           "thumbnails": []
         }
       },
+      "button_link": {
+        "type": "Link",
+        "config": {
+          "label": "Button Link",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

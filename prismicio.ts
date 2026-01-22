@@ -22,10 +22,13 @@ const routes: Route[] = [
   // Examples:
    { type: "homepage", path: "/" },
    { type: "about", path: "/about" },
+   { type: "blog_post", path: "/blogs/:[uid]" },
    { type: "contact", path: "/contact" },
    { type: "services", path: "/services" },
    { type: "service", path: "/service/:[uid]" },
-   {type: "news_items", path: "/newsitems"},
+   { type: "news_items", path: "/newsitems"},
+   
+   
 
 ];
 

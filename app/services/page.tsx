@@ -8,7 +8,6 @@ import { components } from "@/slices";
 import { Bounded } from "@/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
 import { FadeIn } from "@/components/FadeIn";
-import { ButtonLink } from "@/components/ButtonLink";
 import { RevealText } from "@/components/RevealText";
 
 export default async function Page() {
