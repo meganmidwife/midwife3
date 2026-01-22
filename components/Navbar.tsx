@@ -65,12 +65,12 @@ export const NavBar = ({ settings }: NavBarProps) => {
 
           <div className="absolute left-1/2 -translate-x-1/2 transform">
             <TransitionLink href="/">
-              <Image
-                src="/logo.svg"
+             <Image
+                src="/logocir.png"
                 alt="Megan The Midwife Logo"
-                width={180}
-                height={30}
-                className="w-32 md:w-44"
+                width={20}
+                height={20}
+                className="w-15 md:w-20"
               />
             </TransitionLink>
           </div>
