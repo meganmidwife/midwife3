@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const page = await client.getByUID("blog_post", uid).catch(() => notFound());
   const date = asDate(page.data.publication_date);
   return (
-     <Bounded className="py-10">
+     <Bounded className="py-10 pt-20 md:pt-30">
         <PrismicNextImage field={page.data.background_image} className="absolute inset-0 w-full h-auto opacity-20" />
       <div className="grid grid-cols-1 items-center gap-10 pb-10 lg:grid-cols-2">
         <div className="relative  flex justify-center">

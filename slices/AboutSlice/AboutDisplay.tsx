@@ -1,0 +1,66 @@
+import Image from "next/image";
+import { FadeIn } from "@/components/FadeIn";
+import { TransitionLink } from "@/components/TransitionLink";
+import { createClient } from "@/prismicio";
+import { asText, Content } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
+import {  PrismicText } from "@prismicio/react";
+import { ButtonLink } from '@/components/ButtonLink';
+
+
+
+export const AboutDisplay = async ({  }) => {
+  const client = createClient();
+  const about = await client.getSingle<Content.AboutDocument>("about");
+  //const truncatedDescription = asText(about.data.description).substring(0,150) + ' ...'
+  return (
+  
+  <>
+  <Image src={"/meganThumbnail.png"} width={100} height={100} alt="megan" className="absolute inset-left-0 inset-top-0 -mt-1 ml-1 z-30 border-2 border-white/50 rounded-full w-12 h-12 md:w-24 md:h-24" />
+    <FadeIn
+      className="relative z-10 grid pt-10 md:pt-0 min-h-[85vh]  grid-cols-1 md:grid-cols-2 gap-4 translate-y-20 items-center justify-items-start p-4 text-left md:p-14 lg:p-20"
+      vars={{ duration: 2.5 }}
+      start="top 50%"
+    >
+     
+      <div className="absolute inset-0 -z-1">
+        <PrismicNextImage
+          field={about.data.meta_image}
+          className="object-cover opacity-20 md:opacity-30"
+          fill
+          width={1150}
+          quality={90}
+          alt=""
+        />
+      </div>
+
+    
+      <FadeIn
+        className="relative z-10 grid-cols-2 md:grid-cols-1"
+        vars={{ duration: 3, delay: 0.2 }}
+        start="top 60%"
+      >
+        <h3 className="font-display mb-3 text-3xl md:text-5xl lg:text-6xl">
+          <PrismicText field={about.data.about_megan_the_midwife} />
+        </h3>
+        <div className="mb-10">
+          <p className=" text-lg text-gray-300 bg-gray-800/50 p-4">
+          <TransitionLink document={about} className="text-center z-30  mt-4 text-gray-100 hover:text-gray-400">More</TransitionLink>
+        </p>
+        </div>
+        <TransitionLink document={about} className="absolute max-w-1/2 text-center z-30 border-2 border-white bg-gray-300/20 hover:bg-gray-300/50 text-2xl text-gray-100 p-6">More</TransitionLink>
+      </FadeIn>
+      <FadeIn
+        className="relative z-10 grid-cols-2 md:grid-cols-1 mt-20"
+        vars={{ duration: 3, delay: 0.2 }}
+        start="top 50%"
+      >
+         <div className="flex flex-wrap">
+          <PrismicNextImage field={about.data.meta_image}/>
+        </div>
+      </FadeIn>
+    </FadeIn>
+    
+    </>
+  );
+};

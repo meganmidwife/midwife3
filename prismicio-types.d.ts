@@ -343,7 +343,7 @@ export type ContactDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice = AboutSliceSlice | HeroSlice;
 
 /**
  * Content for homepage documents
@@ -914,6 +914,93 @@ type AboutSliceVariation = AboutSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
+
+/**
+ * Primary content in *AboutSlice → Default → Primary*
+ */
+export interface AboutSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *AboutSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *AboutSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_slice.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Background Image field in *AboutSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_slice.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Link field in *AboutSlice → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_slice.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  link: ContentRelationshipFieldWithData<
+    [
+      {
+        id: "about";
+        fields: [
+          "about_megan_the_midwife",
+          "meta_title",
+          "meta_description",
+          "meta_image",
+        ];
+      },
+    ]
+  >;
+}
+
+/**
+ * Default variation for AboutSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AboutSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutSlice*
+ */
+type AboutSliceSliceVariation = AboutSliceSliceDefault;
+
+/**
+ * AboutSlice Shared Slice
+ *
+ * - **API ID**: `about_slice`
+ * - **Description**: AboutSlice
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AboutSliceSlice = prismic.SharedSlice<
+  "about_slice",
+  AboutSliceSliceVariation
+>;
 
 /**
  * Item in *BlogList → Default → Primary → BlogList*
@@ -1492,6 +1579,10 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      AboutSliceSlice,
+      AboutSliceSliceDefaultPrimary,
+      AboutSliceSliceVariation,
+      AboutSliceSliceDefault,
       BlogListSlice,
       BlogListSliceDefaultPrimaryBloglistItem,
       BlogListSliceDefaultPrimary,

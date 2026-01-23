@@ -53,7 +53,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
 
   return (
     <header>
-      <div className="navbar fixed top-0 left-0 z-50 w-full  text-white">
+      <div className="navbar fixed top-0 left-0 z-50 w-full bg-linear-to-b from-green-800/60 to-slate-50/1  text-white">
         <div className="flex items-center justify-between p-2 md:p-4">
           <button
             onClick={toggleDrawer}
@@ -63,14 +63,14 @@ export const NavBar = ({ settings }: NavBarProps) => {
             <HiBars3 size={34} />
           </button>
 
-          <div className="absolute left-1/2 -translate-x-1/2 transform">
-            <TransitionLink href="/">
+          <div className="absolute left-1/2 -translate-x-1/2 transform mt-10">
+            <TransitionLink href="/" className="min-w-44 items-center flex justify-center">
              <Image
                 src="/logocir.png"
                 alt="Megan The Midwife Logo"
                 width={20}
                 height={20}
-                className="w-15 md:w-20"
+                className="w-15 hidden md:block md:w-20"
               />
             </TransitionLink>
           </div>
@@ -102,12 +102,20 @@ export const NavBar = ({ settings }: NavBarProps) => {
 
       <div
         className={clsx(
-          "nav-drawer fixed top-0 left-0 z-50 h-full w-72 bg-neutral-900 p-6 transition-transform duration-500",
+          "nav-drawer fixed top-0 left-0 z-50 h-full w-72 bg-linear-to-r from-lime-600/80 to-slate-50/20 p-6 transition-transform duration-500",
           isDrawerOpen ? "translate-x-0" : "-translate-x-full",
         )}
         role="dialog"
         aria-modal={isDrawerOpen}
       >
+
+              <Image
+                src="/logocir.png"
+                alt="Megan The Midwife Logo"
+                width={20}
+                height={20}
+                className="w-15 md:w-20 m-auto"
+              />
         <div className="mb-6 flex justify-end">
           <button
             className="p-2 text-white transition-colors duration-300 hover:bg-white/10"
