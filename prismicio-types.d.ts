@@ -343,7 +343,10 @@ export type ContactDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomepageDocumentDataSlicesSlice = AboutSliceSlice | HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | ServiceHomeSlice
+  | AboutSliceSlice
+  | HeroSlice;
 
 /**
  * Content for homepage documents
@@ -1349,6 +1352,112 @@ export type ServiceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ServiceHome → Default → Primary*
+ */
+export interface ServiceHomeSliceDefaultPrimary {
+  /**
+   * Heading field in *ServiceHome → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_home.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *ServiceHome → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_home.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button Link field in *ServiceHome → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_home.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  button_link: ContentRelationshipFieldWithData<
+    [
+      {
+        id: "services";
+        fields: [
+          "heading",
+          "description",
+          "image",
+          {
+            id: "services";
+            customtypes: [
+              {
+                id: "service";
+                fields: [
+                  "heading",
+                  "description",
+                  "image",
+                  "link",
+                  "meta_title",
+                  "meta_description",
+                  "meta_image",
+                ];
+              },
+            ];
+          },
+          "meta_title",
+          "meta_description",
+          "meta_image",
+        ];
+      },
+    ]
+  >;
+
+  /**
+   * Image field in *ServiceHome → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_home.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ServiceHome Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceHomeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServiceHomeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServiceHome*
+ */
+type ServiceHomeSliceVariation = ServiceHomeSliceDefault;
+
+/**
+ * ServiceHome Shared Slice
+ *
+ * - **API ID**: `service_home`
+ * - **Description**: ServiceHome
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceHomeSlice = prismic.SharedSlice<
+  "service_home",
+  ServiceHomeSliceVariation
+>;
+
+/**
  * Item in *ServiceList → Default → Primary → Services*
  */
 export interface ServiceListSliceDefaultPrimaryServicesItem {
@@ -1604,6 +1713,10 @@ declare module "@prismicio/client" {
       ServiceSliceDefaultPrimary,
       ServiceSliceVariation,
       ServiceSliceDefault,
+      ServiceHomeSlice,
+      ServiceHomeSliceDefaultPrimary,
+      ServiceHomeSliceVariation,
+      ServiceHomeSliceDefault,
       ServiceListSlice,
       ServiceListSliceDefaultPrimaryServicesItem,
       ServiceListSliceDefaultPrimary,

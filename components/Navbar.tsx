@@ -70,7 +70,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
                 alt="Megan The Midwife Logo"
                 width={20}
                 height={20}
-                className="w-15 hidden md:block md:w-20"
+                className="w-15 hidden md:block md:w-20 border-gray-400 border-bevel border-6 rounded-full"
               />
             </TransitionLink>
           </div>

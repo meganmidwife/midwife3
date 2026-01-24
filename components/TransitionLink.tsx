@@ -22,7 +22,6 @@ export const TransitionLink = ({
   tabIndex,
 }: TransitionLinkProps) => {
   const nu = doc;
-  console.log("CVCC"+nu?.uid);
 
   const newurl = nu?.uid !== undefined ? `/blogs/${nu?.uid}` : undefined; 
 

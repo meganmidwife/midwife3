@@ -1,0 +1,83 @@
+{
+  "id": "service_home",
+  "type": "SharedSlice",
+  "name": "ServiceHome",
+  "description": "ServiceHome",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3,strong,em"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,list-item,o-list-item"
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              {
+                "id": "services",
+                "fields": [
+                  "heading",
+                  "description",
+                  "image",
+                  {
+                    "id": "services",
+                    "customtypes": [
+                      {
+                        "id": "service",
+                        "fields": [
+                          "heading",
+                          "description",
+                          "image",
+                          "link",
+                          "meta_title",
+                          "meta_description",
+                          "meta_image"
+                        ]
+                      }
+                    ]
+                  },
+                  "meta_title",
+                  "meta_description",
+                  "meta_image"
+                ]
+              }
+            ]
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

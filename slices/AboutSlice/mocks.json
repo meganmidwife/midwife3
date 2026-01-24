@@ -49,8 +49,8 @@
 				"thumbnails": {}
 			},
 			"link": {
-				"__TYPE__": "LinkContent",
 				"key": "b90e8550-a7a8-48c2-907c-d99271d0af1a",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "DocumentLink",
 					"id": "mock_document_id"
