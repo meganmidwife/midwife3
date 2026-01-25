@@ -411,6 +411,128 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Legal → Legal Stuff*
+ */
+export interface LegalDocumentDataLinkStuffItem {
+  /**
+   * Legal field in *Legal → Legal Stuff*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal.link_stuff[].legal
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  legal: ContentRelationshipFieldWithData<
+    [
+      {
+        id: "policy";
+        fields: [
+          "heading",
+          "description",
+          "meta_title",
+          "meta_description",
+          "meta_image",
+        ];
+      },
+    ]
+  >;
+}
+
+type LegalDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Legal documents
+ */
+interface LegalDocumentData {
+  /**
+   * Heading field in *Legal*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal.heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *Legal*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Legal Stuff field in *Legal*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal.link_stuff[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  link_stuff: prismic.GroupField<Simplify<LegalDocumentDataLinkStuffItem>>;
+
+  /**
+   * Slice Zone field in *Legal*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<LegalDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Legal*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: legal.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Legal*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: legal.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Legal*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Legal document from Prismic
+ *
+ * - **API ID**: `legal`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LegalDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<LegalDocumentData>, "legal", Lang>;
+
 type NewsItemsDocumentDataSlicesSlice = BlogListSlice;
 
 /**
@@ -508,6 +630,89 @@ export type NewsItemsDocument<Lang extends string = string> =
     "news_items",
     Lang
   >;
+
+type PolicyDocumentDataSlicesSlice = PolicySliceSlice;
+
+/**
+ * Content for Policy documents
+ */
+interface PolicyDocumentData {
+  /**
+   * Heading field in *Policy*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: policy.heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *Policy*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: policy.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Policy*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: policy.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<PolicyDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Policy*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: policy.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Policy*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: policy.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Policy*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: policy.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Policy document from Prismic
+ *
+ * - **API ID**: `policy`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PolicyDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<PolicyDocumentData>, "policy", Lang>;
 
 type ServiceDocumentDataSlicesSlice = ServiceSectionSlice;
 
@@ -839,7 +1044,9 @@ export type AllDocumentTypes =
   | BlogPostDocument
   | ContactDocument
   | HomepageDocument
+  | LegalDocument
   | NewsItemsDocument
+  | PolicyDocument
   | ServiceDocument
   | ServicesDocument
   | SettingsDocument;
@@ -1300,6 +1507,61 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *PolicySlice → Default → Primary*
+ */
+export interface PolicySliceSliceDefaultPrimary {
+  /**
+   * Heading field in *PolicySlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: policy_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *PolicySlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: policy_slice.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for PolicySlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PolicySliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PolicySliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PolicySlice*
+ */
+type PolicySliceSliceVariation = PolicySliceSliceDefault;
+
+/**
+ * PolicySlice Shared Slice
+ *
+ * - **API ID**: `policy_slice`
+ * - **Description**: PolicySlice
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PolicySliceSlice = prismic.SharedSlice<
+  "policy_slice",
+  PolicySliceSliceVariation
+>;
+
+/**
  * Primary content in *Service → Default → Primary*
  */
 export interface ServiceSliceDefaultPrimary {
@@ -1672,9 +1934,16 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      LegalDocument,
+      LegalDocumentData,
+      LegalDocumentDataLinkStuffItem,
+      LegalDocumentDataSlicesSlice,
       NewsItemsDocument,
       NewsItemsDocumentData,
       NewsItemsDocumentDataSlicesSlice,
+      PolicyDocument,
+      PolicyDocumentData,
+      PolicyDocumentDataSlicesSlice,
       ServiceDocument,
       ServiceDocumentData,
       ServiceDocumentDataSlicesSlice,
@@ -1709,6 +1978,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      PolicySliceSlice,
+      PolicySliceSliceDefaultPrimary,
+      PolicySliceSliceVariation,
+      PolicySliceSliceDefault,
       ServiceSlice,
       ServiceSliceDefaultPrimary,
       ServiceSliceVariation,

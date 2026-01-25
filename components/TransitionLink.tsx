@@ -21,13 +21,7 @@ export const TransitionLink = ({
   onClick,
   tabIndex,
 }: TransitionLinkProps) => {
-  const nu = doc;
-
-  const newurl = nu?.uid !== undefined ? `/blogs/${nu?.uid}` : undefined; 
-
-  const url = href ?? newurl ?? asLink(field ?? doc);
-
-
+  const url = href ?? asLink(field ?? doc);
 
   if (!url) {
     console.warn("TransitionLink: No URL Found");
