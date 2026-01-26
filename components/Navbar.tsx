@@ -80,9 +80,9 @@ export const NavBar = ({ settings }: NavBarProps) => {
              <Image
                 src="/meganlogo3.png"
                 alt="Megan The Midwife Logo"
-                width={50}
-                height={30}
-                className="w-15 hidden md:block md:w-50 mt-9"
+                width={300}
+                height={100}
+                className=" hidden md:block md:w-50 mt-9"
               />
             </TransitionLink>
           </div>
@@ -112,7 +112,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
 
       <div
         className={clsx(
-          "nav-drawer fixed top-0 left-0 z-50 h-full w-72 bg-linear-to-r from-lime-600/80 to-slate-50/20 p-6 transition-transform duration-500",
+          "nav-drawer fixed top-0 left-0 z-50 h-full w-72 bg-logocolor p-6 transition-transform duration-500",
           isDrawerOpen ? "translate-x-0" : "-translate-x-full",
         )}
         role="dialog"
@@ -121,11 +121,11 @@ export const NavBar = ({ settings }: NavBarProps) => {
         
 
               <Image
-                src="/logocir.png"
+                src="/meganlogo3.png"
                 alt="Megan The Midwife Logo"
-                width={20}
-                height={20}
-                className="w-15 md:w-20 m-auto"
+                width={300}
+                height={100}
+                className="w-300 m-auto"
               />
         <div className="mb-6 flex justify-end">
           <button
