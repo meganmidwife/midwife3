@@ -15,37 +15,37 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { FaSquareWhatsapp } from "react-icons/fa6";
 import { TransitionLink } from "@/components/TransitionLink";
 
-type NavIconsProps = {
-  icon: string;
-  className?: string;
-  tabIndex?: number;
-};
+ type NavIconsProps = {
+   icon: string;
+   className?: string;
+   tabIndex?: number;
+ };
 
 type NavBarProps = {
   settings: Content.SettingsDocument;
 };
  
-const NavIcon = ({ icon }:NavIconsProps) => {
-  let Icon;
-  switch (icon) {
-    case "Facebook":
-      Icon = <FaFacebookSquare size={24} className="mx-2 text-white hover:text-gray-300" />;
-      break;
-    case "LinkedIn":
-      Icon = <FaLinkedin size={24} className="mx-2 text-white hover:text-gray-300" />;
-      break;
-    case "Instagram":
-      Icon = <FaInstagramSquare size={24} className="mx-2 text-white hover:text-gray-300" />;
-      break;
-    case "WhatsApp":
-      Icon = <FaSquareWhatsapp size={24} className="mx-2 text-white hover:text-gray-300" />;
-      break;
-    default:
-      Icon = null;
-  } 
+ const NavIcon = ({ icon }:NavIconsProps) => {
+   let Icon;
+   switch (icon) {
+     case "Facebook":
+       Icon = <FaFacebookSquare size={24} className="mx-2 text-white hover:text-gray-300" />;
+       break;
+     case "LinkedIn":
+       Icon = <FaLinkedin size={24} className="mx-2 text-white hover:text-gray-300" />;
+       break;
+     case "Instagram":
+       Icon = <FaInstagramSquare size={24} className="mx-2 text-white hover:text-gray-300" />;
+       break;
+     case "WhatsApp":
+       Icon = <FaSquareWhatsapp size={24} className="mx-2 text-white hover:text-gray-300" />;
+       break;
+     default:
+       Icon = null;
+   } 
     
-  return (Icon)
-};
+   return (Icon)
+ };
 export const NavBar = ({ settings }: NavBarProps) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -53,39 +53,49 @@ export const NavBar = ({ settings }: NavBarProps) => {
 
   return (
     <header>
-      <div className="navbar fixed top-0 left-0 z-50 w-full bg-linear-to-b from-green-800/60 to-slate-50/1  text-white">
-        <div className="flex items-center justify-between p-2 md:p-4">
+      <div className="navbar fixed top-0 left-0 z-50 w-full min-h-40 logocolor  text-white" style={{backgroundColor:'var(--color-logocolor)'}}>
+        <div className="flex items-center p-2 md:p-4">
           <button
             onClick={toggleDrawer}
             aria-label="Menu"
-            className="cursor-pointer p-2 text-white transition-colors duration-300 hover:bg-white/20"
+            className=" cursor-pointer block md:cursor-none md:hidden p-2 text-white transition-colors duration-300 hover:bg-white/20"
           >
             <HiBars3 size={34} />
           </button>
+          <nav className="absolute bottom-0 hidden md:block mb-3" aria-label="Main Navigation">
+          {settings.data.navigation_link.map((link) => (
+            <TransitionLink
+              field={link}
+              key={link.key}
+              className="border-b border-t border-logofontcolor py-2 px-4 font-semibold text-logofontcolor uppercase hover:bg-logohovercolor hover:text-gray-300 mx-2"
+              
+            />
+          ))}
+         
+        </nav>
 
-          <div className="absolute left-1/2 -translate-x-1/2 transform mt-10">
-            <TransitionLink href="/" className="min-w-44 items-center flex justify-center">
+          <div className="absolute left-1/2 -translate-x-1/2 transform ">
+          
+            <TransitionLink href="/" className="min-w-44 z-50 items-center flex justify-center">
              <Image
-                src="/logocir.png"
+                src="/meganlogo3.png"
                 alt="Megan The Midwife Logo"
-                width={20}
-                height={20}
-                className="w-15 hidden md:block md:w-20 border-gray-400 border-bevel border-6 rounded-full"
+                width={50}
+                height={30}
+                className="w-15 hidden md:block md:w-50 mt-9"
               />
             </TransitionLink>
           </div>
 
-          <div className="flex ">
-            {/* <NavIcons className="hidden md:flex" /> */}
+           <div className="flex ">
              <div className="pt-4 ">
-            {settings.data.social_links.map((soc)=>(
-              <div key={soc.key} className="text-white inline-flex">
-                <NavIcon icon={String(soc?.text)}/>
-              </div>
-            ))}
-            
-          </div>
-          </div>
+              {settings.data.social_links.map((soc)=>(
+                <div key={soc.key} className="text-white inline-flex">
+                  <NavIcon icon={String(soc?.text)}/>
+                </div>
+              ))}
+            </div>
+          </div> 
         </div>
       </div>
 
@@ -108,6 +118,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
         role="dialog"
         aria-modal={isDrawerOpen}
       >
+        
 
               <Image
                 src="/logocir.png"

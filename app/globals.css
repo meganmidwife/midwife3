@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --color-logofontcolor: #8d7690;
+  --color-logocolor: #b4c4aa;
+  --color-logohovercolor: #737d6d;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-logofontcolor: #8d7690;
+  --color-logocolor: #b4c4aa;
+  --color-logohovercolor: #737d6d;
 }
 
 @theme inline {
@@ -10,6 +18,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-logofontcolor: var(--color-logofontcolor);
+  --color-logocolor: var(--color-logocolor);
+  --color-logohovercolor: var(--color-logohovercolor);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +33,6 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  color-logofontcolor: var(--color-logofontcolor);
   font-family: Arial, Helvetica, sans-serif;
 }

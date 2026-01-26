@@ -1021,6 +1021,17 @@ interface SettingsDocumentData {
       "Facebook" | "Iinstagram" | "Whatsapp." | "LinkedIn"
     >
   >;
+
+  /**
+   * Phone Number field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.phone_number
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  phone_number: prismic.KeyTextField;
 }
 
 /**

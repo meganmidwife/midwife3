@@ -57,6 +57,13 @@
           "repeat": true,
           "variants": ["Facebook", "Iinstagram", "Whatsapp.", "LinkedIn"]
         }
+      },
+      "phone_number": {
+        "type": "Text",
+        "config": {
+          "label": "Phone Number",
+          "placeholder": ""
+        }
       }
     }
   }
