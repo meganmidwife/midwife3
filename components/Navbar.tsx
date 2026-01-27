@@ -29,16 +29,16 @@ type NavBarProps = {
    let Icon;
    switch (icon) {
      case "Facebook":
-       Icon = <FaFacebookSquare size={24} className="mx-2 text-white hover:text-gray-300" />;
+       Icon = <FaFacebookSquare size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
        break;
      case "LinkedIn":
-       Icon = <FaLinkedin size={24} className="mx-2 text-white hover:text-gray-300" />;
+       Icon = <FaLinkedin size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
        break;
      case "Instagram":
-       Icon = <FaInstagramSquare size={24} className="mx-2 text-white hover:text-gray-300" />;
+       Icon = <FaInstagramSquare size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
        break;
      case "WhatsApp":
-       Icon = <FaSquareWhatsapp size={24} className="mx-2 text-white hover:text-gray-300" />;
+       Icon = <FaSquareWhatsapp size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
        break;
      default:
        Icon = null;
@@ -90,8 +90,8 @@ export const NavBar = ({ settings }: NavBarProps) => {
            <div className="flex ">
              <div className="pt-4 ">
               {settings.data.social_links.map((soc)=>(
-                <div key={soc.key} className="text-white inline-flex">
-                  <NavIcon icon={String(soc?.text)}/>
+                <div key={soc.key} className="text-logofontcolor inline-flex" style={{color:"logofontcolor"}}>
+                  <NavIcon icon={String(soc?.text)} className="text-logofontcolor"/>
                 </div>
               ))}
             </div>

@@ -15,16 +15,16 @@ type FooterIconsProps = {
    let Icon;
    switch (icon) {
      case "Facebook":
-       Icon = <FaFacebookSquare size={24} className="mx-2 text-white hover:text-gray-300" />;
+       Icon = <FaFacebookSquare size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
        break;
      case "LinkedIn":
-       Icon = <FaLinkedin size={24} className="mx-2 text-white hover:text-gray-300" />;
+       Icon = <FaLinkedin size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
        break;
      case "Instagram":
-       Icon = <FaInstagramSquare size={24} className="mx-2 text-white hover:text-gray-300" />;
+       Icon = <FaInstagramSquare size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
        break;
      case "WhatsApp":
-       Icon = <FaSquareWhatsapp size={24} className="mx-2 text-white hover:text-gray-300" />;
+       Icon = <FaSquareWhatsapp size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
        break;
      default:
        Icon = null;
@@ -39,7 +39,7 @@ export const Footer = ({settings}:FooterProps) => {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="container mx-auto border-2 border-red-10">
+      <div className="container mx-auto">
         
 
         {/* Bottom footer */}

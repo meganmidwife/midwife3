@@ -631,6 +631,231 @@ export type NewsItemsDocument<Lang extends string = string> =
     Lang
   >;
 
+type PackageDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Package documents
+ */
+interface PackageDocumentData {
+  /**
+   * Heading field in *Package*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: package.heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *Package*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: package.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Image field in *Package*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: package.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *Package*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: package.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<PackageDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Package*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: package.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Package*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: package.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Package*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: package.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Package document from Prismic
+ *
+ * - **API ID**: `package`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PackageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PackageDocumentData>,
+    "package",
+    Lang
+  >;
+
+/**
+ * Item in *Packages → Button Link*
+ */
+export interface PackagesDocumentDataButtonLinkItem {
+  /**
+   * Link field in *Packages → Button Link*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: packages.button_link[].link
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  link: ContentRelationshipFieldWithData<
+    [
+      {
+        id: "package";
+        fields: [
+          "meta_title",
+          "meta_description",
+          "meta_image",
+          "heading",
+          "description",
+          "image",
+        ];
+      },
+    ]
+  >;
+}
+
+type PackagesDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Packages documents
+ */
+interface PackagesDocumentData {
+  /**
+   * Packages field in *Packages*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: packages.packages
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  packages: prismic.RichTextField;
+
+  /**
+   * Description field in *Packages*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: packages.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button Link field in *Packages*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: packages.button_link[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  button_link: prismic.GroupField<Simplify<PackagesDocumentDataButtonLinkItem>>;
+
+  /**
+   * Slice Zone field in *Packages*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: packages.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<PackagesDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Packages*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: packages.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Packages*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: packages.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Packages*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: packages.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Packages document from Prismic
+ *
+ * - **API ID**: `packages`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PackagesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PackagesDocumentData>,
+    "packages",
+    Lang
+  >;
+
 type PolicyDocumentDataSlicesSlice = PolicySliceSlice;
 
 /**
@@ -1057,6 +1282,8 @@ export type AllDocumentTypes =
   | HomepageDocument
   | LegalDocument
   | NewsItemsDocument
+  | PackageDocument
+  | PackagesDocument
   | PolicyDocument
   | ServiceDocument
   | ServicesDocument
@@ -1518,6 +1745,81 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *PackageSlice → Default → Primary*
+ */
+export interface PackageSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *PackageSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: package_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *PackageSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: package_slice.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Image field in *PackageSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: package_slice.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Price field in *PackageSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: package_slice.default.primary.price
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  price: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for PackageSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PackageSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PackageSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PackageSlice*
+ */
+type PackageSliceSliceVariation = PackageSliceSliceDefault;
+
+/**
+ * PackageSlice Shared Slice
+ *
+ * - **API ID**: `package_slice`
+ * - **Description**: PackageSlice
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PackageSliceSlice = prismic.SharedSlice<
+  "package_slice",
+  PackageSliceSliceVariation
+>;
+
+/**
  * Primary content in *PolicySlice → Default → Primary*
  */
 export interface PolicySliceSliceDefaultPrimary {
@@ -1952,6 +2254,13 @@ declare module "@prismicio/client" {
       NewsItemsDocument,
       NewsItemsDocumentData,
       NewsItemsDocumentDataSlicesSlice,
+      PackageDocument,
+      PackageDocumentData,
+      PackageDocumentDataSlicesSlice,
+      PackagesDocument,
+      PackagesDocumentData,
+      PackagesDocumentDataButtonLinkItem,
+      PackagesDocumentDataSlicesSlice,
       PolicyDocument,
       PolicyDocumentData,
       PolicyDocumentDataSlicesSlice,
@@ -1989,6 +2298,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      PackageSliceSlice,
+      PackageSliceSliceDefaultPrimary,
+      PackageSliceSliceVariation,
+      PackageSliceSliceDefault,
       PolicySliceSlice,
       PolicySliceSliceDefaultPrimary,
       PolicySliceSliceVariation,
