@@ -53,8 +53,8 @@ export const NavBar = ({ settings }: NavBarProps) => {
 
   return (
     <header>
-      <div className="navbar fixed top-0 left-0 z-50 w-full min-h-40 logocolor  text-white" style={{backgroundColor:'var(--color-logocolor)'}}>
-        <div className="flex items-center p-2 md:p-4">
+      <div className="navbar fixed top-0 left-0 z-50 w-full h-auto md:min-h-40 logocolor  text-white" style={{backgroundColor:'var(--color-logocolor)'}}>
+        <div className="flex items-center  md:p-6 md:border-2 md:border-logofontcolor m-2">
           <button
             onClick={toggleDrawer}
             aria-label="Menu"
@@ -62,27 +62,27 @@ export const NavBar = ({ settings }: NavBarProps) => {
           >
             <HiBars3 size={34} />
           </button>
-          <nav className="absolute bottom-0 hidden md:block mb-3" aria-label="Main Navigation">
+          <nav className="absolute bottom-0 hidden md:block mb-3 top-30" aria-label="Main Navigation">
           {settings.data.navigation_link.map((link) => (
             <TransitionLink
               field={link}
               key={link.key}
-              className="border-b border-t border-logofontcolor py-2 px-4 font-semibold text-logofontcolor uppercase hover:bg-logohovercolor hover:text-gray-300 mx-2"
+              className="border-b border-t border-logofontcolor text-sm py-1 px-2 mt-10 font-semibold text-logofontcolor uppercase hover:bg-logohovercolor hover:text-gray-300 mx-2"
               
             />
           ))}
          
         </nav>
 
-          <div className="absolute left-1/2 -translate-x-1/2 transform ">
+          <div className="absolute right-0 md:left-1/2 md:-translate-x-1/2 md:transform -mt-9 ">
           
             <TransitionLink href="/" className="min-w-44 z-50 items-center flex justify-center">
              <Image
                 src="/meganlogo3.png"
                 alt="Megan The Midwife Logo"
-                width={300}
-                height={100}
-                className=" hidden md:block md:w-50 mt-9"
+                width={150}
+                height={90}
+                className="w-30 md:block md:w-40 mt-9"
               />
             </TransitionLink>
           </div>
