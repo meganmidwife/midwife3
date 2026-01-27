@@ -38,6 +38,13 @@
           "thumbnails": []
         }
       },
+      "price": {
+        "type": "Text",
+        "config": {
+          "label": "Price",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

@@ -9,6 +9,7 @@ import { Bounded } from "@/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
+import { FaPoundSign } from "react-icons/fa";
 import Link from "next/link";
 
 type Params = { uid: string };
@@ -49,6 +50,9 @@ export default async function Page({ params }: { params: Promise<Params> }) {
                     vars={{ delay: 1, duration: 1.3 }}
                   >
                     <PrismicRichText field={page.data.description} />
+                    <div className="min-w-full">
+                      <FaPoundSign/>{page.data.price?page.data.price:""}
+                    </div>
                     <div className="grid grid-cols-2 gap-4 font-bold text-center text-balance mt-5">
                       <Link href={"/packages"} className="w-auto border-2 border-logohovercolor bg-logocolor text-logofontcolor">Back</Link>
                       <Link href={"/"} className="w-auto border-2 border-logocolor bg-logocolor text-logofontcolor">Home</Link>

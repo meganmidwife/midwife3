@@ -671,6 +671,17 @@ interface PackageDocumentData {
   image: prismic.ImageField<never>;
 
   /**
+   * Price field in *Package*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: package.price
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  price: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *Package*
    *
    * - **Field Type**: Slice Zone
