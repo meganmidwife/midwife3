@@ -37,14 +37,14 @@ export const ServiceDisplay = async ({ id }: ServiceDisplayProps) => {
         vars={{ duration: 3, delay: 0.8 }}
         start="top 50%"
       >
-        <h3 className="font-display mb-3 text-5xl md:text-6xl lg:text-7xl">
+        <h3 className="font-display text-logofontcolor bg-logocolor p-6 mb-3 text-5xl md:text-6xl lg:text-7xl">
           <PrismicText field={service.data.heading} />
         </h3>
 
 
         
 
-        <div className="mb-10 max-w-md text-lg text-gray-300 bg-gray-800/50 p-4">
+        <div className="mb-10 max-w-max text-lg text-black font-bold bg-logocolor p-4">
           <PrismicRichText field={service.data.description} />
         </div>
         {/* <div className="flex flex-wrap gap-4">

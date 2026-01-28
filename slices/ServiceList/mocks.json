@@ -3,33 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"eyebrow": {
-				"__TYPE__": "FieldContent",
-				"value": "snow",
-				"type": "Text"
-			},
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Promised"
-						}
-					}
-				]
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Veniam pariatur qui veniam minim sit ex est ad Lorem eiusmod aliquip laborum velit reprehenderit."
-						}
-					}
-				]
-			},
 			"services": {
 				"__TYPE__": "GroupContentType",
 				"value": [

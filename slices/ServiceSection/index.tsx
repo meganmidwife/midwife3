@@ -21,7 +21,7 @@ const ServiceSection: FC<ServiceSectionProps> = ({ slice }) => {
       <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative min-h-screen overflow-hidden bg-neutral-950"
+      className="relative min-h-screen overflow-hidden bg-logocolor"
     >
       <FadeIn
         vars={{ scale: 1, opacity: 0.5 }}

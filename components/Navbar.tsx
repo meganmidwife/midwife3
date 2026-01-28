@@ -54,15 +54,15 @@ export const NavBar = ({ settings }: NavBarProps) => {
   return (
     <header>
       <div className="navbar fixed top-0 left-0 z-50 w-full h-auto md:min-h-40 logocolor  text-white" style={{backgroundColor:'var(--color-logocolor)'}}>
-        <div className="flex items-center  md:p-6 md:border-2 md:border-logofontcolor m-2">
+        <div className="flex items-center   md:p-6 md:border-2 md:border-logofontcolor m-2">
           <button
             onClick={toggleDrawer}
             aria-label="Menu"
-            className=" cursor-pointer block md:cursor-none md:hidden p-2 text-white transition-colors duration-300 hover:bg-white/20"
+            className=" cursor-pointer block md:cursor-none md:hidden p-2 text-white transition-colors  duration-300 hover:bg-white/20"
           >
             <HiBars3 size={34} />
           </button>
-          <nav className="absolute bottom-0 hidden md:block mb-3 top-30" aria-label="Main Navigation">
+          <nav className="absolute bottom-0 hidden md:block mb-3 left-0  w-full top-30  text-center  align-middle" aria-label="Main Navigation">
           {settings.data.navigation_link.map((link) => (
             <TransitionLink
               field={link}

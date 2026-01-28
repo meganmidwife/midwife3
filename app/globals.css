@@ -6,7 +6,7 @@
   --color-logohovercolor: #737d6d;
 }
 :root {
-  --background: #ffffff;
+  --background: #737d6d;
   --foreground: #171717;
   --color-logofontcolor: #8d7690;
   --color-logocolor: #b4c4aa;
@@ -18,6 +18,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-alexbrush);
   --color-logofontcolor: var(--color-logofontcolor);
   --color-logocolor: var(--color-logocolor);
   --color-logohovercolor: var(--color-logohovercolor);
@@ -25,7 +26,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #737d6d;
     --foreground: #ededed;
   }
 }

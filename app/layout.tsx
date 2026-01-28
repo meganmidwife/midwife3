@@ -23,6 +23,12 @@ const gambarino = localFont({
   variable: "--font-gambarino",
 });
 
+const alexbrush = localFont({
+  src: "./alexbrush.ttf",
+  display:"swap",
+  variable: "--font-alexbrush",
+});
+
 export async function generateMetdata(): Promise<Metadata> {
   const client = createClient();
   const settings = await client.getSingle("settings");
@@ -52,9 +58,9 @@ export default async function RootLayout({
     <ViewTransitions>
       <html
         lang="en"
-        className={`${raleway.variable} ${gambarino.variable} antialiased`}
+        className={`${raleway.variable} ${gambarino.variable} ${alexbrush.variable} antialiased`}
       >
-        <body className="bg-neutral-900 text-white pt-0 md:pt-40">
+        <body className="bg-logohovercolor text-logofontcolor pt-0 md:pt-40">
           <NavBar settings={settings} />
           <main className="">{children}</main>
           <Footer settings={settings} />

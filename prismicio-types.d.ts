@@ -2078,36 +2078,6 @@ export interface ServiceListSliceDefaultPrimaryServicesItem {
  */
 export interface ServiceListSliceDefaultPrimary {
   /**
-   * eyebrow field in *ServiceList → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_list.default.primary.eyebrow
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  eyebrow: prismic.KeyTextField;
-
-  /**
-   * Heading field in *ServiceList → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_list.default.primary.heading
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  heading: prismic.RichTextField;
-
-  /**
-   * Description field in *ServiceList → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_list.default.primary.description
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  description: prismic.RichTextField;
-
-  /**
    * Services field in *ServiceList → Default → Primary*
    *
    * - **Field Type**: Group

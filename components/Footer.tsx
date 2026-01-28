@@ -39,7 +39,7 @@ export const Footer = ({settings}:FooterProps) => {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="container mx-auto">
+      <div className="container mx-auto pt-2">
         
 
         {/* Bottom footer */}
@@ -54,21 +54,21 @@ export const Footer = ({settings}:FooterProps) => {
               ))}
             </div>
           </div>
-          <p className="text-center text-sm text-black">
-            © {new Date().getFullYear()} Megan The Midwife All rights reserved
-          </p>
+          
           
           <TransitionLink
             href="/"
             aria-label="Megan the midwife home"
-            className="order-first md:order-0  align-middle "
+            className="order-first md:order-0  align-right "
           >
-            <Image src="/meganlogo4.png" alt="Megan The " width={150} height={80} />
+            <Image src="/meganlogo4.png" alt="Megan The " width={80} height={150} />
           </TransitionLink>
-         
+        <p className="z-50 text-2xl block text-logofontcolor border-b-2 border-logofontcolor">Call: {settings.data.phone_number}</p>
         </div>
-        <p className="z-50 block text-logofontcolor border-b-2 border-logofontcolor">Call: {settings.data.phone_number}</p>
       </div>
+      <p className="text-center text-sm text-black">
+            © {new Date().getFullYear()} Megan The Midwife All rights reserved
+          </p>
     </footer>
   );
 };

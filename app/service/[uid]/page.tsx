@@ -1,12 +1,11 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { asImageSrc } from "@prismicio/client";
-import { PrismicRichText, SliceZone } from "@prismicio/react";
+import { PrismicRichText} from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
 import { Bounded } from "@/components/Bounded";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage} from "@prismicio/next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
@@ -17,12 +16,10 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const { uid } = await params;
   const client = createClient();
   const page = await client.getByUID("service", uid).catch(() => notFound());
-
-  //return <SliceZone slices={page.data.slices} components={components} />;
   return (
         <Bounded
               
-              className="relative min-h-screen overflow-hidden bg-neutral-950"
+              className="relative min-h-screen  overflow-hidden bg-logocolor"
             >
               <FadeIn
                 vars={{ scale: 1, opacity: 0.5 }}
@@ -37,7 +34,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
                 />
               </FadeIn>
         
-              <div className="relative flex h-screen flex-col justify-center">
+              <div className="relative flex h-screen min-w-max flex-col justify-center">
                 <RevealText
                   field={page.data.heading}
                   id="hero-heading"

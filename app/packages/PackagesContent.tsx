@@ -6,6 +6,7 @@ import { asText, Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicText } from "@prismicio/react";
 import Link from "next/link";
+import { FaChevronRight } from "react-icons/fa";
 
 type PackagesContentProps = {
   id: string;
@@ -38,21 +39,22 @@ export const PackagesContent = async ({ id }: PackagesContentProps) => {
 
     
       <FadeIn
-        className="relative z-10 grid-cols-2 md:grid-cols-1"
+        className="relative z-10 grid-cols-2 pt-40 md:grid-cols-1 "
         vars={{ duration: 3, delay: 0.2 }}
         start="top 60%"
       >
-        <h3 className="font-display mb-3 text-3xl md:text-5xl lg:text-6xl">
+        <div className="text-logofontcolor bg-logocolor p-4">
+        <h3 className="font-display mb-3  text-3xl md:text-5xl lg:text-6xl ">
           <PrismicText field={pack.data.heading} />
         </h3>
         <div className="mb-10">
-          <p className=" text-lg text-gray-300 bg-gray-800/50 p-4">{truncatedDescription} {/* <TransitionLink document={pack} className="text-center z-30  mt-4 text-gray-100 hover:text-gray-400">More</TransitionLink> */}
+          <p className=" text-lg text-gray-300 bg-gray-800/50 p-4">{truncatedDescription}
         </p>
         </div>
-        <Link href={`package/${pack.uid}`}>
-        More
+        <Link href={`package/${pack.uid}`} className="flex border-2 border-logocolor bg-logohovercolor/50 hover:bg-logocolor/50 hover:border-logohovercolor/50 text-white font-bold uppercase w-auto p-4 ">
+        More <FaChevronRight className="text-2xl ml-3"/>
         </Link>
-        {/* <TransitionLink document={pack} className="absolute max-w-1/2 text-center z-30 border-2 border-white bg-gray-300/20 hover:bg-gray-300/50 text-2xl text-gray-100 p-6">More</TransitionLink> */}
+        </div>
       </FadeIn>
       <FadeIn
         className="relative z-10 grid-cols-2 md:grid-cols-1 mt-20"
