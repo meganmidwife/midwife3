@@ -60,7 +60,7 @@ export default async function RootLayout({
         lang="en"
         className={`${raleway.variable} ${gambarino.variable} ${alexbrush.variable} antialiased`}
       >
-        <body className="bg-logohovercolor text-logofontcolor pt-0 md:pt-40">
+        <body className="bg-logohovercolor text-logofontcolor pt-20 md:pt-40">
           <NavBar settings={settings} />
           <main className="">{children}</main>
           <Footer settings={settings} />

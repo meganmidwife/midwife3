@@ -48,7 +48,7 @@ export const PackagesContent = async ({ id }: PackagesContentProps) => {
           <PrismicText field={pack.data.heading} />
         </h3>
         <div className="mb-10">
-          <p className=" text-lg text-gray-300 bg-gray-800/50 p-4">{truncatedDescription}
+          <p className=" text-lg text-gray-300 bg-logohovercolor p-4">{truncatedDescription}
         </p>
         </div>
         <Link href={`package/${pack.uid}`} className="flex border-2 border-logocolor bg-logohovercolor/50 hover:bg-logocolor/50 hover:border-logohovercolor/50 text-white font-bold uppercase w-auto p-4 ">

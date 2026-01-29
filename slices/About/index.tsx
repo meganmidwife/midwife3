@@ -35,21 +35,29 @@ const About: FC<AboutProps> = ({ slice }) => {
             />
           </FadeIn>
     
-          <div className="relative flex h-screen flex-col justify-center mt-20">
+          <div className="relative flex  flex-col justify-center  mb-10">
             <RevealText
               field={slice.primary.heading}
               id="hero-heading"
-              className="font-display text-balance align-middle  mt-14 pt-4 text-4xl leading-none bg-logocolor text-logofontcolor pl-5  md:text-5xl lg:text-6xl"
+              className="container-common font-display text-balance align-middle  mt-14 pt-4 text-4xl leading-none bg-logocolor text-logofontcolor pl-5  md:text-5xl lg:text-6xl"
               staggerAmount={0.2}
               duration={1.7}
               as="h1"
             />
     
             <FadeIn
-              className="mt-6 translate-y-8 text-lg  bg-logocolor text-logofontcolor font-bold p-6 mb-4"
+              className="container-common grid grid-cols-4 gap-4 mt-6 translate-y-8 text-lg  bg-logocolor text-black  p-6 mb-4"
               vars={{ delay: 1, duration: 1.3 }}
             >
-              <PrismicRichText field={slice.primary.description} />
+              <div className="col-span-4 md:col-span-1">
+                <PrismicNextImage field={slice.primary.image}/> 
+              </div>
+              <div className="col-span-4 md:col-span-3 ">
+                <PrismicRichText field={slice.primary.description} />
+              </div>
+              
+              
+
             </FadeIn>
     
              <FadeIn

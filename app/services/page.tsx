@@ -17,7 +17,7 @@ export default async function Page() {
   return (
     <>
   <Bounded 
-      className="relative min-h-screen overflow-hidden  bg-logocolor"
+      className="relative min-h-screen   bg-logocolor"
   >
     <FadeIn
             vars={{ scale: 1, opacity: 0.5 }}
@@ -31,11 +31,11 @@ export default async function Page() {
               className="object-cover motion-reduce:opacity-50"
             />
           </FadeIn>
-     <div className="relative flex h-screen flex-col justify-center">
+     <div className="relative flex  flex-col justify-center">
             <RevealText
               field={page.data.heading}
               id="hero-heading"
-              className="font-display max-w-xl text-4xl pt-5 mt-5 pl-5  leading-none bg-logocolor text-logofontcolor align-middle  md:text-5xl lg:text-6xl"
+              className="font-display max-w-xl text-4xl pt-5 md:mt-5 pl-5  leading-none bg-logocolor text-logofontcolor align-middle  md:text-5xl lg:text-6xl"
               staggerAmount={0.2}
               duration={1.7}
               as="h1"

@@ -15,11 +15,12 @@ export default async function Page() {
 
   return (
 
-  <div className="text-logofontcolor bg-logocolor pt-5">
-    <div className="w-auto text-4xl md:text-5xl lg:text-6xl font-display  border-2 text-balance align-middle text-center border-white/55 rounded-md m-4 py-4">
+  <div className="text-black bg-logocolor pt-5">
+    <div className="w-auto text-logofontcolor text-4xl md:text-5xl lg:text-6xl font-display  border-2 text-balance align-middle text-center border-white/55 rounded-md m-4 py-4">
       <PrismicRichText field={page.data.packages} />
     </div>
-    <div className="text-balance align-middle text-center border-b-2 border-white/10 pb-3 mb-4"><PrismicRichText field={page.data.description} /></div>
+    <div className="text-balance align-middle text-center border-b-2 border-white/10 pb-3 mb-4">
+      <PrismicRichText field={page.data.description} /></div>
     {pagecontent.map((item) => (
         <Bounded
               key={item.id}

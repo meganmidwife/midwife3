@@ -52,7 +52,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
   const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
 
   return (
-    <header>
+    <header className="">
       <div className="navbar fixed top-0 left-0 z-50 w-full h-auto md:min-h-40 logocolor  text-white" style={{backgroundColor:'var(--color-logocolor)'}}>
         <div className="flex items-center   md:p-6 md:border-2 md:border-logofontcolor m-2">
           <button
@@ -67,7 +67,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
             <TransitionLink
               field={link}
               key={link.key}
-              className="border-b border-t border-logofontcolor text-sm py-1 px-2 mt-10 font-semibold text-logofontcolor uppercase hover:bg-logohovercolor hover:text-gray-300 mx-2"
+              className="border-b border-t border-logofontcolor text-sm py-1 px-2 mt-10 font-semibold text-black uppercase hover:bg-logohovercolor hover:text-gray-300 mx-2"
               
             />
           ))}

@@ -19,7 +19,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   return (
         <Bounded
               
-              className="relative min-h-screen  overflow-hidden bg-logocolor"
+              className="relative min-h-screen   bg-logocolor"
             >
               <FadeIn
                 vars={{ scale: 1, opacity: 0.5 }}
