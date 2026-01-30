@@ -37,7 +37,7 @@ const ServiceHome: FC<ServiceHomeProps> = ({ slice }) => {
               className="object-cover motion-reduce:opacity-50"
             />
           </FadeIn>
-           <div className="bg-logocolor rounded-t-md  pt-4 px-4 lg:text-6xl z-40">           
+           <div className="bg-logocolor rounded-t-md  pt-4  lg:text-6xl z-40">           
               <RevealText
               field={slice.primary.heading}
               id="service-heading"
@@ -48,7 +48,7 @@ const ServiceHome: FC<ServiceHomeProps> = ({ slice }) => {
             />
     
             <FadeIn
-            className="mb-8 p-4 translate-y-8 text-xl text-center font-bold  text-gray-900"
+            className="mb-8 translate-y-8 text-xl text-left font-bold  text-gray-900"
             vars={{ delay: 1, duration: 1.3 }}
           >
               <PrismicRichText field={slice.primary.description} />
