@@ -35,11 +35,11 @@ type FooterIconsProps = {
 
 export const Footer = ({settings}:FooterProps) => {
   return (
-    <footer aria-labelledby="footer-heading" className="bg-logocolor">
+    <footer aria-labelledby="footer-heading" className="bg-logocolor px-4">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="container mx-auto pt-2">
+      <div className=" mx-auto pt-2">
         
 
         {/* Bottom footer */}

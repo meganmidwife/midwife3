@@ -1,7 +1,7 @@
 {
   "format": "page",
   "id": "news_items",
-  "label": "News Items",
+  "label": "Blog",
   "repeatable": true,
   "status": true,
   "json": {

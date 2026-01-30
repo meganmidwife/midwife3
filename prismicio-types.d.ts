@@ -536,11 +536,11 @@ export type LegalDocument<Lang extends string = string> =
 type NewsItemsDocumentDataSlicesSlice = BlogListSlice;
 
 /**
- * Content for News Items documents
+ * Content for Blog documents
  */
 interface NewsItemsDocumentData {
   /**
-   * Heading field in *News Items*
+   * Heading field in *Blog*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -551,7 +551,7 @@ interface NewsItemsDocumentData {
   heading: prismic.RichTextField;
 
   /**
-   * Description field in *News Items*
+   * Description field in *Blog*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -562,7 +562,7 @@ interface NewsItemsDocumentData {
   description: prismic.RichTextField;
 
   /**
-   * Image field in *News Items*
+   * Image field in *Blog*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -573,7 +573,7 @@ interface NewsItemsDocumentData {
   image: prismic.ImageField<never>;
 
   /**
-   * Slice Zone field in *News Items*
+   * Slice Zone field in *Blog*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -582,7 +582,7 @@ interface NewsItemsDocumentData {
    * - **Documentation**: https://prismic.io/docs/slices
    */
   slices: prismic.SliceZone<NewsItemsDocumentDataSlicesSlice>; /**
-   * Meta Title field in *News Items*
+   * Meta Title field in *Blog*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
@@ -593,7 +593,7 @@ interface NewsItemsDocumentData {
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *News Items*
+   * Meta Description field in *Blog*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
@@ -604,7 +604,7 @@ interface NewsItemsDocumentData {
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *News Items*
+   * Meta Image field in *Blog*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -616,7 +616,7 @@ interface NewsItemsDocumentData {
 }
 
 /**
- * News Items document from Prismic
+ * Blog document from Prismic
  *
  * - **API ID**: `news_items`
  * - **Repeatable**: `true`
@@ -1118,6 +1118,17 @@ interface ServicesDocumentData {
   services: ContentRelationshipFieldWithData<
     [{ id: "service"; fields: ["heading", "description", "image", "link"] }]
   >;
+
+  /**
+   * Image on page field in *Services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.image_on_page
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image_on_page: prismic.ImageField<never>;
 
   /**
    * Slice Zone field in *Services*

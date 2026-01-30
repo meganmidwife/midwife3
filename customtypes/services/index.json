@@ -52,6 +52,14 @@
           ]
         }
       },
+      "image_on_page": {
+        "type": "Image",
+        "config": {
+          "label": "Image on page",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

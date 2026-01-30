@@ -70,7 +70,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
             <ButtonLink
               key={link.key}
               field={link}
-              className={clsx(link.variant, `col-span-(${3}) md:col-span-1 border-2 border-logofontcolor `)}
+              className={clsx(link.variant, `col-span-(${numOfLinks}) md:col-span-1 border-2 border-logofontcolor `)}
             />
           ))}
         </FadeIn>

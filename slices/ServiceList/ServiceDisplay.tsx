@@ -1,10 +1,13 @@
+import { Bounded } from "@/components/Bounded";
 import { ButtonLink } from "@/components/ButtonLink";
 import { FadeIn } from "@/components/FadeIn";
+import { RevealText } from "@/components/RevealText";
 import { TransitionLink } from "@/components/TransitionLink";
 import { createClient } from "@/prismicio";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, PrismicText } from "@prismicio/react";
+import clsx from "clsx";
 import { HiPlus } from "react-icons/hi2";
 
 type ServiceDisplayProps = {
@@ -16,50 +19,38 @@ export const ServiceDisplay = async ({ id }: ServiceDisplayProps) => {
   const service = await client.getByID<Content.ServiceDocument>(id);
 
   return (
-    <FadeIn
-      className="relative z-10 grid min-h-[85vh] w-full translate-y-20 items-center justify-items-start border border-white/10 p-4 text-left md:p-14 lg:p-20"
-      vars={{ duration: 2.5 }}
-      start="top 50%"
-    >
-      <div className="absolute inset-0 z-0">
-        <PrismicNextImage
-          field={service.data.image}
-          className="object-cover opacity-30 md:opacity-50"
-          fill
-          width={1150}
-          quality={90}
-          alt=""
-        />
-      </div>
-
-      <FadeIn
-        className="relative z-10 grid translate-y-8"
-        vars={{ duration: 3, delay: 0.8 }}
-        start="top 50%"
-      >
-        <h3 className="font-display text-logofontcolor bg-logocolor p-6 mb-3 text-5xl md:text-6xl lg:text-7xl">
-          <PrismicText field={service.data.heading} />
-        </h3>
-
-
-        
-
-        <div className="mb-10 max-w-max text-lg text-black font-bold bg-logocolor p-4">
-          <PrismicRichText field={service.data.description} />
-        </div>
-        {/* <div className="flex flex-wrap gap-4">
-          {service.data.link.map((link)=>(
-            <TransitionLink field={link} key={link.key} />
-          ))}
-          <ButtonLink document={service} variant="Secondary">
-            Discover
-          </ButtonLink>
-
-          <ButtonLink document={service} variant="Primary">
-            <span>{"ggg"}</span>
-          </ButtonLink> 
-        </div> */}
-      </FadeIn>
-    </FadeIn>
+    <Bounded
+          className="relative min-h-screen overflow-hidden bg-neutral-950"
+        >
+          <FadeIn
+            vars={{ scale: 1, opacity: 0.5 }}
+            className="absolute inset-0 opacity-0 motion-safe:scale-125"
+          >
+            <PrismicNextImage
+              field={service.data.image}
+              alt=""
+              priority
+              fill
+              className="object-cover motion-reduce:opacity-50"
+            />
+          </FadeIn>
+    
+          <div className="relative flex h-screen flex-col justify-center ">
+            <RevealText
+              field={service.data.heading}
+              id="hero-heading"
+              className="font-display max-w-xl text-4xl leading-none text-logofontcolor bg-logocolor rounded-t-md  pt-4 pl-4 md:text-5xl lg:text-6xl"
+              staggerAmount={0.2}
+              duration={1.7}
+              as="h1"
+            />
+            <FadeIn
+              className="mt-6 p-4 max-w-xl translate-y-8 text-lg font-bold bg-logocolor text-black"
+              vars={{ delay: 1, duration: 1.3 }}
+            >
+              <PrismicRichText field={service.data.description} />
+            </FadeIn>
+          </div>
+        </Bounded>
   );
 };

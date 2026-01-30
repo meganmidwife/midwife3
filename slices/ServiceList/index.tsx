@@ -17,15 +17,7 @@ export type ServiceListProps =
  */
 const ServiceList: FC<ServiceListProps> = ({ slice }) => {
   return (
-    <Bounded
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-      className="space-y-8 bg-logocolor py-16 text-center text-white md:py-24"
-    >
-      <div className="mx-auto space-y-8">
-
-        <div className="mt-12 grid grid-cols-1 gap-12">
-          {slice.primary.services.map((item) => {
+          slice.primary.services.map((item) => {
             if (isFilled.contentRelationship(item.service)) {
               return (
                 <ServiceDisplay
@@ -34,10 +26,8 @@ const ServiceList: FC<ServiceListProps> = ({ slice }) => {
                 />
               );
             }
-          })}
-        </div>
-      </div>
-    </Bounded>
+          })
+
   );
 };
 
