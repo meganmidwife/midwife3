@@ -6,7 +6,6 @@ import { PrismicNextImage} from "@prismicio/next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
-import clsx from "clsx";
 
 /**
  * Props for `About`.
@@ -19,11 +18,11 @@ export type AboutProps = SliceComponentProps<Content.AboutSlice>;
 const About: FC<AboutProps> = ({ slice }) => {
   return (
      <Bounded
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-      className="relative glow min-h-screen overflow-hidden bg-logocolor"
-    >
-      <div className="relative flex h-screen flex-col justify-center ">          
+          data-slice-type={slice.slice_type}
+          data-slice-variation={slice.variation}
+          className="relative bg-logocolor pt-10 min-h-screen overflow-hidden"
+        >
+          <div className="relative flex  flex-col justify-center  mb-10">
           <FadeIn
             vars={{ scale: 1, opacity: 0.5 }}
             className="absolute inset-0 opacity-0 motion-safe:scale-125"
@@ -36,20 +35,20 @@ const About: FC<AboutProps> = ({ slice }) => {
               className="object-cover motion-reduce:opacity-50"
             />
           </FadeIn>
-          <div className="bg-logocolor rounded-t-md  pt-4 px-4 lg:text-6xl z-40">
+    <div className="bg-logocolor rounded-t-md  pt-4  lg:text-6xl z-40">
             <RevealText
               field={slice.primary.heading}
               id="hero-heading"
-              className="font-display text-4xl md:text-7xl lg:text-8xl mt-10  leading-none mb:-10 text-logofontcolor text-center"              
+              className="  font-display text-balance align-middle  mt-14 pt-4 text-4xl leading-none bg-logocolor text-logofontcolor pl-5  md:text-5xl lg:text-6xl"
               staggerAmount={0.2}
               align="center"
               duration={1.7}
               as="h1"
-            />
-           <FadeIn
-            className="mb-8 p-4 translate-y-8 text-xl text-center font-bold  text-logofontcolor"
-            vars={{ delay: 1, duration: 1.3 }}
-          >
+            /></div>
+            <FadeIn
+              className=" grid grid-cols-4 gap-4 mt-6 translate-y-8 text-lg  bg-logocolor text-black  p-6 mb-4"
+              vars={{ delay: 1, duration: 1.3 }}
+            >
               <div className="col-span-4 md:col-span-1">
                 <PrismicNextImage field={slice.primary.image}/> 
               </div>
@@ -57,7 +56,7 @@ const About: FC<AboutProps> = ({ slice }) => {
                 <PrismicRichText field={slice.primary.description} />
               </div>
             </FadeIn>
-            </div>
+    
              <FadeIn
               className="mt-8 translate-y-5"
               vars={{ delay: 1.7, duration: 1.1 }}
@@ -66,7 +65,7 @@ const About: FC<AboutProps> = ({ slice }) => {
                 <ButtonLink
                   key={link.key}
                   field={link}
-                  className={clsx(link.variant, `col-span-1 border-2 mx-1 my-1 bg-logocolor border-logofontcolor `)}
+                  className={link.variant}
                 >
                   Link
                 </ButtonLink>

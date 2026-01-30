@@ -49,7 +49,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
                     className="mt-6 max-w-xl translate-y-8 text-lg text-neutral-100"
                     vars={{ delay: 1, duration: 1.3 }}
                   >
-                    <div className="bg-logocolor p-6 text-black text-left">
+                    <div className="bg-logocolor p-6 text-gray-900 text-left">
                     <PrismicRichText field={page.data.description} />
                       <div className="min-w-full justify-between  text-logofontcolor font-bold text-center py-2 border-2 border-gray-300 mt-2 bg-gray-300/50">
                         <FaPoundSign className="inline-block"/>{page.data.price?page.data.price:""}

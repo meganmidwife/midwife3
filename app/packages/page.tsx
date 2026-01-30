@@ -15,7 +15,7 @@ export default async function Page() {
 
   return (
 
-  <div className="text-black bg-logocolor pt-5">
+  <div className="text-gray-900 bg-logocolor pt-5">
     <div className="w-auto text-logofontcolor text-4xl md:text-5xl lg:text-6xl font-display  border-2 text-balance align-middle text-center border-white/55 rounded-md m-4 py-4">
       <PrismicRichText field={page.data.packages} />
     </div>

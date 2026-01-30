@@ -54,7 +54,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
   return (
     <header className="">
       <div className="navbar fixed top-0 left-0 z-50 w-full h-auto md:min-h-40 logocolor  text-white" style={{backgroundColor:'var(--color-logocolor)'}}>
-        <div className="flex items-center   md:p-6 md:border-2 md:border-logofontcolor m-2">
+        <div className="flex items-center   md:p-6 m-2">
           <button
             onClick={toggleDrawer}
             aria-label="Menu"
