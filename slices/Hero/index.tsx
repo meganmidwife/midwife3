@@ -25,14 +25,13 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero: FC<HeroProps> = ({ slice }) => {
 
-  const mdnumOfLinks = "md:grid-cols-"+slice.primary.button_link.length;
-   const numOfLinks = "grid-cols-1";
   return (
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative glow min-h-screen overflow-hidden bg-neutral-950"
+      className="relative glow min-h-screen overflow-hidden bg-logocolor"
     >
+      <div className="relative flex h-screen flex-col justify-center ">
       <FadeIn
         vars={{ scale: 1, opacity: 0.5 }}
         className="absolute inset-0 opacity-0 motion-safe:scale-125"
@@ -45,9 +44,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           className="object-cover motion-reduce:opacity-50"
         />
       </FadeIn>
-
-      <div className="relative flex h-screen flex-col justify-center ">
-        <div className="bg-logocolor rounded-t-md  pt-4 pl-4 lg:text-6xl">
+        <div className="bg-logocolor rounded-t-md  pt-4 px-4 lg:text-6xl z-40">
           <RevealText
             field={slice.primary.heading}
             id="hero-heading"
@@ -59,7 +56,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           />
 
           <FadeIn
-            className="mb-8 p-4 translate-y-8 text-xl text-center font-bold bg-logocolor text-logofontcolor"
+            className="mb-8 p-4 translate-y-8 text-xl text-center font-bold  text-logofontcolor"
             vars={{ delay: 1, duration: 1.3 }}
           >
             <PrismicRichText field={slice.primary.description} />

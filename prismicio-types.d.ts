@@ -1422,23 +1422,13 @@ export interface AboutSliceSliceDefaultPrimary {
   /**
    * Link field in *AboutSlice → Default → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: about_slice.default.primary.link
-   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   * - **Documentation**: https://prismic.io/docs/fields/link
    */
-  link: ContentRelationshipFieldWithData<
-    [
-      {
-        id: "about";
-        fields: [
-          "about_megan_the_midwife",
-          "meta_title",
-          "meta_description",
-          "meta_image",
-        ];
-      },
-    ]
+  link: prismic.Repeatable<
+    prismic.LinkField<string, string, unknown, prismic.FieldState, never>
   >;
 }
 

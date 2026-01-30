@@ -21,22 +21,23 @@ const ServiceSection: FC<ServiceSectionProps> = ({ slice }) => {
       <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative min-h-screen overflow-hidden bg-logocolor"
-    >
-      <FadeIn
-        vars={{ scale: 1, opacity: 0.5 }}
-        className="absolute inset-0 opacity-0 motion-safe:scale-125"
-      >
-        <PrismicNextImage
-          field={slice.primary.image}
-          alt=""
-          priority
-          fill
-          className="object-cover motion-reduce:opacity-50"
-        />
-      </FadeIn>
-
-      <div className="relative flex h-screen flex-col justify-center">
+      className="relative glow min-h-screen overflow-hidden bg-logocolor"    >
+      
+      <div className="relative flex h-screen flex-col justify-center ">
+      
+        <FadeIn
+          vars={{ scale: 1, opacity: 0.5 }}
+          className="absolute inset-0 opacity-0 motion-safe:scale-125"
+        >
+          <PrismicNextImage
+            field={slice.primary.image}
+            alt=""
+            priority
+            fill
+            className="object-cover motion-reduce:opacity-50"
+          />
+        </FadeIn>
+    <div className="bg-logocolor rounded-t-md  pt-4 px-4 lg:text-6xl z-40">
         <RevealText
           field={slice.primary.heading}
           id="hero-heading"
@@ -46,27 +47,14 @@ const ServiceSection: FC<ServiceSectionProps> = ({ slice }) => {
           as="h1"
         />
 
-        <FadeIn
-          className="mt-6 max-w-md translate-y-8 text-lg text-neutral-100"
-          vars={{ delay: 1, duration: 1.3 }}
-        >
-          <PrismicRichText field={slice.primary.description} />
-        </FadeIn>
-
-         {/* <FadeIn
-          className="mt-8 translate-y-5"
-          vars={{ delay: 1.7, duration: 1.1 }}
-        >
-          {slice.primary.link.map((link) => (
-            <ButtonLink
-              key={link.key}
-              field={link}
-              className={link.variant}
-            >
-              Link
-            </ButtonLink>
-          ))}
-        </FadeIn> */}
+         <FadeIn
+            className="mb-8 p-4 translate-y-8 text-xl text-center font-bold  text-logofontcolor"
+            vars={{ delay: 1, duration: 1.3 }}
+          >
+            <PrismicRichText field={slice.primary.description} />
+          </FadeIn>
+    </div>
+        
       </div>
     </Bounded>
   );

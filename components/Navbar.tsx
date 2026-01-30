@@ -67,7 +67,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
             <TransitionLink
               field={link}
               key={link.key}
-              className="border-b border-t border-logofontcolor text-sm py-1 px-2 mt-10 font-semibold text-black uppercase hover:bg-logohovercolor hover:text-gray-300 mx-2"
+              className="border-b border-t border-logofontcolor text-sm py-1 px-2 mt-10 font-semibold text-gray-900 uppercase hover:bg-logohovercolor hover:text-gray-300 mx-2"
               
             />
           ))}

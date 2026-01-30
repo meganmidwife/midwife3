@@ -7,6 +7,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
+import clsx from "clsx";
 
 /**
  * Props for `AboutSlice`.
@@ -21,8 +22,9 @@ const AboutSlice: FC<AboutSliceProps> = ({ slice }) => {
     <Bounded
           data-slice-type={slice.slice_type}
           data-slice-variation={slice.variation}
-          className="relative min-h-screen overflow-hidden bg-neutral-950"
+          className="relative min-h-screen overflow-hidden bg-logocolor"
         >
+          <div className="relative flex h-screen flex-col justify-center">
           <FadeIn
             vars={{ scale: 1, opacity: 0.5 }}
             className="absolute inset-0 opacity-0 motion-safe:scale-125"
@@ -35,30 +37,37 @@ const AboutSlice: FC<AboutSliceProps> = ({ slice }) => {
               className="object-cover motion-reduce:opacity-50"
             />
           </FadeIn>
-    
-          <div className="relative flex h-screen flex-col justify-center">
+        <div className="bg-logocolor rounded-t-md  pt-4 px-4 lg:text-6xl z-40">
             <RevealText
               field={slice.primary.heading}
               id="hero-heading"
-          className="font-display max-w-xl text-4xl leading-none text-logofontcolor bg-logocolor rounded-t-md  pt-4 pl-4 md:text-5xl lg:text-6xl"
+              className="font-display  text-4xl md:text-7xl lg:text-8xl leading-none text-logofontcolor bg-logocolor rounded-t-md  pt-4 px-4"
               staggerAmount={0.2}
+              align="center"
               duration={1.7}
               as="h1"
             />
     
             <FadeIn
-              className="mt-6 p-4 max-w-xl translate-y-8 text-lg font-bold bg-logocolor text-black"
+              className="mt-6 p-4 text-balance translate-y-8 text-lg font-bold bg-logocolor text-gray-900"
               vars={{ delay: 1, duration: 1.3 }}
             >
               <PrismicRichText field={slice.primary.description} />
             </FadeIn>
-    
+        </div>
              <FadeIn
-              className="mt-8 translate-y-5"
-              vars={{ delay: 1.7, duration: 1.1 }}
-            >
-              <ButtonLink href={"/about"} className="bg-white text-neutral-900 hover:bg-gray-200">About Megan</ButtonLink>
+          className={`grid gird-cols-1 md:grid-cols-4 mt-8 translate-y-5`}
+          vars={{ delay: 1.7, duration: 1.1 }}
+        >
+          {slice.primary.link.map((link) => (
+            <ButtonLink
+              key={link.key}
+              field={link}
+              className={clsx(link.variant, `col-span-1 border-2 mx-1 my-1 bg-logocolor border-logofontcolor `)}
+            />
+          ))}
             </FadeIn>
+          
           </div>
         </Bounded>
   );

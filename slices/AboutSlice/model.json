@@ -42,19 +42,11 @@
           "type": "Link",
           "config": {
             "label": "Link",
-            "select": "document",
-            "repeat": false,
-            "customtypes": [
-              {
-                "id": "about",
-                "fields": [
-                  "about_megan_the_midwife",
-                  "meta_title",
-                  "meta_description",
-                  "meta_image"
-                ]
-              }
-            ]
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": true
           }
         }
       },

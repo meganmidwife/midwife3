@@ -66,7 +66,7 @@ export const Footer = ({settings}:FooterProps) => {
         <p className="z-50 text-2xl block text-logofontcolor border-b-2 border-logofontcolor">Call: {settings.data.phone_number}</p>
         </div>
       </div>
-      <p className="text-center text-sm text-black">
+      <p className="text-center text-sm text-gray-900">
             © {new Date().getFullYear()} Megan The Midwife All rights reserved
           </p>
     </footer>

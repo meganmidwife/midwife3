@@ -43,7 +43,7 @@ export default async function Page() {
             />
     
             <FadeIn
-              className="mt-6  translate-y-8 text-lg bg-logocolor p-4 text-black"
+              className="mt-6  translate-y-8 text-lg bg-logocolor p-4 text-gray-900"
               vars={{ delay: 1, duration: 1.3 }}
             >
               <PrismicRichText field={page.data.description} />
