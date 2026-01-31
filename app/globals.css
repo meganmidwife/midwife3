@@ -44,6 +44,9 @@ body {
 a strong {
   color:#8d7690!important;
 }
+a{
+  color:#8d7690!important;
+}
 .container-common {
   border-radius: 10px;
   box-shadow: 0 54px 55px rgb(78 78 78 / 25%), 0 -12px 30px rgb(78 78 78 / 25%),

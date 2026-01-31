@@ -26,6 +26,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "about_paragraph_section": {
+              "type": "SharedSlice"
+            },
             "about": {
               "type": "SharedSlice"
             }

@@ -36,7 +36,7 @@ export default async function Page() {
             <RevealText
               field={page.data.heading}
               id="hero-heading"
-              className="font-display  text-4xl  leading-none bg-logocolor text-logofontcolor align-middle  md:text-5xl lg:text-6xl"
+              className="font-display text-4xl leading-none bg-logocolor  pt-10 pl-6 text-logofontcolor align-middle  md:text-5xl lg:text-6xl"
               staggerAmount={0.2}
               duration={1.7}
               as="h1"

@@ -69,7 +69,7 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
-type AboutDocumentDataSlicesSlice = AboutSlice;
+type AboutDocumentDataSlicesSlice = AboutParagraphSectionSlice | AboutSlice;
 
 /**
  * Content for About documents
@@ -1386,6 +1386,82 @@ type AboutSliceVariation = AboutSliceDefault;
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
 
 /**
+ * Primary content in *AboutParagraphSection → Default → Primary*
+ */
+export interface AboutParagraphSectionSliceDefaultPrimary {
+  /**
+   * Heading field in *AboutParagraphSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_paragraph_section.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *AboutParagraphSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_paragraph_section.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Image field in *AboutParagraphSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_paragraph_section.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Image Position field in *AboutParagraphSection → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: about_paragraph_section.default.primary.image_position
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  image_position: prismic.BooleanField;
+}
+
+/**
+ * Default variation for AboutParagraphSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AboutParagraphSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutParagraphSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutParagraphSection*
+ */
+type AboutParagraphSectionSliceVariation = AboutParagraphSectionSliceDefault;
+
+/**
+ * AboutParagraphSection Shared Slice
+ *
+ * - **API ID**: `about_paragraph_section`
+ * - **Description**: AboutParagraphSection
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type AboutParagraphSectionSlice = prismic.SharedSlice<
+  "about_paragraph_section",
+  AboutParagraphSectionSliceVariation
+>;
+
+/**
  * Primary content in *AboutSlice → Default → Primary*
  */
 export interface AboutSliceSliceDefaultPrimary {
@@ -2259,6 +2335,10 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      AboutParagraphSectionSlice,
+      AboutParagraphSectionSliceDefaultPrimary,
+      AboutParagraphSectionSliceVariation,
+      AboutParagraphSectionSliceDefault,
       AboutSliceSlice,
       AboutSliceSliceDefaultPrimary,
       AboutSliceSliceVariation,
