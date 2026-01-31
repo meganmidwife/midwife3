@@ -56,7 +56,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           />
 
           <FadeIn
-            className="mb-8 p-4 translate-y-8 text-xl text-center font-bold  text-logofontcolor"
+            className="mb-8 p-4 translate-y-8 text-xl text-center  text-logofontcolor"
             vars={{ delay: 1, duration: 1.3 }}
           >
             <PrismicRichText field={slice.primary.description} />

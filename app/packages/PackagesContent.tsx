@@ -19,7 +19,7 @@ export const PackagesContent = async ({ id }: PackagesContentProps) => {
   return (
   
   <>
-  <Image src={"/meganThumbnail.png"} width={100} height={100} alt="megan" className="absolute inset-left-0 inset-top-0 -mt-1 ml-1 z-30 border-2 border-white/50 rounded-full w-12 h-12 md:w-24 md:h-24" />
+  <Image src={"/basiclogo-round.png"}  width={100} height={100} alt="megan" className="absolute inset-left-4 inset-top-0 -mt-1 ml-1 z-30 w-12 h-12 md:w-24 md:h-24" />
     <FadeIn
       className="relative z-10 grid pt-10 md:pt-0 min-h-[85vh]  grid-cols-1 md:grid-cols-2 gap-4 translate-y-20 items-center justify-items-start p-4 text-left md:p-14 lg:p-20"
       vars={{ duration: 2.5 }}
@@ -51,7 +51,7 @@ export const PackagesContent = async ({ id }: PackagesContentProps) => {
           <p className=" text-lg text-gray-300 bg-logohovercolor p-4">{truncatedDescription}
         </p>
         </div>
-        <Link href={`package/${pack.uid}`} className="flex border-2 border-logocolor bg-logohovercolor/50 hover:bg-logocolor/50 hover:border-logohovercolor/50 text-white font-bold uppercase w-auto p-4 ">
+        <Link href={`package/${pack.uid}`} className="flex border-2 border-logocolor bg-logohovercolor/50 hover:bg-logocolor/50 hover:border-logohovercolor/50 text-white uppercase w-auto p-4 ">
         More <FaChevronRight className="text-2xl ml-3"/>
         </Link>
         </div>

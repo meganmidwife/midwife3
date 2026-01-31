@@ -51,13 +51,13 @@ export default async function Page({ params }: { params: Promise<Params> }) {
                   >
                     <div className="bg-logocolor p-6 text-gray-900 text-left">
                     <PrismicRichText field={page.data.description} />
-                      <div className="min-w-full justify-between  text-logofontcolor font-bold text-center py-2 border-2 border-gray-300 mt-2 bg-gray-300/50">
+                      <div className="min-w-full justify-between  text-logofontcolor  text-center py-2 border-2 border-gray-300 mt-2 bg-gray-300/50">
                         <FaPoundSign className="inline-block"/>{page.data.price?page.data.price:""}
                       </div>
                     </div>
 
                    
-                    <div className="grid grid-cols-2 gap-4 font-bold text-center text-balance mt-5">
+                    <div className="grid grid-cols-2 gap-4  text-center text-balance mt-5">
                       <Link href={"/packages"} className="w-auto border-2 border-logohovercolor bg-logocolor text-logofontcolor">Back</Link>
                       <Link href={"/"} className="w-auto border-2 border-logocolor bg-logocolor text-logofontcolor">Home</Link>
                     </div>

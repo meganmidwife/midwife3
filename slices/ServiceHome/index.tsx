@@ -48,7 +48,7 @@ const ServiceHome: FC<ServiceHomeProps> = ({ slice }) => {
             />
     
             <FadeIn
-            className="mb-8 translate-y-8 text-xl text-left font-bold  text-gray-900"
+            className="mb-8 translate-y-8 text-xl text-left  text-gray-900"
             vars={{ delay: 1, duration: 1.3 }}
           >
               <PrismicRichText field={slice.primary.description} />

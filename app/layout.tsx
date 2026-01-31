@@ -29,6 +29,27 @@ const alexbrush = localFont({
   variable: "--font-alexbrush",
 });
 
+const poppinsregular = localFont({
+  src: "./Poppins-Regular.ttf",
+  display: "swap",
+  variable: "--font-poppinsregular"
+});
+const poppinsitalic = localFont({
+  src: "./Poppins-Italic.ttf",
+  display: "swap",
+  variable: "--font-poppinsitalic"
+});
+const poppinsbold = localFont({
+  src: "./Poppins-Bold.ttf",
+  display: "swap",
+  variable: "--font-poppinsbold"
+});
+const poppinsbolditalic = localFont({
+  src: "./Poppins-BoldItalic.ttf",
+  display: "swap",
+  variable: "--font-poppinsbolditalic"
+});
+
 export async function generateMetdata(): Promise<Metadata> {
   const client = createClient();
   const settings = await client.getSingle("settings");
@@ -58,7 +79,7 @@ export default async function RootLayout({
     <ViewTransitions>
       <html
         lang="en"
-        className={`${raleway.variable} ${gambarino.variable} ${alexbrush.variable} antialiased`}
+        className={`${raleway.variable} ${gambarino.variable} ${alexbrush.variable} ${poppinsregular.variable} ${poppinsitalic.variable} ${poppinsbold.variable} ${poppinsbolditalic.variable} antialiased`}
       >
         <body className="bg-logocolor text-logofontcolor pt-20 md:pt-40">
           <NavBar settings={settings} />

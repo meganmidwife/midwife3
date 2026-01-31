@@ -45,7 +45,7 @@ export const ServiceDisplay = async ({ id }: ServiceDisplayProps) => {
               as="h1"
             />
             <FadeIn
-              className="mt-6 p-4 max-w-xl translate-y-8 text-lg font-bold bg-logocolor text-gray-900"
+              className="mt-6 p-4 max-w-xl translate-y-8 text-lg  bg-logocolor text-gray-900"
               vars={{ delay: 1, duration: 1.3 }}
             >
               <PrismicRichText field={service.data.description} />

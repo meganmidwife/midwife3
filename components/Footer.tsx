@@ -61,7 +61,7 @@ export const Footer = ({settings}:FooterProps) => {
             aria-label="Megan the midwife home"
             className="order-first md:order-0  align-right "
           >
-            <Image src="/meganlogo4.png" alt="Megan The " width={80} height={150} />
+            <Image src="/meganlogo5.png" alt="Megan The " width={80} height={150} />
           </TransitionLink>
         <p className="z-50 text-2xl block text-logofontcolor border-b-2 border-logofontcolor">Call: {settings.data.phone_number}</p>
         </div>

@@ -74,7 +74,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               autoComplete="email"
               placeholder="email"
               required
-               className="col-span-3 md:col-span-2  text-black"
+               className="col-span-3 md:col-span-2  text-gray-900"
               value={email}
               onChange={(e)=>setEmail(e.target.value)}
               />
@@ -88,7 +88,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               autoComplete="phone"
               placeholder="phone"
               required
-              className="col-span-3 md:col-span-2  text-black"
+              className="col-span-3 md:col-span-2  text-gray-900"
               value={phone}
               onChange={(e)=>setPhone(e.target.value)}
               />
@@ -102,7 +102,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               autoComplete="first-name"
               placeholder="first-name"
               required
-              className="col-span-3 md:col-span-2  text-black"
+              className="col-span-3 md:col-span-2  text-gray-900"
               value={firstName}
               onChange={(e)=>setFirstName(e.target.value)}
               />
@@ -116,14 +116,14 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               autoComplete="last-name"
               placeholder="last-name"
               required
-              className="col-span-3 md:col-span-2  text-black "
+              className="col-span-3 md:col-span-2   text-gray-900 "
               value={lastName}
               onChange={(e)=>setLastName(e.target.value)}
               />
           </div>
       <div className="last-name grid grid-cols-3 align-middle items-center">
         <label htmlFor="frm-message" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200 rounded-t-md bg-gray-800 mt-3 md:border-0 md:bg-neutral-800">Message</label>
-        <textarea id="frm-message" className="col-span-3 md:col-span-2  text-black" rows={6} name="message" onChange={(e)=>setMessage(e.target.value)} value={message}/>
+        <textarea id="frm-message" className="col-span-3 md:col-span-2  text-gray-900" rows={6} name="message" onChange={(e)=>setMessage(e.target.value)} value={message}/>
       </div>
       <div className="button flex w-full">
         <button type="submit" className="w-full border-2 border-gray-200 rounded-2xl py-4 bg-gray-400 hover:bg-gray-600 mt-4">Submit</button>

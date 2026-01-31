@@ -19,6 +19,10 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-alexbrush);
+  --font-body: var(--font-poppins);
+  --font-body-italic: var(--font-poppinsitalic);
+  --font-body-bold: var(--font-poppinsbold);
+  --font-body-bold-italic: var(--font-poppinsbolditalic);
   --color-logofontcolor: var(--color-logofontcolor);
   --color-logocolor: var(--color-logocolor);
   --color-logohovercolor: var(--color-logohovercolor);
@@ -35,7 +39,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   color-logofontcolor: var(--color-logofontcolor);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: body, Arial, Helvetica, sans-serif;
 }
 .container-common {
   border-radius: 10px;
