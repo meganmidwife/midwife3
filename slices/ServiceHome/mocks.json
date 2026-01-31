@@ -20,7 +20,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Eiusmod exercitation veniam anim fugiat nisi velit ex incididunt. Ad dolore do ut magna consectetur mollit est do sint tempor consectetur cillum ipsum."
+							"text": "Officia magna adipisicing laborum ut sint est anim sit. Exercitation consequat sunt culpa anim nisi voluptate fugiat mollit ex ullamco."
 						}
 					}
 				]
@@ -34,7 +34,6 @@
 				}
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88",
@@ -53,6 +52,8 @@
 					"background": "transparent"
 				},
 				"alt": "mission",
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},

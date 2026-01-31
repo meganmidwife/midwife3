@@ -20,7 +20,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Nulla elit excepteur fugiat sit ipsum exercitation incididunt ullamco labore nulla ipsum cupidatat excepteur ipsum ex."
+							"text": "Sunt ea eiusmod nisi qui officia amet culpa aliqua esse."
 						}
 					}
 				]
@@ -49,8 +49,8 @@
 				"thumbnails": {}
 			},
 			"link": {
-				"__TYPE__": "LinkContent",
 				"key": "de95e763-4c2e-4c32-98a3-d02da73ede5a",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "http://twitter.com",

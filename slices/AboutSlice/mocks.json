@@ -20,7 +20,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Dolore nisi occaecat incididunt excepteur cupidatat sint aliquip commodo dolore. Enim id eu aute anim aliqua non quis cupidatat nisi est culpa."
+							"text": "Dolore proident laborum nostrud aute nostrud voluptate et. Cillum consectetur Lorem quis duis."
 						}
 					}
 				]
@@ -53,8 +53,8 @@
 				"type": "Link",
 				"value": [
 					{
-						"__TYPE__": "LinkContent",
 						"key": "b2b7d988-2d1f-467f-b2c0-1a34ca945ae6",
+						"__TYPE__": "LinkContent",
 						"value": {
 							"__TYPE__": "ExternalLink",
 							"url": "https://slicemachine.dev",
