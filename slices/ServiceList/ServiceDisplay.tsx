@@ -39,13 +39,13 @@ export const ServiceDisplay = async ({ id }: ServiceDisplayProps) => {
             <RevealText
               field={service.data.heading}
               id="hero-heading"
-              className="font-display max-w-xl text-4xl leading-none text-logofontcolor bg-logocolor rounded-t-md  pt-4 pl-4 md:text-5xl lg:text-6xl"
+              className="font-display text-4xl leading-none text-logofontcolor bg-logocolor rounded-t-md  pt-4 pl-4 md:text-5xl lg:text-6xl"
               staggerAmount={0.2}
               duration={1.7}
               as="h1"
             />
             <FadeIn
-              className="mt-6 p-4 max-w-xl translate-y-8 text-lg  bg-logocolor text-gray-900"
+              className="mt-6 p-4  translate-y-8 text-lg  bg-logocolor text-gray-900"
               vars={{ delay: 1, duration: 1.3 }}
             >
               <PrismicRichText field={service.data.description} />
