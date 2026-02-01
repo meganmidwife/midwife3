@@ -28,7 +28,7 @@ export const PackagesContent = async ({ id }: PackagesContentProps) => {
      
       <div className="absolute inset-0 -z-1">
         <PrismicNextImage
-          field={pack.data.image}
+          field={pack.data.background_image}
           className="object-cover opacity-20 md:opacity-30"
           fill
           width={1150}
@@ -48,10 +48,10 @@ export const PackagesContent = async ({ id }: PackagesContentProps) => {
           <PrismicText field={pack.data.heading} />
         </h3>
         <div className="mb-10">
-          <p className=" text-lg text-gray-300 bg-logohovercolor p-4">{truncatedDescription}
+          <p className=" text-lg text-gray-900 bg-logocolor p-4">{truncatedDescription}
         </p>
         </div>
-        <Link href={`package/${pack.uid}`} className="flex border-2 border-logocolor bg-logohovercolor/50 hover:bg-logocolor/50 hover:border-logohovercolor/50 text-white uppercase w-auto p-4 ">
+        <Link href={`package/${pack.uid}`} className="flex border-2 border-logohovercolor bg-logocolor/50 hover:bg-logohovercolor/50 hover:border-logohovercolor/50 text-white uppercase w-auto p-4 ">
         More <FaChevronRight className="text-2xl ml-3"/>
         </Link>
         </div>
@@ -62,7 +62,7 @@ export const PackagesContent = async ({ id }: PackagesContentProps) => {
         start="top 50%"
       >
          <div className="flex flex-wrap">
-          <PrismicNextImage field={pack.data.image}/>
+          <PrismicNextImage field={pack.data.image} alt=""/>
         </div>
       </FadeIn>
     </FadeIn>

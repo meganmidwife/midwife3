@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
             className="absolute inset-0 opacity-0 motion-safe:scale-125"
           >
         <PrismicNextImage
-          field={page.data.image}
+          field={page.data.background_image}
           alt=""
           priority
           fill

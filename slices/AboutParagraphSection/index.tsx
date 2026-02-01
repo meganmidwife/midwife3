@@ -14,7 +14,6 @@ export type AboutParagraphSectionProps =
  * Component for "AboutParagraphSection" Slices.
  */
 const AboutParagraphSection: FC<AboutParagraphSectionProps> = ({ slice }) => {
-  console.log(slice.primary.image_position)
   return (
     <Bounded
       data-slice-type={slice.slice_type}
@@ -25,7 +24,7 @@ const AboutParagraphSection: FC<AboutParagraphSectionProps> = ({ slice }) => {
           <div className="col-span-4 text-4xl md:5xl lg:6xl font-display text-logofontcolor ">
             <PrismicRichText field= {slice.primary.heading} />
           </div>
-          {slice.primary.image.url  ? <><div className={`col-span-1 mx-3 ${!slice.primary.image_position? "order-2" : "order-1"}`}><PrismicNextImage field={slice.primary.image}/></div><div className={`col-span-3 ${!slice.primary.image_position? "order-1" : "order-2`"} `} ><PrismicRichText field={slice.primary.description}/></div></> :<><div className="col-span-4"><PrismicRichText field={slice.primary.description}/></div></>}
+          {slice.primary.image.url  ? <><div className={`col-span-4 md:col-span-1  md:mx-3 ${!slice.primary.image_position? "order-2" : "order-1"}`}><PrismicNextImage field={slice.primary.image} /></div><div className={`col-span-4 md:col-span-3 ${!slice.primary.image_position? "order-1" : "order-2`"} `} ><PrismicRichText field={slice.primary.description} /></div></> :<><div className="col-span-4 md:col-span-4"><PrismicRichText field={slice.primary.description}/></div></>}
          
           
               
