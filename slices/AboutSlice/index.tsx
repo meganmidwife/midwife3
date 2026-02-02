@@ -49,7 +49,7 @@ const AboutSlice: FC<AboutSliceProps> = ({ slice }) => {
             />
     
             <FadeIn
-              className="mt-6 text-balance translate-y-8 text-lg bg-logocolor text-gray-900"
+              className="mt-6 text-balance translate-y-8 text-lg bg-logocolor pb-6 text-gray-900"
               vars={{ delay: 1, duration: 1.3 }}
             >
               <PrismicRichText field={slice.primary.description} />
