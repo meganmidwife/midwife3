@@ -43,7 +43,7 @@ export default async function Page() {
           className="object-cover motion-reduce:opacity-50"
         />
       </FadeIn>
-     <div className="bg-logocolor rounded-t-md  pt-4 px-4 lg:text-6xl z-40">
+     <div className="bg-logocolor   pt-4 px-4 lg:text-6xl z-40">
       <RevealText
         field={legal.data.heading}
         id="hero-heading"

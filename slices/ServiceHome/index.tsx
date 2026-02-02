@@ -37,7 +37,7 @@ const ServiceHome: FC<ServiceHomeProps> = ({ slice }) => {
               className="object-cover motion-reduce:opacity-50"
             />
           </FadeIn>
-           <div className="bg-logocolor rounded-t-md  pt-4  lg:text-6xl z-40">           
+           <div className="bg-logocolor   pt-4  lg:text-6xl z-40">           
               <RevealText
               field={slice.primary.heading}
               id="service-heading"

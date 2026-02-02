@@ -39,7 +39,7 @@ export const ServiceDisplay = async ({ id }: ServiceDisplayProps) => {
             <RevealText
               field={service.data.heading}
               id="hero-heading"
-              className="font-display text-4xl leading-none text-logofontcolor bg-logocolor rounded-t-md  pt-4 pl-4 md:text-5xl lg:text-6xl"
+              className="font-display text-4xl leading-none text-logofontcolor bg-logocolor   pt-4 pl-4 md:text-5xl lg:text-6xl"
               staggerAmount={0.2}
               duration={1.7}
               as="h1"

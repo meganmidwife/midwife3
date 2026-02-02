@@ -37,11 +37,11 @@ const AboutSlice: FC<AboutSliceProps> = ({ slice }) => {
               className="object-cover motion-reduce:opacity-50"
             />
           </FadeIn>
-        <div className="bg-logocolor rounded-t-md  pt-4 px-4 lg:text-6xl z-40">
+        <div className="bg-logocolor   pt-4 px-4 lg:text-6xl z-40">
             <RevealText
               field={slice.primary.heading}
               id="hero-heading"
-              className="font-display  text-4xl md:text-7xl lg:text-8xl leading-none text-logofontcolor bg-logocolor rounded-t-md  pt-4 px-4"
+              className="font-display  text-4xl md:text-7xl lg:text-8xl leading-none text-logofontcolor bg-logocolor  pt-4 px-4"
               staggerAmount={0.2}
               align="center"
               duration={1.7}

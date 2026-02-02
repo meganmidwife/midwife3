@@ -24,7 +24,7 @@ const About: FC<AboutProps> = ({ slice }) => {
         >
           <div className="relative flex  flex-col justify-center  mb-10">
          
-    <div className="bg-logocolor rounded-t-md  pt-4  lg:text-6xl z-40">
+    <div className="bg-logocolor   pt-4  lg:text-6xl z-40">
             <RevealText
               field={slice.primary.heading}
               id="hero-heading"

@@ -49,7 +49,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
           }}
         />
       </AnimatedContent>
-      <div className="mt-16 grid items-center gap-8 rounded-xl border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 px-8 py-8 backdrop-blur-sm lg:grid-cols-2 lg:gap-0 lg:py-12">
+      <div className="mt-16 grid items-center gap-8  border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 px-8 py-8 backdrop-blur-sm lg:grid-cols-2 lg:gap-0 lg:py-12">
         <div>
           {/* <div className="w-fit rounded-lg bg-blue-500/35 p-4 text-3xl">
             <>{slice.primary.icon && icons[slice.primary.icon]}</>
@@ -66,7 +66,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
 
         <form className="container">
           <div className="email grid grid-cols-3 align-middle items-center border-b-2 border-gray-500">
-            <label htmlFor="frm-email" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200 rounded-t-md bg-gray-800 mt-3 md:border-0 md:bg-neutral-800">Email</label>
+            <label htmlFor="frm-email" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3 md:border-0 md:bg-neutral-800">Email</label>
             <input 
               type="email" 
               id="frm-email" 
@@ -80,7 +80,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               />
           </div>
           <div className="phone grid grid-cols-3 align-middle items-center border-b-2 border-gray-500">
-            <label htmlFor="frm-phone" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200 rounded-t-md bg-gray-800 mt-3 md:border-0 md:bg-neutral-800">Phone</label>
+            <label htmlFor="frm-phone" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3 md:border-0 md:bg-neutral-800">Phone</label>
             <input 
               type="phone" 
               id="frm-phone" 
@@ -94,7 +94,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               />
           </div>
           <div className="first-name grid grid-cols-3 align-middle items-center border-b-2 border-gray-500">
-            <label htmlFor="frm-first-name" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200 rounded-t-md bg-gray-800 mt-3 md:border-0 md:bg-neutral-800">First Name </label>
+            <label htmlFor="frm-first-name" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200 bg-gray-800 mt-3 md:border-0 md:bg-neutral-800">First Name </label>
             <input 
               type="first-name" 
               id="frm-first-name" 
@@ -108,7 +108,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               />
           </div>
           <div className="last-name grid grid-cols-3 align-middle items-center border-b-2 border-gray-500">
-            <label htmlFor="frm-last-name" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200 rounded-t-md bg-gray-800 mt-3 md:border-0 md:bg-neutral-800">Last Name</label>
+            <label htmlFor="frm-last-name" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3 md:border-0 md:bg-neutral-800">Last Name</label>
             <input 
               type="last-name" 
               id="frm-last-name" 
@@ -122,11 +122,11 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               />
           </div>
       <div className="last-name grid grid-cols-3 align-middle items-center">
-        <label htmlFor="frm-message" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200 rounded-t-md bg-gray-800 mt-3 md:border-0 md:bg-neutral-800">Message</label>
+        <label htmlFor="frm-message" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3 md:border-0 md:bg-neutral-800">Message</label>
         <textarea id="frm-message" className="col-span-3 md:col-span-2  text-gray-900" rows={6} name="message" onChange={(e)=>setMessage(e.target.value)} value={message}/>
       </div>
       <div className="button flex w-full">
-        <button type="submit" className="w-full border-2 border-gray-200 rounded-2xl py-4 bg-gray-400 hover:bg-gray-600 mt-4">Submit</button>
+        <button type="submit" className="w-full border-2 border-gray-200  py-4 bg-gray-400 hover:bg-gray-600 mt-4">Submit</button>
       </div>
 
         </form>
