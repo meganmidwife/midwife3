@@ -47,6 +47,11 @@
 						}
 					}
 				]
+			},
+			"phone": {
+				"__TYPE__": "FieldContent",
+				"value": "women",
+				"type": "Text"
 			}
 		},
 		"items": []

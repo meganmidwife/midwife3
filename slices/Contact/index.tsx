@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, PrismicText, SliceComponentProps } from "@prismicio/react";
 import { Bounded } from "@/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
 import { ButtonLink } from "@/components/ButtonLink";
@@ -53,7 +53,7 @@ const Contact: FC<ContactProps> = ({ slice }) => {
               <PrismicRichText field={slice.primary.description} />
             </FadeIn>
             </div>
-             
+             <p className="p-4 bg-logocolor text-logofontcolor text-2xl font-bold">{slice.primary.phone}</p>
           </div>
         </Bounded>
   );

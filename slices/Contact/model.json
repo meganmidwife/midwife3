@@ -37,6 +37,13 @@
             "allowTargetBlank": true,
             "multi": "paragraph,strong,em,hyperlink,embed,list-item,o-list-item"
           }
+        },
+        "phone": {
+          "type": "Text",
+          "config": {
+            "label": "Phone",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
