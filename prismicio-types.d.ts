@@ -536,6 +536,17 @@ type LegalDocumentDataSlicesSlice = never;
  */
 interface LegalDocumentData {
   /**
+   * Image field in *Legal*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
    * Heading field in *Legal*
    *
    * - **Field Type**: Rich Text

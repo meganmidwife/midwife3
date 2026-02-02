@@ -5,6 +5,10 @@ import { asImageSrc, asText } from "@prismicio/client";
 import { createClient } from "@/prismicio";
 import { Bounded } from "@/components/Bounded";
 import Link from "next/link";
+import { PrismicRichText } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
+import { FadeIn } from "@/components/FadeIn";
+import { RevealText } from "@/components/RevealText";
 
 
 
@@ -19,14 +23,47 @@ const CapitalizeFirstChar = (wordIn:string) =>{
 export default async function Page() {
   const client = createClient();
   const page = await client.getAllByType("policy").catch(() => notFound());
+  const legal = await client.getSingle("legal").catch(()=> notFound());
 
 
   return (
-    <Bounded className="py-10 mt-20">
-      <div className="grid grid-cols-1 w-full border-2 border-gray-300 bg-gray-300/20">
+    <Bounded
+      className="relative glow min-h-screen overflow-hidden bg-logocolor" >
+      <div className="relative flex h-screen flex-col justify-center">
+
+     <FadeIn
+        vars={{ scale: 1, opacity: 0.5 }}
+        className="absolute inset-0 opacity-0 motion-safe:scale-125"
+      >
+        <PrismicNextImage
+          field={legal.data.image}
+          alt=""
+          priority
+          fill
+          className="object-cover motion-reduce:opacity-50"
+        />
+      </FadeIn>
+     <div className="bg-logocolor rounded-t-md  pt-4 px-4 lg:text-6xl z-40">
+      <RevealText
+        field={legal.data.heading}
+        id="hero-heading"
+        className="font-display text-4xl md:text-7xl lg:text-8xl mt-10  leading-none mb:-10 text-logofontcolor text-center"
+        staggerAmount={0.2}
+        duration={1.7}
+        align="center"
+        as="h1"
+      />
+          
+      <FadeIn
+        className="mb-8 p-4 translate-y-8 text-xl text-center  text-logofontcolor"
+        vars={{ delay: 1, duration: 1.3 }}
+      >
+        <PrismicRichText field={legal.data.description} />
+      </FadeIn>
+    </div>
       {page.map((item)=>(
         
-          <Link key={item.id} href={`/policy/${item.uid}`} className="w-full text-center p-5 my-3 border-2 border-gray-300 bg-gray-300/20 hover:bg-gray-300/40">{CapitalizeFirstChar(item.uid)}</Link>
+          <Link key={item.id} href={`/policy/${item.uid}`} className="w-full z-40 text-center p-5 my-3 border-2 border-logofontcolor bg-logocolor hover:bg-logohovercolor text-logofontcolor hover:!text-gray-300">{CapitalizeFirstChar(item.uid)}</Link>
       
         ) )}
       </div>

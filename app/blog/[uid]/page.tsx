@@ -21,8 +21,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const date = asDate(page.data.publication_date);
   return (
      <Bounded
-      className="relative glow min-h-screen overflow-hidden bg-logocolor"
-    >
+      className="relative glow min-h-screen overflow-hidden bg-logocolor" >
            <div className="relative flex h-screen flex-col justify-center ">
            <FadeIn
              vars={{ scale: 1, opacity: 0.5 }}
