@@ -26,7 +26,7 @@ export default async function Page() {
               key={item.id}
               className="relative"
             >
-          <div className="glow absolute -z-10 aspect-square w-full min-w-full rounded-full bg-gray-300/20 blur-3xl filter" />
+          <div className="glow absolute -z-10 aspect-square  rounded-full bg-gray-300/20 blur-3xl filter" />
               <PackagesContent id={item.id} />
              
            
