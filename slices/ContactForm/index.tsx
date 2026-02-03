@@ -52,8 +52,8 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
           }}
         />
       </AnimatedContent> */}
-      <div className="mt-16 grid items-center gap-8  border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 px-8 py-8 backdrop-blur-sm lg:grid-cols-2 lg:gap-0 lg:py-12">
-        <div className="bg-logocolor p-6">
+      <div className="mt-16 grid items-center gap-4  border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 px-2 py-2 backdrop-blur-sm lg:grid-cols-2 lg:gap-0 lg:py-5">
+        <div className="bg-logocolor p-3">
           
           <div className="mt-6 text-3xl md:text-6xl font-display text-logofontcolor">
             <PrismicRichText field={slice.primary.heading} />
@@ -68,7 +68,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
 
         <form className="container">
           <div className="email grid grid-cols-3 align-middle items-center border-b-2 border-gray-500">
-            <label htmlFor="frm-email" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3 pl-4 pr-3 md:border-0 md:bg-logohovercolor">Email</label>
+            <label htmlFor="frm-email" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3 pl-1 md:pl-4 pr-1 md:pr-3 md:border-0 md:bg-logohovercolor">Email</label>
             <input 
               type="email" 
               id="frm-email" 
@@ -82,7 +82,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               />
           </div>
           <div className="phone grid grid-cols-3 align-middle items-center border-b-2 border-gray-500">
-            <label htmlFor="frm-phone" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3 pl-4 pr-3 md:border-0 md:bg-logohovercolor">Phone</label>
+            <label htmlFor="frm-phone" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3 pl-1 md:pl-4 pr-1 md:pr-3 md:border-0 md:bg-logohovercolor">Phone</label>
             <input 
               type="phone" 
               id="frm-phone" 
@@ -96,7 +96,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               />
           </div>
           <div className="first-name grid grid-cols-3 align-middle items-center border-b-2 border-gray-500">
-            <label htmlFor="frm-first-name" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200 bg-gray-800 mt-3 pl-4 pr-3 md:border-0 md:bg-logohovercolor">First Name </label>
+            <label htmlFor="frm-first-name" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200 bg-gray-800 mt-3 pl-1 md:pl-4 pr-1 md:pr-3 md:border-0 md:bg-logohovercolor">First Name </label>
             <input 
               type="first-name" 
               id="frm-first-name" 
@@ -110,7 +110,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               />
           </div>
           <div className="last-name grid grid-cols-3 align-middle items-center border-b-2 border-gray-500">
-            <label htmlFor="frm-last-name" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3  pl-4 pr-3 md:border-0 md:bg-logohovercolor">Last Name</label>
+            <label htmlFor="frm-last-name" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3  pl-1 md:pl-4 pr-1 md:pr-3 md:border-0 md:bg-logohovercolor">Last Name</label>
             <input 
               type="last-name" 
               id="frm-last-name" 
@@ -124,7 +124,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               />
           </div>
       <div className="last-name grid grid-cols-3 align-middle items-center">
-        <label htmlFor="frm-message" className="col-span-3  pl-4 pr-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3 md:border-0 md:bg-logohovercolor">Message</label>
+        <label htmlFor="frm-message" className="col-span-3  pl-1 md:pl-4 pr-1 md:pr-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3 md:border-0 md:bg-logohovercolor">Message</label>
         <textarea id="frm-message" className="col-span-3 md:col-span-2  text-gray-900" rows={6} name="message" onChange={(e)=>setMessage(e.target.value)} value={message}/>
       </div>
       <div className="button flex w-full">
