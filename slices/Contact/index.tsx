@@ -39,22 +39,27 @@ const Contact: FC<ContactProps> = ({ slice }) => {
           </FadeIn>
     
           <div className="relative flex h-screen flex-col justify-center">
-            <div className="bg-logocolor p-6">
-            <RevealText
-              field={slice.primary.heading}
-              id="hero-heading"
-              className="font-display max-w-xl text-4xl leading-none text-logofontcolor  md:text-5xl lg:text-6xl"
-              staggerAmount={0.2}
-              duration={1.7}
-              as="h1"
-            />
+            <div className="grid grid-cols-4 bg-logocolor ">
+                <div className="p-6 col-span-4 md:col-span-3">
+                <RevealText
+                  field={slice.primary.heading}
+                  id="contact-heading"
+                  className="font-display max-w-xl text-4xl  text-logofontcolor  md:text-5xl lg:text-6xl"
+                  staggerAmount={0.2}
+                  duration={1.7}
+                  as="h1"
+                />
     
-            <FadeIn
-              className="mt-6 max-w-md translate-y-8 text-lg text-gray-900"
-              vars={{ delay: 1, duration: 1.3 }}
-            >
-              <PrismicRichText field={slice.primary.description} />
-            </FadeIn>
+                <FadeIn
+                  className="mt-6 max-w-md translate-y-8 text-lg text-gray-900"
+                  vars={{ delay: 1, duration: 1.3 }}
+                >
+                  <PrismicRichText field={slice.primary.description} />
+                </FadeIn>
+              </div>
+              <div className="col-span-4 md:col-span-1 ">
+                <PrismicNextImage field={slice.primary.featured_image} className="object-contain hidden md:block"/>
+              </div>
             </div>
              <p className="grid grid-cols-2 p-4 bg-logocolor text-logofontcolor text-2xl font-bold">
               <span className="inline-block my-3 align-middle text-center"><a href="#contactform" > <MdEmail className="inline-block"/> {slice.primary.email}

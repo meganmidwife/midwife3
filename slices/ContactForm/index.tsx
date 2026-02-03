@@ -53,19 +53,17 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
         />
       </AnimatedContent> */}
       <div className="mt-16 grid items-center gap-8  border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 px-8 py-8 backdrop-blur-sm lg:grid-cols-2 lg:gap-0 lg:py-12">
-        <div>
+        <div className="bg-logocolor p-6">
           
-          <div className="mt-6 text-2xl font-normal">
+          <div className="mt-6 text-3xl md:text-6xl font-display text-logofontcolor">
             <PrismicRichText field={slice.primary.heading} />
           </div>
-
-          <div className="prose prose-invert mt-4 max-w-xl">
+          <div className="prose prose-invert mt-4 max-w-xl text-gray-900">
             <PrismicRichText field={slice.primary.description} />
              <p className="grid grid-cols-2 p-4 bg-logocolor text-logofontcolor text-2xl font-bold">
                           <span className="inline-block my-3 align-middle text-center"><a href="#contactform" > <MdEmail className="inline-block"/> {slice.primary.email}
             </a></span><span className="inline-block my-3 align-middle text-center"><a href={`${slice.primary.phone}`}><FaPhoneSquareAlt className="inline-block" /> {slice.primary.phone}</a></span></p>
           </div>
-          
         </div>
 
         <form className="container">

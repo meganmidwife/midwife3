@@ -51,6 +51,14 @@
             "label": "email",
             "placeholder": ""
           }
+        },
+        "featured_image": {
+          "type": "Image",
+          "config": {
+            "label": "Featured Image",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}
