@@ -44,6 +44,13 @@
             "label": "Phone",
             "placeholder": ""
           }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "email",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

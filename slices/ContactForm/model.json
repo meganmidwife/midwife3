@@ -47,6 +47,13 @@
             "label": "Phone",
             "placeholder": "Phone number"
           }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "email",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

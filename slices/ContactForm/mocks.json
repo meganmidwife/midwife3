@@ -44,6 +44,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "hearing",
 				"type": "Text"
+			},
+			"email": {
+				"__TYPE__": "FieldContent",
+				"value": "wide",
+				"type": "Text"
 			}
 		},
 		"items": []

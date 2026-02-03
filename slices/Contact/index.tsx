@@ -6,6 +6,9 @@ import { PrismicNextImage } from "@prismicio/next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
+import { FaPhoneSquareAlt } from "react-icons/fa";
+import Link from "next/link";
+import { MdEmail } from "react-icons/md";
 
 /**
  * Props for `Contact`.
@@ -53,7 +56,9 @@ const Contact: FC<ContactProps> = ({ slice }) => {
               <PrismicRichText field={slice.primary.description} />
             </FadeIn>
             </div>
-             <p className="p-4 bg-logocolor text-logofontcolor text-2xl font-bold">{slice.primary.phone}</p>
+             <p className="grid grid-cols-2 p-4 bg-logocolor text-logofontcolor text-2xl font-bold">
+              <span className="inline-block my-3 align-middle text-center"><a href="#contactform" > <MdEmail className="inline-block"/> {slice.primary.email}
+</a></span><span className="inline-block my-3 align-middle text-center"><a href={`tel:${slice.primary.phone}`}><FaPhoneSquareAlt className="inline-block" /> {slice.primary.phone}</a></span></p>
           </div>
         </Bounded>
   );

@@ -9,6 +9,8 @@ import { PiArrowsClockwise, PiGear } from "react-icons/pi";
 import AnimatedContent from "./AnimatedContent";
 import { JSX, useState } from "react";
 import "./contact.css";
+import { FaPhoneSquareAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const icons = {
   gear: <PiGear />,
@@ -34,10 +36,11 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="relative"
-    >
+      
+    ><div id="contactform">
       <div className="glow absolute -z-10 aspect-square w-full max-w-xl rounded-full bg-blue-400/20 blur-3xl filter" />
 
-      <AnimatedContent>
+      {/* <AnimatedContent>
         <PrismicRichText
           field={slice.primary.heading}
           components={{
@@ -48,7 +51,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
             ),
           }}
         />
-      </AnimatedContent>
+      </AnimatedContent> */}
       <div className="mt-16 grid items-center gap-8  border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 px-8 py-8 backdrop-blur-sm lg:grid-cols-2 lg:gap-0 lg:py-12">
         <div>
           
@@ -58,6 +61,9 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
 
           <div className="prose prose-invert mt-4 max-w-xl">
             <PrismicRichText field={slice.primary.description} />
+             <p className="grid grid-cols-2 p-4 bg-logocolor text-logofontcolor text-2xl font-bold">
+                          <span className="inline-block my-3 align-middle text-center"><a href="#contactform" > <MdEmail className="inline-block"/> {slice.primary.email}
+            </a></span><span className="inline-block my-3 align-middle text-center"><a href={`${slice.primary.phone}`}><FaPhoneSquareAlt className="inline-block" /> {slice.primary.phone}</a></span></p>
           </div>
           
         </div>
@@ -129,6 +135,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
 
         </form>
 
+      </div>
       </div>
     </Bounded>
   );

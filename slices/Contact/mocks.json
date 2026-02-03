@@ -52,6 +52,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "women",
 				"type": "Text"
+			},
+			"email": {
+				"__TYPE__": "FieldContent",
+				"value": "castle",
+				"type": "Text"
 			}
 		},
 		"items": []
