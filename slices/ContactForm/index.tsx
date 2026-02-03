@@ -37,22 +37,11 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="relative"
       
-    ><div id="contactform">
-      <div className="glow absolute -z-10 aspect-square w-full max-w-xl rounded-full bg-blue-400/20 blur-3xl filter" />
-
-      {/* <AnimatedContent>
-        <PrismicRichText
-          field={slice.primary.heading}
-          components={{
-            heading2: ({ children }) => (
-              <h2 className="text-balance text-center text-5xl font-medium md:text-7xl">
-                {children}
-              </h2>
-            ),
-          }}
-        />
-      </AnimatedContent> */}
-      <div className="mt-16 grid items-center gap-4  border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 px-2 py-2 backdrop-blur-sm lg:grid-cols-2 lg:gap-0 lg:py-5">
+    >
+      <div id="contactform">
+      <div className="glow absolute -z-10 aspect-square rounded-full bg-blue-400/20 blur-3xl filter" />
+  
+     <div className="mt-16 grid items-center gap-4  border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5  backdrop-blur-sm lg:grid-cols-2 lg:gap-0 lg:py-5">
         <div className="bg-logocolor p-3 h-full">
           
           <div className="mt-6 text-3xl md:text-6xl font-display text-logofontcolor">
