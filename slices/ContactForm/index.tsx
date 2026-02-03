@@ -53,7 +53,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
         />
       </AnimatedContent> */}
       <div className="mt-16 grid items-center gap-4  border border-blue-50/20 bg-gradient-to-b from-slate-50/15 to-slate-50/5 px-2 py-2 backdrop-blur-sm lg:grid-cols-2 lg:gap-0 lg:py-5">
-        <div className="bg-logocolor p-3">
+        <div className="bg-logocolor p-3 h-full">
           
           <div className="mt-6 text-3xl md:text-6xl font-display text-logofontcolor">
             <PrismicRichText field={slice.primary.heading} />
