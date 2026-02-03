@@ -66,7 +66,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
           </div>
         </div>
 
-        <form className="container">
+        <form className="">
           <div className="email grid grid-cols-3 align-middle items-center border-b-2 border-gray-500">
             <label htmlFor="frm-email" className="col-span-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3 pl-1 md:pl-4 pr-1 md:pr-3 md:border-0 md:bg-logohovercolor">Email</label>
             <input 
@@ -76,7 +76,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               autoComplete="email"
               placeholder="email"
               required
-               className="col-span-3 md:col-span-2  text-gray-900"
+               className="col-span-3 md:col-span-2  text-gray-900 bg-gray-300 py-2 px-2"
               value={email}
               onChange={(e)=>setEmail(e.target.value)}
               />
@@ -90,7 +90,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               autoComplete="phone"
               placeholder="phone"
               required
-              className="col-span-3 md:col-span-2  text-gray-900"
+              className="col-span-3 md:col-span-2  text-gray-900 bg-gray-300 py-2 px-2"
               value={phone}
               onChange={(e)=>setPhone(e.target.value)}
               />
@@ -104,7 +104,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               autoComplete="first-name"
               placeholder="first-name"
               required
-              className="col-span-3 md:col-span-2  text-gray-900"
+              className="col-span-3 md:col-span-2  text-gray-900 bg-gray-300 py-2 px-2"
               value={firstName}
               onChange={(e)=>setFirstName(e.target.value)}
               />
@@ -118,14 +118,14 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               autoComplete="last-name"
               placeholder="last-name"
               required
-              className="col-span-3 md:col-span-2   text-gray-900 "
+              className="col-span-3 md:col-span-2   text-gray-900 bg-gray-300 py-2 px-2 "
               value={lastName}
               onChange={(e)=>setLastName(e.target.value)}
               />
           </div>
       <div className="last-name grid grid-cols-3 align-middle items-center">
         <label htmlFor="frm-message" className="col-span-3  pl-1 md:pl-4 pr-1 md:pr-3 md:col-span-1  text-center w-full  md:text-left border-2 border-gray-200  bg-gray-800 mt-3 md:border-0 md:bg-logohovercolor">Message</label>
-        <textarea id="frm-message" className="col-span-3 md:col-span-2  text-gray-900" rows={6} name="message" onChange={(e)=>setMessage(e.target.value)} value={message}/>
+        <textarea id="frm-message" className="col-span-3 md:col-span-2  text-gray-900 bg-gray-300 py-2 px-2" rows={6} name="message" onChange={(e)=>setMessage(e.target.value)} value={message}/>
       </div>
       <div className="button flex w-full">
         <button type="submit" className="w-full border-2 border-gray-200  py-4 bg-gray-400 hover:bg-gray-600 mt-4">Submit</button>
