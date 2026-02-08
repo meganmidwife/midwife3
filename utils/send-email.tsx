@@ -1,7 +1,8 @@
 import { FormData } from '@/components/Contact';
 
 export function sendEmail(data: FormData) {
-  const apiEndpoint = '/api/email';
+  const apiEndpoint = '@/api/email';
+  console.log(data);
 
   fetch(apiEndpoint, {
     method: 'POST',

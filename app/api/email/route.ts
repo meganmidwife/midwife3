@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
   const { email, name, message } = await request.json();
 
   const transport = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'outlook',
     /* 
       setting service as 'gmail' is same as providing these setings:
       host: "smtp.gmail.com",
@@ -16,6 +16,9 @@ export async function POST(request: NextRequest) {
       Or you can go use these well known services and their settings at
       https://github.com/nodemailer/nodemailer/blob/master/lib/well-known/services.json
   */
+    host: "smtp.office365.com",
+    port: 587,
+    secure: false,
     auth: {
       user: process.env.MY_EMAIL,
       pass: process.env.MY_PASSWORD,
