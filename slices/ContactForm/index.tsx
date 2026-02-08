@@ -11,6 +11,7 @@ import { JSX, useState } from "react";
 import "./contact.css";
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import Contact from "@/components/Contact";
 
 const icons = {
   gear: <PiGear />,
@@ -123,6 +124,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
         </form>
 
       </div>
+      <Contact/>
       </div>
     </Bounded>
   );

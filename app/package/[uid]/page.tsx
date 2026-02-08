@@ -1,10 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { asImageSrc } from "@prismicio/client";
-import { PrismicImage, PrismicRichText, SliceZone } from "@prismicio/react";
+import { PrismicRichText} from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
 import { Bounded } from "@/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
 import { FadeIn } from "@/components/FadeIn";
@@ -23,19 +22,19 @@ export default async function Page({ params }: { params: Promise<Params> }) {
         <Bounded
           className="relative   bg-logocolor"
         >
-          <FadeIn
-            vars={{ scale: 1, opacity: 0.5 }}
-            className="absolute inset-0 opacity-0 motion-safe:scale-125"
-          >
-        <PrismicNextImage
-          field={page.data.background_image}
-          alt=""
-          priority
-          fill
-          className="object-cover motion-reduce:opacity-50"
-        />
-      </FadeIn>
-          <div className="relative flex md:min-w-max pb-5  flex-col justify-center">
+            <FadeIn
+              vars={{ scale: 1, opacity: 0.5 }}
+              className="absolute inset-0 opacity-0 motion-safe:scale-125"
+            >
+              <PrismicNextImage
+                field={page.data.background_image}
+                alt=""
+                priority
+                fill
+                className="object-cover motion-reduce:opacity-50"
+              />
+            </FadeIn>
+          <div className="relative flex  pb-5  flex-col justify-center">
                   <RevealText
                     field={page.data.heading}
                     id="hero-heading"

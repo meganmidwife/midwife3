@@ -5,6 +5,9 @@ import { PrismicRichText} from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { PackagesContent } from "./PackagesContent";
 import { Bounded } from "@/components/Bounded";
+import { asImageSrc } from "@prismicio/client";
+import { Metadata } from "next";
+import { Params } from "next/dist/server/request/params";
 
 
 
@@ -14,12 +17,11 @@ export default async function Page() {
   const pagecontent = await client.getAllByType("package").catch(() => notFound());
 
   return (
-
-  <div className="text-gray-900 bg-logocolor pt-5">
-    <div className="w-auto text-logofontcolor text-4xl md:text-5xl lg:text-6xl font-display   text-balance align-middle text-center m-4 py-4">
+<div className="text-gray-900 bg-logocolor pt-5 px-4"> 
+      <div className="w-auto text-logofontcolor px-4 text-4xl md:text-5xl lg:text-6xl font-display text-balance align-middle font-bold text-left md:text-center m-4 py-4 mb-4">
       <PrismicRichText field={page.data.packages} />
     </div>
-    <div className="text-balance align-middle text-center border-b-2 border-white/10 pb-3 mb-4">
+    <div className="text-balance align-middle text-left md:text-center border-b-2 border-white/10 pb-3 mb-4">
       <PrismicRichText field={page.data.description} /></div>
     {pagecontent.map((item) => (
         <Bounded
@@ -37,27 +39,26 @@ export default async function Page() {
   </div>);
 }
 
-// export async function generateMetadata({
-//   params,
-// }: {
-//   params: Promise<Params>;
-// }): Promise<Metadata> {
-//   const { uid } = await params;
-//   const client = createClient();
-//   const page = await client.getByUID("packages", uid).catch(() => notFound());
+ export async function generateMetadata({
+  
+ }: {
+   params: Promise<Params>;
+ }): Promise<Metadata> {
+   const client = createClient();
+   const page = await client.getSingle("packages").catch(() => notFound());
 
-//   return {
-//     title: page.data.meta_title,
-//     description: page.data.meta_description,
-//     openGraph: {
-//       images: [{ url: asImageSrc(page.data.meta_image) ?? "" }],
-//     },
-//   };
-// }
+   return {
+     title: page.data.meta_title,
+     description: page.data.meta_description,
+     openGraph: {
+       images: [{ url: asImageSrc(page.data.meta_image) ?? "" }],
+     },
+   };
+ }
 
-// export async function generateStaticParams() {
-//   const client = createClient();
-//   const pages = await client.getAllByType("packages");
+ export async function generateStaticParams() {
+   const client = createClient();
+   const pages = await client.getAllByType("packages");
 
-//   return pages.map((page) => ({ uid: page.uid }));
-// }
+   return pages.map((page) => ({ uid: page.uid }));
+ }
