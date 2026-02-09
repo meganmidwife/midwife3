@@ -25,6 +25,7 @@ const AboutSlice: FC<AboutSliceProps> = ({ slice }) => {
           className="relative min-h-screen overflow-hidden bg-logocolor"
         >
           <div className="relative flex h-screen flex-col justify-center">
+          {slice.primary.background_image &&
           <FadeIn
             vars={{ scale: 1, opacity: 0.5 }}
             className="absolute inset-0 opacity-0 motion-safe:scale-125"
@@ -36,7 +37,7 @@ const AboutSlice: FC<AboutSliceProps> = ({ slice }) => {
               fill
               className="object-cover motion-reduce:opacity-50"
             />
-          </FadeIn>
+          </FadeIn>}
         <div className="bg-logocolor   pt-4 px-4 lg:text-6xl z-40">
             <RevealText
               field={slice.primary.heading}
@@ -52,7 +53,12 @@ const AboutSlice: FC<AboutSliceProps> = ({ slice }) => {
               className="mt-6 text-balance translate-y-8 text-lg bg-logocolor pb-6 text-gray-900"
               vars={{ delay: 1, duration: 1.3 }}
             >
-              <PrismicRichText field={slice.primary.description} />
+              <div className="grid grid-cols-4">
+                <div className="col-span-4 md:col-span-3 text-xl md:text-3xl order-2 md:order-1">
+                  <PrismicRichText field={slice.primary.description}  />
+                </div>
+                {slice.primary.image && <PrismicNextImage field={slice.primary.image} className="col-span-4 md:col-span-1 order-1 md:order-2 max-w-40 md:max-w-full mb-4 md:mb-1  m-auto"/>}
+              </div>
             </FadeIn>
         </div>
              <FadeIn
