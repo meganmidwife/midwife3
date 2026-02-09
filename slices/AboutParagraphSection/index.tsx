@@ -21,7 +21,7 @@ const AboutParagraphSection: FC<AboutParagraphSectionProps> = ({ slice }) => {
     className="py-2 px-4 bg-logocolor"
     >
         <div className={`grid grid-cols-4 w-full py-4 bg-logocolor text-gray-900`}>
-          <div className="col-span-4 text-4xl md:5xl lg:6xl font-display text-logofontcolor ">
+          <div className="col-span-4 text-4xl md:5xl lg:6xl text-logofontcolor ">
             <PrismicRichText field= {slice.primary.heading} />
           </div>
           {slice.primary.image.url  ? <><div className={`col-span-4 md:col-span-1  md:mx-3 ${!slice.primary.image_position? "order-2" : "order-1"}`}><PrismicNextImage field={slice.primary.image} /></div><div className={`col-span-4 md:col-span-3 ${!slice.primary.image_position? "order-1" : "order-2`"} `} ><PrismicRichText field={slice.primary.description} /></div></> :<><div className="col-span-4 md:col-span-4"><PrismicRichText field={slice.primary.description}/></div></>}
