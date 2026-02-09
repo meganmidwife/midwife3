@@ -42,7 +42,7 @@ const AboutSlice: FC<AboutSliceProps> = ({ slice }) => {
             <RevealText
               field={slice.primary.heading}
               id="hero-heading"
-              className="font-display  text-4xl md:text-7xl lg:text-8xl leading-none text-logofontcolor bg-logocolor  pt-4 px-4"
+              className="font-display  text-7xl md:text-8xl lg:text-9xl leading-none text-logofontcolor bg-logocolor  pt-4 px-4"
               staggerAmount={0.2}
               align="center"
               duration={1.7}
