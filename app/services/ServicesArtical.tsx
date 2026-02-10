@@ -24,7 +24,7 @@ export const ServicesArticle = async ({ id }: ServicesArticleProps) => {
       vars={{ duration: 2.5 }}
       start="top 50%"
     >
-      <div className="flex-1 text-logofontcolor  ">
+      <div className="text-logofontcolor  ">
         <h3 className="font-body-bold text-xl  ">
           <PrismicText field={pack.data.heading} />
         </h3>
@@ -44,5 +44,6 @@ export const ServicesArticle = async ({ id }: ServicesArticleProps) => {
         </div>
     
     </>
+
   );
 };

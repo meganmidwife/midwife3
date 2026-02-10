@@ -37,23 +37,23 @@ const ServiceSection: FC<ServiceSectionProps> = ({ slice }) => {
             className="object-cover motion-reduce:opacity-50"
           />
         </FadeIn>
-    <div className="bg-logocolor  pt-4 px-4 lg:text-6xl z-40">
-        <RevealText
-          field={slice.primary.heading}
-          id="hero-heading"
-          className="font-display max-w-xl text-4xl leading-none text-gray-200  md:text-5xl lg:text-6xl"
-          staggerAmount={0.2}
-          duration={1.7}
-          as="h1"
-        />
+          <div className="bg-logocolor  pt-4 px-4 lg:text-6xl z-40">
+              <RevealText
+                field={slice.primary.heading}
+                id="hero-heading"
+                className="font-display max-w-xl text-4xl leading-none text-gray-200  md:text-5xl lg:text-6xl"
+                staggerAmount={0.2}
+                duration={1.7}
+                as="h1"
+              />
 
-         <FadeIn
-            className="mb-8 p-4 translate-y-8 text-xl text-center  text-logofontcolor"
-            vars={{ delay: 1, duration: 1.3 }}
-          >
-            <PrismicRichText field={slice.primary.description} />
-          </FadeIn>
-    </div>
+              <FadeIn
+                  className="mb-8 p-4 translate-y-8 text-xl text-center  text-logofontcolor"
+                  vars={{ delay: 1, duration: 1.3 }}
+                >
+                  <PrismicRichText field={slice.primary.description} />
+                </FadeIn>
+          </div>
         
       </div>
     </Bounded>

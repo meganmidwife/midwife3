@@ -61,7 +61,8 @@ export default async function Page() {
         <div className="col-span-4 text-3xl text-balance text-center py-5 bg-logohovercolor opacity-100 z-50">
           <h2 className="text-white">Services TEST</h2>
         </div>
-        {articles.map((item)=>(<div key={item.id}>
+        {articles.map((item)=>(<div key={item.id} className="col-span-4 md:col-span-1">
+          
           <ServicesArticle key={item.id} id={item.id}/>
         </div>))}
       </div>
