@@ -15,5 +15,6 @@ export const components = {
   service: dynamic(() => import("./Service")),
   service_home: dynamic(() => import("./ServiceHome")),
   service_list: dynamic(() => import("./ServiceList")),
+  service_page_article: dynamic(() => import("./ServicePageArticle")),
   service_section: dynamic(() => import("./ServiceSection")),
 };

@@ -9,10 +9,13 @@ import { Bounded } from "@/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
+import { ServicesContent } from "./ServicesContent";
+import { ServicesArticle } from "./ServicesArtical";
 
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("services").catch(() => notFound());
+  const articles = await client.getAllByType("service_article").catch(() => notFound());
 
   return (
     <>
@@ -53,8 +56,17 @@ export default async function Page() {
             <PrismicNextImage field={page.data.image_on_page}/>
           </div>
       </div>
+      <SliceZone slices={page.data.slices} components={components} />
+      <div className="grid w-full gap-5 px-4 grid-cols-4 border-2 pt-10 pb-10">
+        <div className="col-span-4 text-3xl text-balance text-center py-5 bg-logohovercolor opacity-100 z-50">
+          <h2 className="text-white">Services TEST</h2>
+        </div>
+        {articles.map((item)=>(<div key={item.id}>
+          <ServicesArticle key={item.id} id={item.id}/>
+        </div>))}
+      </div>
   </Bounded>
-  <SliceZone slices={page.data.slices} components={components} />
+  
   </>);
 }
 

@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "services",
-  "label": "Services",
+  "id": "service_article",
+  "label": "Service Article",
   "repeatable": true,
   "status": true,
   "json": {
@@ -38,70 +38,11 @@
           "thumbnails": []
         }
       },
-      "services": {
-        "type": "Link",
-        "config": {
-          "label": "Services",
-          "select": "document",
-          "repeat": false,
-          "customtypes": [
-            {
-              "id": "service",
-              "fields": ["heading", "description", "image", "link"]
-            }
-          ]
-        }
-      },
-      "image_on_page": {
-        "type": "Image",
-        "config": {
-          "label": "Image on page",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
-      "button_link": {
-        "type": "Group",
-        "config": {
-          "label": "Button Link",
-          "repeat": true,
-          "fields": {
-            "link": {
-              "type": "Link",
-              "config": {
-                "label": "Link",
-                "select": "document",
-                "repeat": false,
-                "customtypes": [
-                  {
-                    "id": "service_article",
-                    "fields": [
-                      "heading",
-                      "image",
-                      "description",
-                      "meta_title",
-                      "meta_description",
-                      "meta_image"
-                    ]
-                  }
-                ]
-              }
-            }
-          }
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "service_page_article": {
-              "type": "SharedSlice"
-            },
-            "service_list": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     },
