@@ -17,7 +17,7 @@ export const ServicesArticle = async ({ id }: ServicesArticleProps) => {
   const truncatedDescription = asText(pack.data.description).substring(0,150) + ' ...'
   return (
   
-  <>
+  <Link href={`servicearticle/${pack.uid}`} >
   <Image src={"/basiclogo-round.png"}  width={100} height={100} alt="megan" className="absolute inset-left-5 inset-top-0 -mt-2 z-30 w-12 h-12 md:w-24 md:h-24" />
     <FadeIn
       className="h-full bg-logocolor p-3 pt-25 "
@@ -34,16 +34,16 @@ export const ServicesArticle = async ({ id }: ServicesArticleProps) => {
         </div>
         
         </div>
-        <Link href={`servicearticle/${pack.uid}`} className="absolute bottom-0 left-0 text-center w-full border-2 border-logohovercolor bg-logocolor/50 hover:bg-logohovercolor/50 hover:border-logohovercolor/50 text-white uppercase">
+        <div className="absolute bottom-0 left-0 text-center w-full  bg-logocolor/50 hover:bg-logohovercolor/50 hover:border-logohovercolor/50 text-logofontcolor uppercase">
         More
-        </Link>
+        </div>
+        
       </FadeIn>
       
          <div className="flex flex-wrap">
           <PrismicNextImage field={pack.data.image} alt=""/>
         </div>
-    
-    </>
+  </Link>
 
   );
 };

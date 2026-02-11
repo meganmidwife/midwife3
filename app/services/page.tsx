@@ -22,7 +22,7 @@ export default async function Page() {
   <Bounded 
       className="relative min-h-screen   bg-logocolor"
   >
-          <FadeIn
+          { page.data.image && <FadeIn
             vars={{ scale: 1, opacity: 0.5 }}
             className="absolute inset-0 opacity-0 motion-safe:scale-125"
           >
@@ -33,31 +33,31 @@ export default async function Page() {
               fill
               className="object-cover motion-reduce:opacity-50"
             />
-          </FadeIn>
-     <div className="relative grid gap-4 pt-5 md:mt-5 grid-cols-1 md:grid-cols-4 justify-center">
-      <div className=" col-span-4 md:col-span-3">
-            <RevealText
+          </FadeIn>}
+    {    <div className="relative grid gap-4 pt-5 md:mt-5 grid-cols-1 md:grid-cols-4 justify-center">
+     <div className=" col-span-4 md:col-span-3">
+           {page.data.heading && <RevealText
               field={page.data.heading}
-              id="hero-heading"
+              id="service-heading"
               className="font-display text-4xl leading-none bg-logocolor  pt-10 pl-6 text-logofontcolor align-middle  md:text-5xl lg:text-6xl"
               staggerAmount={0.2}
               duration={1.7}
               as="h1"
-            />
+            />}
     
-            <FadeIn
+            {page.data.description.length > 1 && <FadeIn
               className="mt-6  translate-y-8 text-lg bg-logocolor p-4 text-gray-900"
               vars={{ delay: 1, duration: 1.3 }}
             >
               <PrismicRichText field={page.data.description} />
-            </FadeIn>
+            </FadeIn>}
           </div>
           <div className="col-span-4 md:col-span-1">
             <PrismicNextImage field={page.data.image_on_page}/>
           </div>
-      </div>
+      </div>}
       <SliceZone slices={page.data.slices} components={components} />
-      <div className="grid w-full gap-5 px-4 grid-cols-4 border-2 pt-10 pb-10">
+      <div className="grid w-full gap-5  grid-cols-4 pt-10 pb-10">
         <div className="col-span-4 text-3xl text-balance text-center py-5 bg-logohovercolor opacity-100 z-50">
           <h2 className="text-white">Services TEST</h2>
         </div>
