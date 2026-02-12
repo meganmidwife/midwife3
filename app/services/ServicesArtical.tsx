@@ -35,7 +35,7 @@ export const ServicesArticle = async ({ id }: ServicesArticleProps) => {
         
         </div>
         <div className="absolute bottom-0 left-0 text-center w-full  bg-logocolor/50 hover:bg-logohovercolor/50 hover:border-logohovercolor/50 text-logofontcolor uppercase">
-        More
+        More...
         </div>
         
       </FadeIn>

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Content } from "@prismicio/client";
+import { asText, Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { Bounded } from "@/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
@@ -19,7 +19,7 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-logocolor text-gray-900"
+      className="bg-logohovercolor/20 hidden text-gray-900 border-6 border-gray-400/30 rounded-3xl mb-3 md:block"
     >
       <FadeIn
           vars={{ scale: 1, opacity: 0.5 }}
@@ -34,16 +34,18 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
           />
         </FadeIn>
       <div className={`grid grid-cols-4`}>
-        <div className={`col-span-${slice.primary.image?"3":"4"}`}>
-          <div className="text-3xl dispalay-text text-logofontcolor font-body-bold">
+        <div className={`col-span-${isFilled.image(slice.primary.image)?"3":"4"}`}>
+          <div className="text-3xl dispalay-text text-logofontcolor bg-logocolor w-full p-4 my-3 font-body-bold">
           <PrismicRichText field={slice.primary.section_heading} />
           </div>
-          <div className="text-2xl">
+          <div className="text-2xl bg-logocolor p-4 mb-3 font-bold">
           <PrismicRichText field={slice.primary.description} />
           </div>
         </div>
-        {slice.primary.image && <div className={`${slice.primary.image?"col-span-1":""}`}><PrismicNextImage field={slice.primary.image} /></div>}
-      <div className="col-span-4"><button>More</button></div>
+        {slice.primary.image && <div className={`${isFilled.image(slice.primary.image)?"col-span-1":""}`}>
+          <PrismicNextImage field={slice.primary.image} />
+          </div>}
+     
       </div>
       
     </Bounded>

@@ -52,7 +52,7 @@ export const ServicesContent = async ({ id }: ServicesContentProps) => {
         </p>
         </div>
         <Link href={`package/${pack.uid}`} className="flex border-2 border-logohovercolor bg-logocolor/50 hover:bg-logohovercolor/50 hover:border-logohovercolor/50 text-white uppercase w-auto p-4 ">
-        More <FaChevronRight className="text-2xl ml-3"/>
+        More..,. <FaChevronRight className="text-2xl ml-3"/>
         </Link>
         </div>
       </FadeIn>
