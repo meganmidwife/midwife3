@@ -20,7 +20,7 @@ export const ServiceDisplay = async ({ id }: ServiceDisplayProps) => {
 
   return (
     <Bounded
-          className="relative min-h-screen overflow-hidden bg-neutral-950"
+          className="relative min-h-screen overflow-hidden hidden"
         >
           <FadeIn
             vars={{ scale: 1, opacity: 0.5 }}

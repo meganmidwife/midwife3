@@ -9,7 +9,6 @@ import { Bounded } from "@/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
-import { ServicesContent } from "./ServicesContent";
 import { ServicesArticle } from "./ServicesArtical";
 
 export default async function Page() {
@@ -22,7 +21,7 @@ export default async function Page() {
   <Bounded 
       className="relative min-h-screen   bg-logocolor"
   >
-          { isFilled.image(page.data.image) && <FadeIn
+          {/* { isFilled.image(page.data.image) && <FadeIn
             vars={{ scale: 1, opacity: 0.5 }}
             className="absolute inset-0 opacity-0 motion-safe:scale-125"
           >
@@ -33,7 +32,7 @@ export default async function Page() {
               fill
               className="object-cover motion-reduce:opacity-50"
             />
-          </FadeIn>}
+          </FadeIn>} */}
     {    
       
     <div className="relative grid gap-4 pt-5 md:mt-5 grid-cols-1 bg-logocolor  md:grid-cols-4 justify-center">
@@ -59,15 +58,7 @@ export default async function Page() {
         </div>
       </div>}
       <SliceZone slices={page.data.slices} components={components} />
-      <div className="grid w-full gap-5  grid-cols-4 pt-10 pb-10 md:hidden">
-        <div className="col-span-4 text-3xl text-balance text-center py-5 bg-logohovercolor opacity-100 z-50">
-          <h2 className="text-white">Services TEST</h2>
-        </div>
-        {articles.map((item)=>(<div key={item.id} className="col-span-4 md:col-span-1">
-          
-          <ServicesArticle key={item.id} id={item.id}/>
-        </div>))}
-      </div>
+      
   </Bounded>
   
   </>);
