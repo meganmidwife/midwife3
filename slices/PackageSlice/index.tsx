@@ -92,17 +92,15 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
               className="object-cover motion-reduce:opacity-50"
             />
         </FadeIn>
-          <div className={`grid grid-cols-4`}>
-            <div className={`col-span-${isFilled.image(slice.primary.image)?"3":"4"}`}>
-              <div className="text-3xl dispalay-text text-logofontcolor bg-logocolor w-full p-4 my-3 font-body-bold">
-              <PrismicRichText field={slice.primary.heading} />
+           <div className={`grid grid-cols-4`}>
+              <div className={`col-span-${isFilled.image(slice.primary.image)?"3":"4"}`}>
+                <div className="text-3xl dispalay-text text-logofontcolor bg-logocolor w-full p-4 my-3 font-body-bold">
+                <PrismicRichText field={slice.primary.heading} />
+                </div>
+                <div className="text-2xl bg-logocolor p-4 mb-3 font-bold"><div>
+                <PrismicRichText field={slice.primary.description} />
+                <div className="w-full bg-logohovercolor text-gray-300 p-3 mt-3">Price &#8356;{ slice.primary.price?.trim()}</div>
               </div>
-              <div className="text-2xl bg-logocolor p-4 mb-3 font-bold"><div>
-              <PrismicRichText field={slice.primary.description} />
-              <div className="w-full bg-logohovercolor text-gray-300 p-3 mt-3">Price &#8356;{ slice.primary.price?.trim()}</div>
-              
-              </div>
-
               </div>
             </div>
             {slice.primary.image && <div className={`${isFilled.image(slice.primary.image)?"col-span-1":""}`}>

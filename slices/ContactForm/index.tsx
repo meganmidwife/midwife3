@@ -56,7 +56,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
           </div>
         </div>
 
-        <form className="m-3">
+        {/* <form className="m-3">
           <div className="email grid grid-cols-3 align-middle items-center border-b-2 border-gray-500">
             <label htmlFor="frm-email" className="col-span-3 md:col-span-1 text-gray-900  text-center font-bold py-2 w-full  md:text-left border-2 border-gray-200  bg-logocolor md:m-3 pl-1 md:pl-4 pr-1 md:pr-3 md:border-0 md:bg-logocolor">Email</label>
             <input 
@@ -121,7 +121,7 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
         <button type="submit" className="w-full border-2 border-gray-200 md:ml-3 py-4 bg-gray-400 hover:bg-gray-600 mt-4">Submit</button>
       </div>
 
-        </form>
+        </form> */}
 
       </div>
       <Contact/>
