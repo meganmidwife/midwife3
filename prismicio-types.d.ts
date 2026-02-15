@@ -852,51 +852,22 @@ export type PackageDocument<Lang extends string = string> =
     Lang
   >;
 
-/**
- * Item in *Packages → Button Link*
- */
-export interface PackagesDocumentDataButtonLinkItem {
-  /**
-   * Link field in *Packages → Button Link*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: packages.button_link[].link
-   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
-   */
-  link: ContentRelationshipFieldWithData<
-    [
-      {
-        id: "package";
-        fields: [
-          "meta_title",
-          "meta_description",
-          "meta_image",
-          "heading",
-          "description",
-          "image",
-        ];
-      },
-    ]
-  >;
-}
-
-type PackagesDocumentDataSlicesSlice = never;
+type PackagesDocumentDataSlicesSlice = PackageSliceSlice;
 
 /**
  * Content for Packages documents
  */
 interface PackagesDocumentData {
   /**
-   * Packages field in *Packages*
+   * Heading field in *Packages*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: packages.packages
+   * - **API ID Path**: packages.heading
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
-  packages: prismic.RichTextField;
+  heading: prismic.RichTextField;
 
   /**
    * Description field in *Packages*
@@ -910,15 +881,15 @@ interface PackagesDocumentData {
   description: prismic.RichTextField;
 
   /**
-   * Button Link field in *Packages*
+   * Image field in *Packages*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: packages.button_link[]
+   * - **API ID Path**: packages.image
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  button_link: prismic.GroupField<Simplify<PackagesDocumentDataButtonLinkItem>>;
+  image: prismic.ImageField<never>;
 
   /**
    * Slice Zone field in *Packages*
@@ -2699,7 +2670,6 @@ declare module "@prismicio/client" {
       PackageDocumentDataSlicesSlice,
       PackagesDocument,
       PackagesDocumentData,
-      PackagesDocumentDataButtonLinkItem,
       PackagesDocumentDataSlicesSlice,
       PolicyDocument,
       PolicyDocumentData,

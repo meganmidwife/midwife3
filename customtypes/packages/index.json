@@ -12,13 +12,13 @@
           "label": "UID"
         }
       },
-      "packages": {
+      "heading": {
         "type": "StructuredText",
         "config": {
-          "label": "Packages",
+          "label": "Heading",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "heading1"
+          "multi": "heading1,strong,em"
         }
       },
       "description": {
@@ -27,44 +27,26 @@
           "label": "Description",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "paragraph,strong,em,hyperlink,embed,list-item,o-list-item"
+          "multi": "paragraph,strong,list-item,o-list-item,embed,hyperlink"
         }
       },
-      "button_link": {
-        "type": "Group",
+      "image": {
+        "type": "Image",
         "config": {
-          "label": "Button Link",
-          "repeat": true,
-          "fields": {
-            "link": {
-              "type": "Link",
-              "config": {
-                "label": "Link",
-                "select": "document",
-                "repeat": false,
-                "customtypes": [
-                  {
-                    "id": "package",
-                    "fields": [
-                      "meta_title",
-                      "meta_description",
-                      "meta_image",
-                      "heading",
-                      "description",
-                      "image"
-                    ]
-                  }
-                ]
-              }
-            }
-          }
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
         }
       },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "package_slice": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },
