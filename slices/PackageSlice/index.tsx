@@ -99,7 +99,7 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
               </div>
               <div className="text-2xl bg-logocolor p-4 mb-3 font-bold"><div>
               <PrismicRichText field={slice.primary.description} />
-              <div className="w-full bg-logohovercolor text-gray-300 p-3 mt-3">Price <PiCurrencyGbpBold className="inline pb-1 font-bold" />{ slice.primary.price}</div>
+              <div className="w-full bg-logohovercolor text-gray-300 p-3 mt-3">Price &#8356;{ slice.primary.price?.trim()}</div>
               
               </div>
 
