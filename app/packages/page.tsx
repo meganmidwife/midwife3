@@ -6,7 +6,7 @@ import { PrismicRichText, SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { PrismicNextImage } from "@prismicio/next";
-import { Bounded } from "@/components/Bounded";
+import { BoundedFW } from "@/components/BoundedFW";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
 
@@ -16,8 +16,8 @@ export default async function Page() {
   const page = await client.getSingle("packages").catch(() => notFound());
 
   return <>
-    <Bounded 
-        className="relative min-h-screen   bg-logocolor"
+    <BoundedFW 
+        className="relative min-h-screen   bg-logocolor pb-10 pt-10"
     >
             {/* { isFilled.image(page.data.image) && <FadeIn
               vars={{ scale: 1, opacity: 0.5 }}
@@ -33,8 +33,8 @@ export default async function Page() {
             </FadeIn>} */}
       {    
         
-      <div className="relative grid gap-4 pt-5 md:mt-5 grid-cols-1 bg-logocolor  md:grid-cols-4 justify-center">
-       <div className={` col-span-4 ${page.data.image ?"md:col-span-3`":"md:col-span-4`"} `}>
+      <div className="relative grid gap-4 pt-5 md:mt-5 grid-cols-1 bg-logocolor  md:grid-cols-4 lg:grid-cols-5 justify-center">
+         <div className="col-span-4 lg:col-span-5">
             {page.data.heading && <RevealText
               field={page.data.heading}
               id="service-heading"
@@ -43,7 +43,9 @@ export default async function Page() {
               duration={1.7}
               as="h1"
             />}
-    
+            </div>
+           
+       <div className={` col-span-4 ${page.data.image ?"md:col-span-3":"md:col-span-5"} `}>
             {page.data.description.length > 1 && <FadeIn
               className="mt-6  translate-y-8 text-lg bg-logocolor p-4 text-gray-900"
               vars={{ delay: 1, duration: 1.3 }}
@@ -52,13 +54,14 @@ export default async function Page() {
             </FadeIn>}
           </div>
           {page.data.image &&
-          <div className="col-span-4 md:col-span-1 mb-4">
+          <div className="col-span-5 md:col-span-1 lg:col-span-2 mb-4">
             <PrismicNextImage field={page.data.image}/>
           </div>}
         </div>}
+         <div className="col-span-5 h-3 bg-logohovercolor"></div>
         <SliceZone slices={page.data.slices} components={components} />
         
-    </Bounded>
+    </BoundedFW>
     
     </>;
 }

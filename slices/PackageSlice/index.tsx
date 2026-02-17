@@ -4,7 +4,7 @@ import { FC } from "react";
 import Image from "next/image";
 import { asText, Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, PrismicText, SliceComponentProps } from "@prismicio/react";
-import { Bounded } from "@/components/Bounded";
+import { BoundedFW } from "@/components/BoundedFW";
 import { PrismicNextImage } from "@prismicio/next";
 import { FadeIn } from "@/components/FadeIn";
 import { PiCurrencyGbpBold } from "react-icons/pi";
@@ -32,7 +32,7 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
   }
 
   return (
-    <Bounded
+    <BoundedFW
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="text-gray-900  mb-3 md:block"
@@ -52,6 +52,9 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
               <h3 className="font-body-bold text-xl  ">
                 <PrismicText field={slice.primary.heading} />
               </h3>
+              <div className="flex flex-wrap">
+                <PrismicNextImage field={slice.primary.image} alt=""/>
+              </div>
               <div className="mb-10">
                 {showArticle!==slice.id
                 ?<p className="text-lg text-gray-900">{truncatedDescription}</p>:
@@ -67,12 +70,10 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
               </div>
               
               </div>
-              <div className={`absolute ${showLink ? ' block':'hidden'} bottom-0 left-0 text-center w-full  bg-logocolor/50 hover:bg-logohovercolor/50 hover:border-logohovercolor/50 text-logofontcolor uppercase`}>
+              <div className={`absolute ${showLink ? ' block':'hidden'}  -bottom-3 left-0 text-center w-full  bg-logocolor hover:bg-logohovercolor/50 hover:border-logohovercolor/50 text-logofontcolor uppercase`}>
               show more
               </div>
-              <div className="flex flex-wrap">
-                <PrismicNextImage field={slice.primary.image} alt=""/>
-              </div>
+              
             </FadeIn>
           
           </div>
@@ -80,7 +81,7 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
 
       {/** Medium and above */}
       <div className="hidden md:block">
-        <FadeIn
+        {/* <FadeIn
             vars={{ scale: 1, opacity: 0.5 }}
             className="absolute inset-0 opacity-0 motion-safe:scale-125"
           >
@@ -91,24 +92,25 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
               fill
               className="object-cover motion-reduce:opacity-50"
             />
-        </FadeIn>
-           <div className={`grid grid-cols-4`}>
-              <div className={`col-span-${isFilled.image(slice.primary.image)?"3":"4"}`}>
+        </FadeIn> */}
+           <div className={`grid grid-cols-4 lg:grid-cols-5`}>
+              <div className={`md:col-span-${isFilled.image(slice.primary.image)?"3":"4"} lg:col-span-${isFilled.image(slice.primary.image)?"3":"5"}`}>
                 <div className="text-3xl dispalay-text text-logofontcolor bg-logocolor w-full p-4 my-3 font-body-bold">
                 <PrismicRichText field={slice.primary.heading} />
                 </div>
                 <div className="text-2xl bg-logocolor p-4 mb-3 font-bold"><div>
                 <PrismicRichText field={slice.primary.description} />
-                <div className="w-full bg-logohovercolor text-gray-300 p-3 mt-3">Price &#8356;{ slice.primary.price?.trim()}</div>
+                
               </div>
               </div>
             </div>
-            {slice.primary.image && <div className={`${isFilled.image(slice.primary.image)?"col-span-1":""}`}>
+            {slice.primary.image && <div className={`mt-6 ${isFilled.image(slice.primary.image)?"md:col-span-1 lg:col-span-2":""}`}>
               <PrismicNextImage field={slice.primary.image} />
               </div>}
           </div>
+          <div className="w-full bg-logohovercolor text-gray-300 p-3 mt-3">Price &#8356;{ slice.primary.price?.trim()}</div>
         </div>
-    </Bounded>
+    </BoundedFW>
   );
 };
 
