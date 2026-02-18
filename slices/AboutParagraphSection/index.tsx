@@ -15,21 +15,25 @@ export type AboutParagraphSectionProps =
  */
 const AboutParagraphSection: FC<AboutParagraphSectionProps> = ({ slice }) => {
   return (
-    <Bounded
+    <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation} 
     className="py-2 px-4 bg-logocolor"
     >
-        <div className={`grid grid-cols-4 w-full py-4 bg-logocolor text-gray-900`}>
-          <div className="col-span-4 text-3xl md:text-5xl lg:6xl text-logofontcolor ">
+        <div className={`grid grid-cols-5 w-full py-4 bg-logocolor text-gray-900`}>
+          <div className="col-span-5 text-3xl md:text-5xl lg:6xl text-logofontcolor py-6 md:py-12 ">
             <PrismicRichText field= {slice.primary.heading} />
           </div>
-          {slice.primary.image.url  ? <><div className={`col-span-4 md:col-span-1  md:mx-3 ${!slice.primary.image_position? "order-2" : "order-1"}`}><PrismicNextImage field={slice.primary.image} /></div><div className={`col-span-4 md:col-span-3 ${!slice.primary.image_position? "order-1" : "order-2`"} text-xl `} ><PrismicRichText field={slice.primary.description} /></div></> :<><div className="col-span-4 md:col-span-4  text-xl"><PrismicRichText field={slice.primary.description}/></div></>}
+          {slice.primary.image.url  ? <>
+          <div className={`col-span-5  md:col-span-2   md:mx-3 ${!slice.primary.image_position? "order-2" : "order-1"}`}><PrismicNextImage field={slice.primary.image} /></div>
+          <div className={`col-span-5 md:col-span-3 ${!slice.primary.image_position? "order-1" : "order-2"} text-xl pb-6 `} ><PrismicRichText field={slice.primary.description} /></div>
+          </> :
+          <><div className="col-span-5  text-xl"><PrismicRichText field={slice.primary.description}/></div></>}
          
           
               
           </div>
-    </Bounded>
+    </section>
   );
 };
 

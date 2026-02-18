@@ -17,7 +17,7 @@ export type AboutProps = SliceComponentProps<Content.AboutSlice>;
  */
 const About: FC<AboutProps> = ({ slice }) => {
   return (
-     <Bounded
+     <div
           data-slice-type={slice.slice_type}
           data-slice-variation={slice.variation}
           className="relative bg-logocolor pt-10  overflow-hidden"
@@ -35,23 +35,8 @@ const About: FC<AboutProps> = ({ slice }) => {
               as="h1"
             />
             </div>
-            {/* <FadeIn
-              className=" grid grid-cols-4 gap-4 mt-6 translate-y-8 text-lg  bg-logocolor text-black  p-6 mb-4"
-              vars={{ delay: 1, duration: 1.3 }}
-            >
-              <div className="col-span-4 md:col-span-1">
-                <PrismicNextImage field={slice.primary.image}/> 
-              </div>
-              <div className="col-span-4 md:col-span-3 ">
-                <PrismicRichText field={slice.primary.description} />
-              </div> 
-              
-
-            </FadeIn> */}
-    
-             
           </div>
-        </Bounded>
+        </div>
   );
 };
 

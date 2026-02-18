@@ -7,9 +7,7 @@ import { Bounded } from "@/components/Bounded";
 
 import { PrismicNextImage } from "@prismicio/next";
 import { FadeIn } from "@/components/FadeIn";
-import { ButtonLink } from "@/components/ButtonLink";
 import { RevealText } from "@/components/RevealText";
-import { PrismicRichText } from "@prismicio/react";
 import { Link } from "next-view-transitions";
 import { FaChevronRight } from "react-icons/fa";
 
