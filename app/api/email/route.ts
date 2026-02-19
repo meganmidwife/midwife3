@@ -21,13 +21,13 @@ export async function POST(request: NextRequest) {
     port: 587,
     secure: false,
     auth: {
-      user: process.env.MY_EMAIL,
-      pass: process.env.MY_PASSWORD,
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   const mailOptions: Mail.Options = {
-    from: process.env.MY_EMAIL,
+    from: email,
     to: process.env.MY_EMAIL,
     // cc: email, (uncomment this line if you want to send a copy to the sender)
     subject: `Message from ${name} (${email})`,

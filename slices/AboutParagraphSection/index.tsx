@@ -15,10 +15,10 @@ export type AboutParagraphSectionProps =
  */
 const AboutParagraphSection: FC<AboutParagraphSectionProps> = ({ slice }) => {
   return (
-    <section
+    <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation} 
-    className="py-2 px-4 bg-logocolor"
+      className="py-2 px-4 bg-logocolor"
     >
         <div className={`grid grid-cols-5 w-full py-4 bg-logocolor text-gray-900`}>
           <div className="col-span-5 text-3xl md:text-5xl lg:6xl text-logofontcolor py-6 md:py-12 ">
@@ -33,7 +33,7 @@ const AboutParagraphSection: FC<AboutParagraphSectionProps> = ({ slice }) => {
           
               
           </div>
-    </section>
+    </Bounded>
   );
 };
 
