@@ -40,7 +40,7 @@ export const AboutDisplay = async ({  }) => {
         vars={{ duration: 3, delay: 0.2 }}
         start="top 60%"
       >
-        <h3 className="font-display mb-3 text-3xl md:text-5xl lg:text-6xl">
+        <h3 className="font-display mb-3 text-xl md:text-3xl">
           <PrismicText field={about.data.about_megan_the_midwife} />
         </h3>
         <div className="mb-10">

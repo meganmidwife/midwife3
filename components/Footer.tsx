@@ -15,16 +15,16 @@ type FooterIconsProps = {
    let Icon;
    switch (icon) {
      case "Facebook":
-       Icon = <FaFacebookSquare size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
+       Icon = <FaFacebookSquare size={24} className="mx-2 text-logofontcolor hover:text-gray-800" />;
        break;
      case "LinkedIn":
-       Icon = <FaLinkedin size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
+       Icon = <FaLinkedin size={24} className="mx-2 text-logofontcolor hover:text-gray-800" />;
        break;
      case "Instagram":
-       Icon = <FaInstagramSquare size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
+       Icon = <FaInstagramSquare size={24} className="mx-2 text-logofontcolor hover:text-gray-800" />;
        break;
      case "WhatsApp":
-       Icon = <FaSquareWhatsapp size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
+       Icon = <FaSquareWhatsapp size={24} className="mx-2 text-logofontcolor hover:text-gray-800" />;
        break;
      default:
        Icon = null;
@@ -63,10 +63,10 @@ export const Footer = ({settings}:FooterProps) => {
           >
             <Image src="/meganlogo5.png" alt="Megan The " width={80} height={150} />
           </TransitionLink>
-        <p className="z-50 text-2xl block text-logofontcolor border-b-2 border-logofontcolor">Call: {settings.data.phone_number}</p>
+        <p className="z-50 text-xl block text-logofontcolor border-b-2 border-logofontcolor">Call: {settings.data.phone_number}</p>
         </div>
       </div>
-      <p className="text-center text-sm text-gray-900">
+      <p className="text-center text-sm text-gray-800">
             © {new Date().getFullYear()} Megan The Midwife All rights reserved
           </p>
     </footer>

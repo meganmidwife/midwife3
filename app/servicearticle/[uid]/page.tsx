@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
               <div className="relative flex pb-5 flex-col text-center justify-center">                <RevealText
                   field={page.data.heading}
                   id="hero-heading"
-                  className="bg-logocolor font-display text-center md:max-w-xl pt-5 pl-5 text-4xl leading-none text-logofontcolor  md:text-5xl lg:text-6xl"
+                  className="bg-logocolor font-display text-center md:max-w-xl pt-5 pl-5 text-3xl leading-none text-logofontcolor  md:text-5xl"
                   staggerAmount={0.2}
                   duration={1.7}
                   as="h1"
@@ -48,7 +48,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
                   className="mt-6 w-full translate-y-8 text-lg text-neutral-100"
                   vars={{ delay: 1, duration: 1.3 }}
                 >
-                  <div className="bg-logocolor p-6 text-gray-900 text-left">
+                  <div className="bg-logocolor p-6 text-gray-800 text-left">
                   <PrismicRichText field={page.data.description} /></div>
                 </FadeIn>
         

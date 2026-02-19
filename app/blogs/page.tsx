@@ -57,12 +57,12 @@ export default async function Page() {
                     <RevealText
                       field={item.data.heading}
                       id="hero-heading"
-                      className="font-display  max-w-xl text-4xl pt-6 pl-3 leading-none text-logofontcolor  md:text-5xl lg:text-6xl"
+                      className="font-display  max-w-xl text-3xl pt-6 pl-3 leading-none text-logofontcolor  md:text-5xl"
                       staggerAmount={0.2}
                       duration={1.7}
                       as="h1"
                     />
-                    <p className="text-gray-900">{asText(item.data.description).substring(0,150) + ' ...'}</p>
+                    <p className="text-gray-800">{asText(item.data.description).substring(0,150) + ' ...'}</p>
                     </div> 
                   {/* <FadeIn
                     className="mt-6 max-w-md translate-y-8 text-lg text-neutral-100"

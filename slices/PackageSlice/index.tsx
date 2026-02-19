@@ -4,7 +4,7 @@ import { FC } from "react";
 import Image from "next/image";
 import { asText, Content, isFilled } from "@prismicio/client";
 import { PrismicRichText, PrismicText, SliceComponentProps } from "@prismicio/react";
-import { BoundedFW } from "@/components/BoundedFW";
+import { Bounded } from "@/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
 import { FadeIn } from "@/components/FadeIn";
 import { PiCurrencyGbpBold } from "react-icons/pi";
@@ -32,10 +32,10 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
   }
 
   return (
-    <BoundedFW
+    <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="text-gray-900  mb-3 md:block"
+      className="text-gray-800  pb-3 md:pb-0 md:block bg-logocolor"
       
     >
       {/** Below Medium */}
@@ -49,19 +49,19 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
                 start="top 50%"
               >
             <div className="text-logofontcolor  ">
-              <h3 className="font-body-bold text-xl  ">
+              <h3 className="font-body-bold text-xl md:text-3xl">
                 <PrismicText field={slice.primary.heading} />
               </h3>
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap my-4 md:my-0">
                 <PrismicNextImage field={slice.primary.image} alt=""/>
               </div>
               <div className="mb-10">
                 {showArticle!==slice.id
-                ?<p className="text-lg text-gray-900">{truncatedDescription}</p>:
-                <div className="text-lg text-gray-900">{
+                ?<p className="text-lg  text-gray-800">{truncatedDescription}</p>:
+                <div className="text-lg  text-gray-800">{
                   <div><PrismicRichText field={slice.primary.description}/>
                     <div>
-                      <div className="w-full bg-logohovercolor text-gray-300 p-3 mt-3">Price <PiCurrencyGbpBold className="inline pb-1 font-bold" />{ slice.primary.price}</div>
+                      <div className="w-full bg-logohovercolor text-gray-300 p-3 mt-3">Price <PiCurrencyGbpBold className="inline pb-1" />{ slice.primary.price}</div>
                     </div>
                   </div>
                 }
@@ -98,7 +98,7 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
                 <div className="text-3xl dispalay-text text-logofontcolor bg-logocolor w-full p-4 my-3 font-body-bold">
                 <PrismicRichText field={slice.primary.heading} />
                 </div>
-                <div className="text-2xl bg-logocolor p-4 mb-3 font-bold"><div>
+                <div className="text-xl bg-logocolor p-4 mb-3"><div>
                 <PrismicRichText field={slice.primary.description} />
                 
               </div>
@@ -110,7 +110,7 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
           </div>
           <div className="w-full bg-logohovercolor text-gray-300 p-3 mt-3">Price &#8356;{ slice.primary.price?.trim()}</div>
         </div>
-    </BoundedFW>
+    </Bounded>
   );
 };
 

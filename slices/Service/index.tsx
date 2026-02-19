@@ -40,7 +40,7 @@ const Service: FC<ServiceProps> = ({ slice }) => {
     //     <RevealText
     //       field={slice.primary.heading}
     //       id="hero-heading"
-    //       className="font-display max-w-xl text-4xl leading-none text-gray-200  md:text-5xl lg:text-6xl"
+    //       className="font-display max-w-xl text-xl leading-none text-gray-200  md:text-3xl"
     //       staggerAmount={0.2}
     //       duration={1.7}
     //       as="h1"

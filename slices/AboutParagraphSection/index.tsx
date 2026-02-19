@@ -20,15 +20,15 @@ const AboutParagraphSection: FC<AboutParagraphSectionProps> = ({ slice }) => {
       data-slice-variation={slice.variation} 
       className="py-2 px-4 bg-logocolor"
     >
-        <div className={`grid grid-cols-5 w-full py-4 bg-logocolor text-gray-900`}>
-          <div className="col-span-5 text-3xl md:text-5xl lg:6xl text-logofontcolor py-6 md:py-12 ">
+        <div className={`grid grid-cols-5 w-full py-4 bg-logocolor text-gray-800`}>
+          <div className="col-span-5 text-xl md:text-3xl text-logofontcolor py-6 md:py-12 ">
             <PrismicRichText field= {slice.primary.heading} />
           </div>
           {slice.primary.image.url  ? <>
           <div className={`col-span-5  md:col-span-2   md:mx-3 ${!slice.primary.image_position? "order-2" : "order-1"}`}><PrismicNextImage field={slice.primary.image} /></div>
-          <div className={`col-span-5 md:col-span-3 ${!slice.primary.image_position? "order-1" : "order-2"} text-xl pb-6 `} ><PrismicRichText field={slice.primary.description} /></div>
+          <div className={`col-span-5 md:col-span-3 ${!slice.primary.image_position? "order-1" : "order-2"} text-lg pb-6 `} ><PrismicRichText field={slice.primary.description} /></div>
           </> :
-          <><div className="col-span-5  text-xl"><PrismicRichText field={slice.primary.description}/></div></>}
+          <><div className="col-span-5  text-lg"><PrismicRichText field={slice.primary.description}/></div></>}
          
           
               

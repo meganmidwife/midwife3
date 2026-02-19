@@ -41,14 +41,14 @@ const ServiceHome: FC<ServiceHomeProps> = ({ slice }) => {
               <RevealText
               field={slice.primary.heading}
               id="service-heading"
-              className="font-display text-4xl md:text-7xl lg:text-8xl mt-10  leading-none mb:-10 text-logofontcolor text-center"
+              className="font-display text-3xl md:text-5xl mt-10  leading-none mb:-10 text-logofontcolor text-center"
               staggerAmount={0.2}
               duration={1.7}
               as="h1"
             />
     
             <FadeIn
-            className="mb-8 translate-y-8 text-xl text-left  text-gray-900"
+            className="mb-8 translate-y-8 text-lg text-left  text-gray-800"
             vars={{ delay: 1, duration: 1.3 }}
           >
               <PrismicRichText field={slice.primary.description} />

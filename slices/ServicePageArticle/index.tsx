@@ -34,7 +34,7 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="text-gray-900  mb-3 md:block"
+      className="text-gray-800  mb-3 md:block"
       
     >
       {/** Below Medium */}
@@ -53,8 +53,8 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
               </h3>
               <div className="mb-10">
                 {showArticle!==slice.id
-                ?<p className="text-lg text-gray-900">{truncatedDescription}</p>:
-                <div className="text-lg text-gray-900">{<PrismicRichText field={slice.primary.description}/>}</div>}
+                ?<p className="text-lg text-gray-800">{truncatedDescription}</p>:
+                <div className="text-lg text-gray-800">{<PrismicRichText field={slice.primary.description}/>}</div>}
               
               </div>
               
@@ -89,7 +89,7 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
               <div className="text-3xl dispalay-text text-logofontcolor bg-logocolor w-full p-4 my-3 font-body-bold">
               <PrismicRichText field={slice.primary.section_heading} />
               </div>
-              <div className="text-2xl bg-logocolor p-4 mb-3 font-bold">
+              <div className="text-xl bg-logocolor p-4 mb-3">
               <PrismicRichText field={slice.primary.description} />
               </div>
             </div>

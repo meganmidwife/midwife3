@@ -19,7 +19,7 @@ export default function ContactForm() {
     });
 
     if (response.ok) {
-      setStatus("Email sent! Check your inbox.");
+      setStatus("Email sent! Thank you.");
       (e.target as HTMLFormElement).reset();
     } else {
       setStatus("Error sending email.");

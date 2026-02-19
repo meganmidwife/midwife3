@@ -29,16 +29,16 @@ type NavBarProps = {
    let Icon;
    switch (icon) {
      case "Facebook":
-       Icon = <FaFacebookSquare size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
+       Icon = <FaFacebookSquare size={24} className="mx-2 text-logofontcolor hover:text-gray-800" />;
        break;
      case "LinkedIn":
-       Icon = <FaLinkedin size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
+       Icon = <FaLinkedin size={24} className="mx-2 text-logofontcolor hover:text-gray-800" />;
        break;
      case "Instagram":
-       Icon = <FaInstagramSquare size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
+       Icon = <FaInstagramSquare size={24} className="mx-2 text-logofontcolor hover:text-gray-800" />;
        break;
      case "WhatsApp":
-       Icon = <FaSquareWhatsapp size={24} className="mx-2 text-logofontcolor hover:text-gray-900" />;
+       Icon = <FaSquareWhatsapp size={24} className="mx-2 text-logofontcolor hover:text-gray-800" />;
        break;
      default:
        Icon = null;
@@ -67,7 +67,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
             <TransitionLink
               field={link}
               key={link.key}
-              className="border-b border-t border-logofontcolor text-sm py-1 px-2 mt-10 font-semibold text-gray-900 uppercase hover:bg-logohovercolor hover:text-gray-300 mx-2"
+              className="border-b border-t border-logofontcolor text-sm py-1 px-2 mt-10 font-semibold text-gray-800 uppercase hover:bg-logohovercolor hover:text-gray-300 mx-2"
               
             />
           ))}
@@ -144,7 +144,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
               field={link}
               onClick={() => setIsDrawerOpen(false)}
               key={link.key}
-              className="block border-b border-white/10 py-2 text-xl font-semibold tracking-wide text-white uppercase hover:text-gray-300"
+              className="block border-b border-white/10 py-2 text-lg font-semibold tracking-wide text-white uppercase hover:text-gray-300"
               tabIndex={isDrawerOpen ? 0 : -1}
             />
           ))}

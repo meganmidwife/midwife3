@@ -25,11 +25,11 @@ export const ServicesArticle = async ({ id }: ServicesArticleProps) => {
       start="top 50%"
     >
       <div className="text-logofontcolor  ">
-        <h3 className="font-body-bold text-xl  ">
+        <h3 className="font-body-bold text-lg  ">
           <PrismicText field={pack.data.heading} />
         </h3>
         <div className="mb-10">
-          <p className="text-lg text-gray-900">{truncatedDescription}
+          <p className="text-lg text-gray-800">{truncatedDescription}
         </p>
         </div>
         

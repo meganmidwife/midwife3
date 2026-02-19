@@ -1,18 +1,55 @@
-import {NextResponse} from 'next/server';
-import {Resend} from 'resend';
+import { type NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+import Mail from 'nodemailer/lib/mailer';
 
-export async function GET(){
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    try{
-        const data = await resend.emails.send({
-            from:'meganthemidwife@outlook.com',
-            to:'r.mill@ntlworld.com',
-            subject:'Test Email',
-            html:'<h1>Hello World</h1>'
-        })
-        return NextResponse.json({message: "DATA"+data.data?.id});
-    }
-    catch(error){
-        return NextResponse.json({error: 'Something went wrong'}, {status: 500});
-    }
+export async function POST(request: NextRequest) {
+  const { email, name, message } = await request.json();
+
+
+  const transport = nodemailer.createTransport({
+    service: 'gmail',
+    /* 
+      setting service as 'gmail' is same as providing these setings:
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true
+      If you want to use a different email provider other than gmail, you need to provide these manually.
+      Or you can go use these well known services and their settings at
+      https://github.com/nodemailer/nodemailer/blob/master/lib/well-known/services.json
+  */
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+
+  const mailOptions: Mail.Options = {
+    from: "r.mill@ntlworld.com",
+    to: "r.mill@ntlworld.com",
+    // cc: email, (uncomment this line if you want to send a copy to the sender)
+    subject: `Message from ${name} (${email})`,
+    text: message,
+  };
+
+  const sendMailPromise = () =>
+    new Promise<string>((resolve, reject) => {
+      transport.sendMail(mailOptions, function (err) {
+        if (!err) {
+          resolve('Email sent');
+        } else {
+          console.log("NEW ERROR", err)
+          reject(err.message);
+        }
+      });
+    });
+
+  try {
+    await sendMailPromise();
+    return NextResponse.json({ message: 'Email sent' });
+  } catch (err) {
+    return NextResponse.json({ error: err }, { status: 500 });
+  }
 }

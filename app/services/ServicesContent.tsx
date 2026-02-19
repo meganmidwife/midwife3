@@ -44,11 +44,11 @@ export const ServicesContent = async ({ id }: ServicesContentProps) => {
         start="top 60%"
       >
         <div className="text-logofontcolor bg-logocolor p-4">
-        <h3 className="font-display mb-3  text-3xl md:text-5xl lg:text-6xl ">
+        <h3 className="font-display mb-3  text-xl md:text-3xl">
           <PrismicText field={pack.data.heading} />
         </h3>
         <div className="mb-10">
-          <p className=" text-lg text-gray-900 bg-logocolor p-4">{truncatedDescription}
+          <p className=" text-lg text-gray-800 bg-logocolor p-4">{truncatedDescription}
         </p>
         </div>
         <Link href={`package/${pack.uid}`} className="flex border-2 border-logohovercolor bg-logocolor/50 hover:bg-logohovercolor/50 hover:border-logohovercolor/50 text-white uppercase w-auto p-4 ">

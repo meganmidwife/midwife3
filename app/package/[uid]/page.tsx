@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
                   <RevealText
                     field={page.data.heading}
                     id="hero-heading"
-                    className="bg-logocolor font-display md:max-w-xl pt-5 pl-5 text-4xl leading-none text-logofontcolor  md:text-5xl lg:text-6xl"
+                    className="bg-logocolor font-display md:max-w-xl pt-5 pl-5 text-3xl leading-none text-logofontcolor  md:text-5xl"
                     staggerAmount={0.2}
                     duration={1.7}
                     as="h1"
@@ -48,7 +48,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
                     className="mt-6 max-w-xl translate-y-8 text-lg text-neutral-100"
                     vars={{ delay: 1, duration: 1.3 }}
                   >
-                    <div className="bg-logocolor p-6 text-gray-900 text-left">
+                    <div className="bg-logocolor p-6 text-gray-800 text-left">
                     <PrismicRichText field={page.data.description} />
                       <div className="min-w-full justify-between  text-logofontcolor  text-center py-2 border-2 border-gray-300 mt-2 bg-gray-300/50">
                         <FaPoundSign className="inline-block"/>{page.data.price?page.data.price:""}

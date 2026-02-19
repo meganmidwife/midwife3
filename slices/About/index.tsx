@@ -28,7 +28,7 @@ const About: FC<AboutProps> = ({ slice }) => {
             <RevealText
               field={slice.primary.heading}
               id="hero-heading"
-              className="  font-display text-balance align-middle  mt-14 pt-4 text-6xl leading-none bg-logocolor text-logofontcolor pl-5  md:text-7xl lg:text-8xl"
+              className="  font-display text-balance align-middle  mt-14 pt-4 text-3xl leading-none bg-logocolor text-logofontcolor pl-5  md:text-5xl"
               staggerAmount={0.2}
               align="center"
               duration={1.7}

@@ -44,14 +44,14 @@ const Contact: FC<ContactProps> = ({ slice }) => {
                 <RevealText
                   field={slice.primary.heading}
                   id="contact-heading"
-                  className="font-display max-w-xl text-4xl  text-logofontcolor  md:text-5xl lg:text-6xl"
+                  className="font-display max-w-xl text-3xl  text-logofontcolor  md:text-5xl"
                   staggerAmount={0.2}
                   duration={1.7}
                   as="h1"
                 />
     
                 <FadeIn
-                  className="mt-6 max-w-md translate-y-8 text-lg text-gray-900"
+                  className="mt-6 max-w-md translate-y-8 text-lg text-gray-800"
                   vars={{ delay: 1, duration: 1.3 }}
                 >
                   <PrismicRichText field={slice.primary.description} />
@@ -61,7 +61,7 @@ const Contact: FC<ContactProps> = ({ slice }) => {
                 <PrismicNextImage field={slice.primary.featured_image} className="object-contain hidden md:block"/>
               </div>
             </div>
-             <p className="grid grid-cols-1 md:grid-cols-2 p-4 bg-logocolor text-logofontcolor text-2xl font-bold">
+             <p className="grid grid-cols-1 md:grid-cols-2 p-4 bg-logocolor text-logofontcolor text-2xl">
               <span className="inline-block my-3 align-middle text-left md:text-center"><a href="#contactform" > <MdEmail className="inline-block"/> {slice.primary.email}
 </a></span><span className="inline-block my-3 align-middle text-left md:text-center"><a href={`tel:${slice.primary.phone}`}><FaPhoneSquareAlt className="inline-block" /> {slice.primary.phone}</a></span></p>
           </div>

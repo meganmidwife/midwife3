@@ -44,11 +44,11 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           className="object-cover motion-reduce:opacity-50"
         />
       </FadeIn>
-        <div className="bg-logocolor   pt-4 px-4 lg:text-6xl z-40">
+        <div className="bg-logocolor pt-4 px-4 lg:text-6xl z-40">
           <RevealText
             field={slice.primary.heading}
             id="hero-heading"
-            className="font-display text-4xl md:text-7xl lg:text-8xl mt-10  leading-none mb:-10 text-logofontcolor text-center"
+            className="font-display text-3xl md:text-5xl mt-10  leading-none mb:-10 text-logofontcolor text-center"
             staggerAmount={0.2}
             duration={1.7}
             align="center"
@@ -56,7 +56,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           />
 
           <FadeIn
-            className="mb-8 p-4 translate-y-8 text-xl text-center  text-logofontcolor"
+            className="mb-8 p-4 translate-y-8 text-lg text-center  text-logofontcolor"
             vars={{ delay: 1, duration: 1.3 }}
           >
             <PrismicRichText field={slice.primary.description} />

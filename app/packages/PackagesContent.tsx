@@ -44,20 +44,20 @@ export const PackagesContent = async ({ id }: PackagesContentProps) => {
         start="top 60%"
       >
         <div className="text-logofontcolor bg-logocolor p-4">
-        <h3 className="font-display mb-3  text-3xl md:text-5xl lg:text-6xl ">
+        <h3 className="font-display mb-3  text-xl md:text-3xl">
           <PrismicText field={pack.data.heading} />
         </h3>
         <div className="block md:hidden mb-10">
           <div className="grid grid-cols-1">
-            <div className="col-span-1 text-lg text-gray-900 bg-logocolor p-4">
+            <div className="col-span-1 text-lg text-gray-800 bg-logocolor p-4">
               {truncatedDescription}
             </div>
-            {/* <div className="col-span-1 text-lg text-gray-900 bg-logocolor p-4"><PrismicRichText field={pack.data.description}/></div> */}
+            {/* <div className="col-span-1 text-lg text-gray-800 bg-logocolor p-4"><PrismicRichText field={pack.data.description}/></div> */}
             <div className="col-span-1"><PrismicNextImage field={pack.data.image} alt=""/></div>
           </div>
         </div>
         <div className="hidden md:block mb-10">
-          <div className="grid grid-cols-1  md:grid-cols-5 text-lg text-gray-900 bg-logocolor p-4">
+          <div className="grid grid-cols-1  md:grid-cols-5 text-lg text-gray-800 bg-logocolor p-4">
             <div className="col-span-4">
             <PrismicRichText field={pack.data.description}/>
             {pack.data.price && <p>Price <PiCurrencyGbpBold className="inline pb-1 size-6" />{pack.data.price}</p>}
@@ -68,7 +68,7 @@ export const PackagesContent = async ({ id }: PackagesContentProps) => {
           </div>
         </div>
         {/* <Link href={`package/${pack.uid}`} className="flex border-2 border-logohovercolor bg-logocolor/50 hover:bg-logohovercolor/50 hover:border-logohovercolor/50 text-white uppercase w-auto p-4 ">
-        More <FaChevronRight className="text-2xl ml-3"/>
+        More <FaChevronRight className="text-lg ml-3"/>
         </Link> */}
         </div>
       </FadeIn>

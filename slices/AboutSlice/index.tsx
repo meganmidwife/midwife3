@@ -42,7 +42,7 @@ const AboutSlice: FC<AboutSliceProps> = ({ slice }) => {
             <RevealText
               field={slice.primary.heading}
               id="hero-heading"
-              className="font-display  text-7xl md:text-8xl lg:text-9xl leading-none text-logofontcolor bg-logocolor  pt-4 px-4"
+              className="font-display  text-3xl md:text-5xl leading-none text-logofontcolor bg-logocolor  pt-4 px-4"
               staggerAmount={0.2}
               align="center"
               duration={1.7}
@@ -50,11 +50,11 @@ const AboutSlice: FC<AboutSliceProps> = ({ slice }) => {
             />
     
             <FadeIn
-              className="mt-6 text-balance translate-y-8 text-lg bg-logocolor pb-6 text-gray-900"
+              className="mt-6 text-balance translate-y-8 text-lg bg-logocolor pb-6 text-gray-800"
               vars={{ delay: 1, duration: 1.3 }}
             >
               <div className="grid grid-cols-4">
-                <div className="col-span-4 md:col-span-3 text-xl md:text-3xl order-2 md:order-1">
+                <div className="col-span-4 md:col-span-3 text-lg md:text-3xl order-2 md:order-1">
                   <PrismicRichText field={slice.primary.description}  />
                 </div>
                 {slice.primary.image && <PrismicNextImage field={slice.primary.image} className="col-span-4 md:col-span-1 order-1 md:order-2 max-w-40 md:max-w-full mb-4 md:mb-1  m-auto"/>}
