@@ -24,11 +24,11 @@ const About: FC<AboutProps> = ({ slice }) => {
         >
           <div className="relative flex  flex-col justify-center  mb-10">
          
-    <div className="bg-logocolor   pt-4  lg:text-6xl z-40">
+    <div className="bg-logocolor   pt-4 text-4xl md:text-5xl lg:text-6xl z-40">
             <RevealText
               field={slice.primary.heading}
               id="hero-heading"
-              className="  font-display text-balance align-middle  mt-14 pt-4 text-3xl leading-none bg-logocolor text-logofontcolor pl-5  md:text-5xl"
+              className="  font-display text-balance align-middle  mt-14 pt-4  leading-none bg-logocolor text-logofontcolor pl-5"
               staggerAmount={0.2}
               align="center"
               duration={1.7}

@@ -51,6 +51,17 @@
 			"image_position": {
 				"__TYPE__": "BooleanContent",
 				"value": false
+			},
+			"sub_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Consectetur mollit voluptate eiusmod voluptate. Est aute est ipsum elit minim esse exercitation nulla aliquip aliquip voluptate qui velit."
+						}
+					}
+				]
 			}
 		},
 		"items": []

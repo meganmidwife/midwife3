@@ -46,6 +46,15 @@
             "placeholder_true": "right",
             "default_value": false
           }
+        },
+        "sub_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Sub heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3,paragraph,strong,em"
+          }
         }
       },
       "items": {}

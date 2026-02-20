@@ -1654,6 +1654,16 @@ export interface AboutParagraphSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/boolean
    */
   image_position: prismic.BooleanField;
+
+  /**
+   * Sub heading field in *AboutParagraphSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_paragraph_section.default.primary.sub_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  sub_heading: prismic.RichTextField;
 }
 
 /**
