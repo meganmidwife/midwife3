@@ -1537,6 +1537,41 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Item in *About → Default → Primary → Paragraphs*
+ */
+export interface AboutSliceDefaultPrimaryParagraphsItem {
+  /**
+   * Sub heading field in *About → Default → Primary → Paragraphs*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.paragraphs[].sub_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  sub_heading: prismic.RichTextField;
+
+  /**
+   * Description field in *About → Default → Primary → Paragraphs*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.paragraphs[].description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button Link field in *About → Default → Primary → Paragraphs*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.paragraphs[].button_link
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  button_link: prismic.ContentRelationshipField<"contact">;
+}
+
+/**
  * Primary content in *About → Default → Primary*
  */
 export interface AboutSliceDefaultPrimary {
@@ -1571,6 +1606,17 @@ export interface AboutSliceDefaultPrimary {
   image: prismic.ImageField<never>;
 
   /**
+   * Align Image field in *About → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: about.default.primary.align_image
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  align_image: prismic.BooleanField;
+
+  /**
    * Button Link field in *About → Default → Primary*
    *
    * - **Field Type**: Link
@@ -1580,6 +1626,18 @@ export interface AboutSliceDefaultPrimary {
    */
   button_link: prismic.Repeatable<
     prismic.LinkField<string, string, unknown, prismic.FieldState, never>
+  >;
+
+  /**
+   * Paragraphs field in *About → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.paragraphs[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  paragraphs: prismic.GroupField<
+    Simplify<AboutSliceDefaultPrimaryParagraphsItem>
   >;
 }
 
@@ -2698,6 +2756,7 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       AllDocumentTypes,
       AboutSlice,
+      AboutSliceDefaultPrimaryParagraphsItem,
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,

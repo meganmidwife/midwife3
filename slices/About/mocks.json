@@ -62,6 +62,59 @@
 						}
 					}
 				]
+			},
+			"paragraphs": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"sub_heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading4",
+											"content": {
+												"text": "Library"
+											}
+										}
+									]
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Nostrud aute ea ut nisi consectetur fugiat minim sint adipisicing elit cupidatat. Dolor commodo do officia et consectetur. Ullamco ea esse ut in laboris occaecat est dolore."
+											}
+										}
+									]
+								}
+							],
+							[
+								"button_link",
+								{
+									"key": "03474cff-e018-4154-af87-cb69f54df0da",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"align_image": {
+				"__TYPE__": "BooleanContent",
+				"value": false
 			}
 		},
 		"items": []

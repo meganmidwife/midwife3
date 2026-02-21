@@ -39,6 +39,7 @@ const AboutParagraphSection: FC<AboutParagraphSectionProps> = ({ slice }) => {
                 </div>
                 <div className={`col-span-5 md:col-span-4 ${imgposition} text-lg pb-2 `} >
                   <PrismicRichText field={slice.primary.description} />
+                  
                 </div>
 
 
