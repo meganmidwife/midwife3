@@ -1,6 +1,6 @@
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
-import { asImageSrc, isFilled } from "@prismicio/client";
+import { asImageSrc} from "@prismicio/client";
 import { PrismicRichText, SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
@@ -9,30 +9,17 @@ import { Bounded } from "@/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
-import { ServicesArticle } from "./ServicesArtical";
 
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("services").catch(() => notFound());
-  const articles = await client.getAllByType("service_article").catch(() => notFound());
 
   return (
     <>
   <Bounded 
       className="relative min-h-screen   bg-logocolor"
   >
-          {/* { isFilled.image(page.data.image) && <FadeIn
-            vars={{ scale: 1, opacity: 0.5 }}
-            className="absolute inset-0 opacity-0 motion-safe:scale-125"
-          >
-            <PrismicNextImage
-              field={page.data.image}
-              alt=""
-              priority
-              fill
-              className="object-cover motion-reduce:opacity-50"
-            />
-          </FadeIn>} */}
+          
     {    
       
     <div className="relative grid gap-4 pt-5 md:mt-5 grid-cols-1 bg-logocolor  md:grid-cols-4 justify-center">

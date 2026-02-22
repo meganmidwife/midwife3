@@ -1,6 +1,6 @@
 {
   "format": "page",
-  "id": "news_items",
+  "id": "blog",
   "label": "Blog",
   "repeatable": true,
   "status": true,
@@ -18,7 +18,7 @@
           "label": "Heading",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,hyperlink,image,embed,list-item,o-list-item,rtl"
+          "multi": "heading1,strong,em"
         }
       },
       "description": {
@@ -27,7 +27,7 @@
           "label": "Description",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "paragraph,strong,em,list-item,o-list-item,hyperlink,embed"
+          "multi": "paragraph,em,strong,hyperlink,embed,image,list-item,o-list-item,rtl"
         }
       },
       "image": {
@@ -43,7 +43,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "blog_list": {
+            "blog_slice": {
               "type": "SharedSlice"
             }
           }
