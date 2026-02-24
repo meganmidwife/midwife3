@@ -33,19 +33,19 @@ export default async function Page({   }) {
             />}
             </div>
            
-       <div className={` col-span-4 ${page.data.image ?"md:col-span-3":"md:col-span-5"} `}>
-            {page.data.description && <FadeIn
-              className="mt-6  translate-y-8 text-lg bg-logocolor p-4 text-gray-800"
-              vars={{ delay: 1, duration: 1.3 }}
-            >
-              <PrismicRichText field={page.data.description} />
-            </FadeIn>}
-          </div>
-          {page.data.image &&
-          <div className="col-span-5 md:col-span-1 lg:col-span-2 mb-4">
-            <PrismicNextImage field={page.data.image}/>
-          </div>}
-      </div>
+            <div className={` col-span-4 ${page.data.image ?"md:col-span-3":"md:col-span-5"} `}>
+                    {page.data.description && <FadeIn
+                    className="mt-6  translate-y-8 text-lg bg-logocolor p-4 text-gray-800"
+                    vars={{ delay: 1, duration: 1.3 }}
+                    >
+                    <PrismicRichText field={page.data.description} />
+                    </FadeIn>}
+                </div>
+                {page.data.image &&
+                <div className="col-span-5 md:col-span-1 lg:col-span-2 mb-4">
+                    <PrismicNextImage field={page.data.image}/>
+                </div>}
+            </div>
          <div className="col-span-5 h-3 bg-logohovercolor"></div>
             </Bounded>
             <SliceZone slices={page.data.slices} components={components} />

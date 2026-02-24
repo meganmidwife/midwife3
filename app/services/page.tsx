@@ -22,7 +22,7 @@ export default async function Page() {
           
     {    
       
-    <div className="relative grid gap-4 pt-5 md:mt-5 grid-cols-1 bg-logocolor  md:grid-cols-4 justify-center">
+    <div className="relative grid gap-4 pt-5  grid-cols-1 bg-logocolor  md:grid-cols-4 justify-center">
      <div className=" col-span-4 md:col-span-3">
           {page.data.heading && <RevealText
             field={page.data.heading}

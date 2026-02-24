@@ -24,7 +24,7 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
   const sliceID = slice.id;
   const [showArticle, setShowArticle] = useState("");
   const [showLink, setShowLink] = useState(true);
-    const truncatedDescription = asText(slice.primary.description).substring(0,150) + ' ...'
+  const truncatedDescription = asText(slice.primary.description).substring(0,150) + ' ...'
   const hideShow = () =>{
     if(showArticle !== slice.id){
       setShowArticle(slice.id)
@@ -81,18 +81,6 @@ const ServicePageArticle: FC<ServicePageArticleProps> = ({ slice }) => {
 
       {/** Medium and above */}
       <div className="hidden md:block">
-        {/* <FadeIn
-            vars={{ scale: 1, opacity: 0.5 }}
-            className="absolute inset-0 opacity-0 motion-safe:scale-125"
-          >
-            <PrismicNextImage
-              field={slice.primary.image}
-              alt=""
-              priority
-              fill
-              className="object-cover motion-reduce:opacity-50"
-            />
-        </FadeIn> */}
            <div className={`grid grid-cols-4 lg:grid-cols-5`}>
               <div className={`md:col-span-${isFilled.image(slice.primary.image)?"3":"4"} lg:col-span-${isFilled.image(slice.primary.image)?"3":"5"}`}>
                 <div className="text-3xl dispalay-text text-logofontcolor bg-logocolor w-full p-4 my-3 font-body-bold">

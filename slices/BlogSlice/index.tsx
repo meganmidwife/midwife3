@@ -1,5 +1,6 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
+'use client';
+import { FC, useState } from "react";
+import { asText, Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { Bounded } from "@/components/Bounded";
 import { PrismicNextLink } from "@prismicio/next";
@@ -16,6 +17,10 @@ export type BlogSliceProps = SliceComponentProps<Content.BlogSliceSlice>;
  * Component for "BlogSlice" Slices.
  */
 const BlogSlice: FC<BlogSliceProps> = ({ slice }) => {
+   const [showFullDescription, setShowFullDescription] = useState<number | null>(null);
+   const toggleFullDescription = (index: number) => {
+     setShowFullDescription(showFullDescription === index ? null : index);
+   }
   return (
     <Bounded
       data-slice-type={slice.slice_type}
@@ -39,13 +44,29 @@ const BlogSlice: FC<BlogSliceProps> = ({ slice }) => {
           >
       {/* <PrismicRichText field={slice.primary.heading} /> */}
       {slice.primary.paragraphs.map((item, index) => (
+        
         <div key={index} className="mb-4">
           <div className="text-logofontcolor font-body-bold text-xl md:text-3xl">
           <PrismicRichText field={item.sub_heading} />
           </div>
-          <div className="text-lg  text-gray-800">
-            <PrismicRichText field={item.description} />
+          <div className={`text-lg  text-gray-800 block md:hidden`}>
+            {showFullDescription === index ? 
+              <>
+              <PrismicRichText field={item.description}  />
+              <button onClick={()=>toggleFullDescription(0)} className="bg-logohovercolor text-gray-300 w-full mt-4">Hide</button>
+              </>
+              : 
+              <>
+                <p>{asText(item.description).substring(0,150) + ' ...'}</p>
+                <button onClick={()=>toggleFullDescription(index)} className="bg-logohovercolor text-gray-300 w-full mt-4">More</button>
+              </>
+            }
           </div>
+          <div className={`text-lg  text-gray-800 hidden md:block`}>
+              <PrismicRichText field={item.description}  /> 
+          </div>
+          
+          
         </div>
       ))}
        {slice.primary.button_link.map((item, index) => (
