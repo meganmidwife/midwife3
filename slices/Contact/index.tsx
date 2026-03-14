@@ -1,14 +1,13 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, PrismicText, SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { Bounded } from "@/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
-import { ButtonLink } from "@/components/ButtonLink";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
 import { FaPhoneSquareAlt } from "react-icons/fa";
-import Link from "next/link";
 import { MdEmail } from "react-icons/md";
+import ContactForm from "@/components/contactForm/page";
 
 /**
  * Props for `Contact`.
@@ -56,6 +55,7 @@ const Contact: FC<ContactProps> = ({ slice }) => {
                 >
                   <PrismicRichText field={slice.primary.description} />
                 </FadeIn>
+                 <ContactForm />
               </div>
               <div className="col-span-4 md:col-span-1 ">
                 <PrismicNextImage field={slice.primary.featured_image} className="object-contain hidden md:block"/>
