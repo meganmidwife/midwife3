@@ -30,13 +30,13 @@ export default function ContactForm() {
           type="text"
           name="name"
           placeholder="Enter your name"
-          className="w-full p-2 border border-gray-300 rounded"
+          className="w-full p-2 border border-gray-300 bg-gray-200 rounded text-gray-900"
         />
         <input
           type="email"
           name="email"
           placeholder="Enter your email"
-          className="w-full p-2 border border-gray-300 rounded"
+          className="w-full p-2 border border-gray-300 bg-gray-200 rounded text-gray-900"
         />
         <textarea
           name="text"
